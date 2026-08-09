@@ -1,0 +1,8 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+RewriteCond %{ENV:HTTPS} !=on
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+<Files email.cnf>
+   Order Deny,Allow
+   Deny from all
+</Files>

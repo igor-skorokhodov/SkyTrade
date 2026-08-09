@@ -1,0 +1,237 @@
+    /* ===== ПСЕВДОМЕНЮ (декоративное, без реальных ссылок) ===== */
+    .pseudo-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      z-index: 100;
+      padding: 0.9rem 2rem;
+    }
+
+    .menu-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu-list {
+      display: flex;
+      gap: 0.75rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu-item {
+      display: inline-block;
+    }
+
+    /* псевдо-элемент — внешний вид как у интерактивного меню, но без href/jump */
+    .pseudo-link {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: black;
+      background: transparent;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+      font-family: inherit;
+      border: none;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* эффект при наведении: плавное поднятие, тень, акцент */
+    .pseudo-link:hover {
+      background: #ffffff;
+      color: #0f2b3f;
+      box-shadow: 0 6px 14px rgba(0, 32, 64, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* активное состояние (имитация клика) */
+    .pseudo-link:active {
+      transform: translateY(1px);
+      transition: 0.05s;
+      background: #eef3fc;
+    }
+
+    /* легкое выделение для "активного" визуального пункта (демо-состояние) — первый пункт чуть акцентнее */
+    .menu-item:first-child .pseudo-link {
+      background: rgba(26, 86, 125, 0.08);
+      font-weight: 600;
+    }
+
+    /* ===== ОСНОВНОЙ КОНТЕНТ ЛЕНДИНГА ===== */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: radial-gradient(circle at 10% 30%, rgba(235, 245, 255, 0.6), transparent);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1f4e7a, #2a6c9e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #2c4c6e;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+
+    .decor-line {
+      width: 80px;
+      height: 3px;
+      background: #4682b4;
+      margin: 1.8rem auto 0;
+      border-radius: 4px;
+      opacity: 0.5;
+    }
+
+    /* секции контента (для атмосферы лендинга) */
+    .section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem 2rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 2rem;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 10px 25px -12px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #1e4663;
+      display: inline-block;
+      border-left: 5px solid #4682b4;
+      padding-left: 1rem;
+    }
+
+    .grid-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 200px;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid rgba(70,130,180,0.15);
+      transition: all 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(70,130,180,0.3);
+      box-shadow: 0 20px 28px -16px rgba(0, 68, 128, 0.2);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #1f4e7a;
+    }
+
+    .card p {
+      color: #3a5a7a;
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #1f5e8e;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .cta-button:hover {
+      background: #12466b;
+      transform: scale(0.98);
+      box-shadow: 0 8px 16px rgba(0, 55, 94, 0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #5b6f82;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      margin-top: 3rem;
+    }
+
+    /* адаптивность для мобильных устройств — меню становится вертикальным/компактным */
+    @media (max-width: 680px) {
+      .pseudo-nav {
+        padding: 0.7rem 1rem;
+      }
+      .menu-list {
+        gap: 0.5rem;
+      }
+      .pseudo-link {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section {
+        padding: 1.5rem;
+        margin: 1.5rem 1rem;
+      }
+      .grid-cards {
+        flex-direction: column;
+      }
+    }
+
+    /* дополнительная анимация для "псевдо" ощущения */
+    @keyframes softGlow {
+      0% { background: rgba(70,130,180,0.05); }
+      100% { background: rgba(70,130,180,0.12); }
+    }
+    .pseudo-link:focus-visible {
+      outline: 2px solid #4682b4;
+      outline-offset: 2px;
+      animation: softGlow 0.4s ease;
+    }
