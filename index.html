@@ -112,7 +112,7 @@
       position: relative !important;
     }
 
-    /* Полностью убираем position: absolute у шагов квиза */
+    /* Убираем position: absolute у шагов квиза */
     .quiz__step {
       display: none !important;
       position: static !important;
@@ -213,25 +213,6 @@
       background: #2563eb;
       transition: width 0.3s ease;
       width: 0%;
-    }
-
-    @media (max-width: 768px) {
-      .quiz {
-        padding: 16px;
-      }
-      .quiz__step-inner {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-      }
-      .quiz__opts {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-      .quiz__opt {
-        width: 100%;
-        box-sizing: border-box;
-      }
     }
 
     /* Стили для блока сертификатов (Пропорция А4 и просмотр) */
@@ -339,7 +320,30 @@
       opacity: 1;
       transform: scale(1.05);
     }
+
+    /* =========================================================
+       МОБИЛЬНАЯ АДАПТИВНОСТЬ (ВКЛЮЧАЯ ПОДВАЛ И КВИЗ)
+       ========================================================= */
     @media (max-width: 768px) {
+      /* Квиз на мобилке */
+      .quiz {
+        padding: 16px;
+      }
+      .quiz__step-inner {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+      }
+      .quiz__opts {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .quiz__opt {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* Слайдер брендов на мобилке */
       .brands-slide {
         gap: 8px;
       }
@@ -349,6 +353,30 @@
       }
       .brands-item img {
         max-height: 32px;
+      }
+
+      /* МОБИЛЬНЫЙ FOOTER В КОЛОНКИ */
+      .footer__top {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important;
+      }
+      .footer__col {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .footer__bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-top: 20px !important;
+      }
+      .footer__map {
+        width: 100% !important;
+        height: 200px !important;
       }
     }
   </style>
