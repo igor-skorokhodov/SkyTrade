@@ -75,165 +75,6 @@
       display: block;
     }
 
-    /* =========================================================
-       ОБНУЛЕНИЕ POSITION: ABSOLUTE И НАСТРОЙКА FLEX/GRID ДЛЯ КВИЗА
-       ========================================================= */
-    #quiz .container {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 20px;
-      width: 100%;
-      height: auto !important;
-      min-height: 0 !important;
-      position: relative !important;
-      box-sizing: border-box;
-    }
-
-    .quiz {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 20px;
-      width: 100%;
-      height: auto !important;
-      min-height: 0 !important;
-      position: relative !important;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      box-sizing: border-box;
-    }
-
-    .quiz__steps {
-      display: flex !important;
-      flex-direction: column !important;
-      width: 100%;
-      height: auto !important;
-      position: relative !important;
-    }
-
-    /* Полностью убираем position: absolute у шагов квиза */
-    .quiz__step {
-      display: none !important;
-      position: static !important;
-      width: 100%;
-      height: auto !important;
-      top: auto !important;
-      left: auto !important;
-      right: auto !important;
-      bottom: auto !important;
-    }
-
-    .quiz__step.is-active {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 16px;
-      position: static !important;
-      width: 100%;
-      height: auto !important;
-    }
-
-    .quiz__step-inner {
-      display: grid !important;
-      grid-template-columns: 1fr 280px;
-      gap: 24px;
-      align-items: center;
-      width: 100%;
-      height: auto !important;
-      position: static !important;
-    }
-
-    .quiz__step-main {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: static !important;
-    }
-
-    .quiz__q {
-      font-size: 20px;
-      font-weight: 700;
-      color: #0f172a;
-      line-height: 1.3;
-    }
-
-    .quiz__opts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .quiz__opt {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 20px;
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #1e293b;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .quiz__opt:hover {
-      background: #e2e8f0;
-      border-color: #94a3b8;
-    }
-
-    .quiz__step-media {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      position: static !important;
-    }
-
-    .quiz__step-media img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .quiz__progress {
-      width: 100%;
-      height: 6px;
-      background: #e2e8f0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: auto;
-      position: relative !important;
-    }
-
-    .quiz__bar {
-      display: block;
-      height: 100%;
-      background: #2563eb;
-      transition: width 0.3s ease;
-      width: 0%;
-    }
-
-    @media (max-width: 768px) {
-      .quiz {
-        padding: 16px;
-      }
-      .quiz__step-inner {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-      }
-      .quiz__opts {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-      .quiz__opt {
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
-
     /* Стили для блока сертификатов (Пропорция А4 и просмотр) */
     .certs {
       display: flex;
@@ -245,7 +86,7 @@
     .certs img {
       width: 100%;
       max-width: 130px;
-      aspect-ratio: 1 / 1.414;
+      aspect-ratio: 1 / 1.414; /* Пропорции листа А4 */
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #cbd5e1;
@@ -833,7 +674,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.slider')?.addEventListener('mouseenter', ()=>clearInterval(timer));
   } catch(e){ console.warn('Slider init error:', e) }
 
-  // Просмотр сертификатов
+  // Просмотр сертификатов (Попап с закрытием кликом/тачем в любой области)
   try {
     const certOverlay = document.getElementById('certPopupOverlay');
     const certImg = document.getElementById('certPopupImg');
@@ -851,6 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (certOverlay) {
       const closeCertPopup = () => certOverlay.setAttribute('hidden', '');
+      // Закрытие при клике или таче на любой области экрана
       certOverlay.addEventListener('click', closeCertPopup);
       certOverlay.addEventListener('touchend', closeCertPopup);
     }
