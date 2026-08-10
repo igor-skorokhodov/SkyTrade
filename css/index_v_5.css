@@ -1,3 +1,42 @@
+/*КВИЗ*/
+.quiz__step-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.quiz__step-main {
+  flex: 1;
+}
+
+.quiz__step-media {
+  flex: 1;
+  max-width: 450px; /* Ограничение ширины блока с картинкой */
+  width: 100%;
+}
+
+/* Картинка с пропорцией 16:9 */
+.quiz__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Задает пропорции 16:9 */
+  object-fit: cover;    /* Сохраняет пропорции без искажений */
+  border-radius: 8px;   /* Опционально: скругление углов */
+  display: block;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .quiz__step-inner {
+    flex-direction: column;
+  }
+  
+  .quiz__step-media {
+    max-width: 100%;
+  }
+}
+
 /* ============================================
    12. ГРИД-БАННЕР (слайдер + карточки)
    ============================================ */
@@ -205,6 +244,7 @@ img{max-width:100%; display:block}
   color:var(--text);
   text-decoration:none;
   font-weight:700;
+white-space: nowrap;
 }
 
 /* Nav */
@@ -235,6 +275,8 @@ img{max-width:100%; display:block}
   height:44px; padding:0 18px;
   font-weight:600; border-radius:10px; border:1px solid transparent;
   cursor:pointer; text-decoration:none; transition:.2s;
+font-size: smaller;
+white-space: nowrap;
 }
 .btn--primary{ background: var(--primary); color:#fff }
 .btn--primary:hover{ background: var(--primary-600) }

@@ -74,124 +74,6 @@
       margin-bottom: 14px;
       display: block;
     }
-
-    /* Стили для блока сертификатов (Пропорция А4 и просмотр) */
-    .certs {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-    }
-    .certs img {
-      width: 100%;
-      max-width: 130px;
-      aspect-ratio: 1 / 1.414; /* Пропорции листа А4 */
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .certs img:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Попап для просмотра сертификатов */
-    .cert-popup-overlay {
-      cursor: pointer;
-      z-index: 2000;
-      background: rgba(15, 23, 42, 0.85);
-    }
-    .cert-popup-container {
-      max-width: 90vw;
-      max-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cert-popup-img {
-      max-width: 90vw;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Стили для узкого слайдера Брендов */
-    .brands-section {
-      padding: 32px 0;
-      background: #ffffff;
-      border-top: 1px solid #e2e8f0;
-      border-bottom: 1px solid #e2e8f0;
-      overflow: hidden;
-    }
-    .section__title--sm {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #0f172a;
-    }
-    .brands-slider {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-    }
-    .brands-track {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-      width: 100%;
-    }
-    .brands-slide {
-      min-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      box-sizing: border-box;
-      padding: 4px 0;
-    }
-    .brands-item {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 64px;
-      background: #f8fafc;
-      border-radius: 10px;
-      padding: 8px 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      border: 1px solid #e2e8f0;
-      box-sizing: border-box;
-    }
-    .brands-item img {
-      max-width: 100%;
-      max-height: 44px;
-      object-fit: contain;
-      filter: grayscale(20%);
-      opacity: 0.85;
-      transition: all 0.3s ease;
-    }
-    .brands-item:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
-    }
-    @media (max-width: 768px) {
-      .brands-slide {
-        gap: 8px;
-      }
-      .brands-item {
-        height: 50px;
-        padding: 4px 6px;
-      }
-      .brands-item img {
-        max-height: 32px;
-      }
-    }
   </style>
 </head>
 
@@ -215,7 +97,6 @@
         <ul class="nav__list" id="navMenu">
           <li><a href="#catalog">Каталог</a></li>
           <li><a href="#benefits">Преимущества</a></li>
-          <li><a href="#brands">Бренды</a></li>
           <li><a href="#testing">Испытания</a></li>
           <li><a href="#delivery">Доставка</a></li>
           <li><a href="#contacts">Контакты</a></li>
@@ -396,49 +277,6 @@
     </div>
   </section>
 
-  <!-- БРЕНДЫ (Узкий слайдер) -->
-  <section id="brands" class="brands-section">
-    <div class="container">
-      <h2 class="section__title--sm">Бренды, с которыми мы работаем</h2>
-      <div class="brands-slider">
-        <div class="brands-track">
-          <!-- Слайд 1 (1–5) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/11_logo_SORMAT.png" alt="химический анкер Sormat" title="химический анкер Sormat" /></div>
-            <div class="brands-item"><img src="img/brands/12_logo_HILTI.webp" alt="химический анкер HILTI" title="химический анкер HILTI" /></div>
-            <div class="brands-item"><img src="img/brands/13_logo_BIT.jpg" alt="химический анкер BIT" title="химический анкер BIT" /></div>
-            <div class="brands-item"><img src="img/brands/14_logo_techkrep.png" alt="химический анкер Tech‑Krep" title="химический анкер Tech‑Krep" /></div>
-            <div class="brands-item"><img src="img/brands/15_logo_rawlplug.jpg" alt="химический анкер RAWLPLUG" title="химический анкер RAWLPLUG" /></div>
-          </div>
-          <!-- Слайд 2 (6–10) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/21_logo_SKIF.png" alt="химический анкер SKIF" title="химический анкер SKIF" /></div>
-            <div class="brands-item"><img src="img/brands/22_logo_HIMTEX.webp" alt="химический анкер HIMTEX" title="химический анкер HIMTEX" /></div>
-            <div class="brands-item"><img src="img/brands/23_logo_TYTAN.png" alt="химический анкер TYTAN" title="химический анкер TYTAN" /></div>
-            <div class="brands-item"><img src="img/brands/24_logo_UTECH.png" alt="химический анкер UTECH" title="химический анкер UTECH" /></div>
-            <div class="brands-item"><img src="img/brands/25_logo_Fasty.jpg" alt="химический анкер Fasty" title="химический анкер Fasty" /></div>
-          </div>
-          <!-- Слайд 3 (11–15) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/31_logo_EMS_Dubell.jpg" alt="химический анкер EMS" title="химический анкер EMS" /></div>
-            <div class="brands-item"><img src="img/brands/32_logo_MKT.png" alt="химический анкер MKT" title="химический анкер MKT" /></div>
-            <div class="brands-item"><img src="img/brands/33_logo_FISCHER.png" alt="химический анкер Fischer" title="химический анкер Fischer" /></div>
-            <div class="brands-item"><img src="img/brands/34_logo_DAXMER.svg" alt="химический анкер Daxmer" title="химический анкер Daxmer" /></div>
-            <div class="brands-item"><img src="img/brands/35_logo_GRAF.png" alt="химический анкер GRAF" title="химический анкер GRAF" /></div>
-          </div>
-          <!-- Слайд 4 (16–20) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/41_logo_KMP.jpg" alt="химический анкер КМП" title="химический анкер КМП" /></div>
-            <div class="brands-item"><img src="img/brands/42_logo_OKG.jpg" alt="химический анкер OKG" title="химический анкер OKG" /></div>
-            <div class="brands-item"><img src="img/brands/43_logo_STALMAX.jpg" alt="химический анкер STALMAX" title="химический анкер STALMAX" /></div>
-            <div class="brands-item"><img src="img/brands/44_logo_FIXAR.jpg" alt="химический анкер Фиксар" title="химический анкер Фиксар" /></div>
-            <div class="brands-item"><img src="img/brands/45_logo_ELEMENTA.webp" alt="химический анкер ELEMENTA" title="химический анкер ELEMENTA" /></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Испытания -->
   <section id="testing" class="section">
     <div class="container">
@@ -462,7 +300,7 @@
   </section>
 
   <!-- Объекты -->
-  <section id="projects" class="section section--alt">
+  <section id="projects" class="section">
     <div class="container">
       <h2 class="section__title">Объекты, куда поставлялась продукция</h2>
       <div class="projects-grid">
@@ -477,7 +315,7 @@
   </section>
 
   <!-- Доставка -->
-  <section id="delivery" class="section">
+  <section id="delivery" class="section section--alt">
     <div class="container">
       <h2 class="section__title">Доставка и условия</h2>
       <div class="grid grid--2">
@@ -495,7 +333,7 @@
   </section>
 
   <!-- Контакты -->
-  <section id="contacts" class="section section--alt">
+  <section id="contacts" class="section">
     <div class="container grid grid--2">
       <div>
         <h2 class="section__title">Контакты</h2>
@@ -523,7 +361,7 @@
   </section>
   
   <!-- Отзывы -->
-  <section id="reviews" class="section">
+  <section id="reviews" class="section section--alt">
     <div class="container">
       <h2 class="section__title">Отзывы клиентов</h2>
       <div class="reviews">
@@ -603,14 +441,7 @@
     </div>
   </div>
 
-  <!-- Попап просмотра увеличенного сертификата -->
-  <div class="overlay cert-popup-overlay" id="certPopupOverlay" hidden>
-    <div class="cert-popup-container">
-      <img id="certPopupImg" class="cert-popup-img" src="" alt="Сертификат" />
-    </div>
-  </div>
-
-  <!-- Попап с формой -->
+  <!-- Попап с формой (Получить КП / Консультацию / Выбор товара из каталога) -->
   <div class="overlay" id="formPopupOverlay" hidden>
     <div class="popup" id="formPopupContent" role="dialog" aria-modal="true" aria-labelledby="formPopupTitle">
       <button class="popup__close" id="formPopupClose" aria-label="Закрыть">✕</button>
@@ -655,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } catch(e){ console.warn('Nav init error:', e) }
 
-  // Главный Слайдер
+  // Слайдер
   try {
     const slides = Array.from(document.querySelectorAll('.slide'));
     const dots = Array.from(document.querySelectorAll('.dot'));
@@ -673,45 +504,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let timer = setInterval(()=>window.changeSlide(1), 6000);
     document.querySelector('.slider')?.addEventListener('mouseenter', ()=>clearInterval(timer));
   } catch(e){ console.warn('Slider init error:', e) }
-
-  // Просмотр сертификатов (Попап с закрытием кликом/тачем в любой области)
-  try {
-    const certOverlay = document.getElementById('certPopupOverlay');
-    const certImg = document.getElementById('certPopupImg');
-    const certs = document.querySelectorAll('.certs img');
-
-    certs.forEach(img => {
-      img.addEventListener('click', () => {
-        if (certImg && certOverlay) {
-          certImg.src = img.src;
-          certImg.alt = img.alt || 'Сертификат';
-          certOverlay.removeAttribute('hidden');
-        }
-      });
-    });
-
-    if (certOverlay) {
-      const closeCertPopup = () => certOverlay.setAttribute('hidden', '');
-      // Закрытие при клике или таче на любой области экрана
-      certOverlay.addEventListener('click', closeCertPopup);
-      certOverlay.addEventListener('touchend', closeCertPopup);
-    }
-  } catch(e){ console.warn('Cert popup init error:', e) }
-
-  // Автоматический слайдер Брендов (каждые 3 секунды)
-  try {
-    const track = document.querySelector('.brands-track');
-    const brandSlides = document.querySelectorAll('.brands-slide');
-    if (track && brandSlides.length > 0) {
-      let currentBrandSlide = 0;
-      const totalBrandSlides = brandSlides.length;
-
-      setInterval(() => {
-        currentBrandSlide = (currentBrandSlide + 1) % totalBrandSlides;
-        track.style.transform = `translateX(-${currentBrandSlide * 100}%)`;
-      }, 3000);
-    }
-  } catch(e){ console.warn('Brands slider init error:', e) }
 
   // Cookies
   try {
@@ -774,6 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formOverlay?.setAttribute('hidden', '');
   }
 
+  // Слушатель для кнопок «Получить КП» и «Получить консультацию»
   document.querySelectorAll('.js-open-form-popup').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -782,12 +575,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Закрытие по крестику
   formCloseBtn?.addEventListener('click', closeFormPopup);
 
+  // Закрытие по клику вне блока формы
   formOverlay?.addEventListener('click', (e) => {
     if (e.target === formOverlay) closeFormPopup();
   });
 
+  // Закрытие по клавише Esc
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && formOverlay && !formOverlay.hidden) {
       closeFormPopup();
@@ -862,6 +658,7 @@ document.addEventListener('DOMContentLoaded', () => {
               ${p.subtitle ? `<div class="catalog-card__sub">${p.subtitle}</div>` : ''}
             </div>`;
           
+          // Открытие попапа при клике на позицию каталога
           a.addEventListener('click', (e) => {
             e.preventDefault();
             openFormPopup('Отличный выбор!', 'Оставьте свои данные, и мы поможем с заказом', p.code);
@@ -883,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } catch(e){ console.warn('Catalog init error:', e) }
 
-  // Квиз
+  // Квиз с выводом изображения подходящего товара
   try {
     const quiz = document.querySelector('#quiz .quiz');
     if (quiz) {
@@ -894,6 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const answers = {};
       const total = steps.length;
 
+      // База рекомендаций с карточками товаров
       const recs = {
         'ITH 300 Ve': { name: 'ITH 300 Ve', desc: 'Универсальный винилэстеровый анкер под бетон', img: 'img/anchors/ITH-300-Ve-300x107.png' },
         'ITH 410 Ve': { name: 'ITH 410 Ve', desc: 'Для высоких нагрузок и больших диаметров в бетоне', img: 'img/anchors/ITH-410-Ve-1-300x117.png' },
@@ -954,7 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      quiz.querySelector('#quizRestart')?.addEventListener('click', ()=>{
+      quiz.querySelector('#quiztart')?.addEventListener('click', ()=>{
         Object.keys(answers).forEach(k=>delete answers[k]);
         go(0);
       });

@@ -75,51 +75,6 @@
       display: block;
     }
 
-    /* Стили для блока сертификатов (Пропорция А4 и просмотр) */
-    .certs {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-    }
-    .certs img {
-      width: 100%;
-      max-width: 130px;
-      aspect-ratio: 1 / 1.414; /* Пропорции листа А4 */
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .certs img:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Попап для просмотра сертификатов */
-    .cert-popup-overlay {
-      cursor: pointer;
-      z-index: 2000;
-      background: rgba(15, 23, 42, 0.85);
-    }
-    .cert-popup-container {
-      max-width: 90vw;
-      max-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cert-popup-img {
-      max-width: 90vw;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
-
     /* Стили для узкого слайдера Брендов */
     .brands-section {
       padding: 32px 0;
@@ -287,6 +242,49 @@
     </div>
   </div>
 
+  <!-- БРЕНДЫ (Узкий слайдер) -->
+  <section id="brands" class="brands-section">
+    <div class="container">
+      <h2 class="section__title--sm">Бренды, с которыми мы работаем</h2>
+      <div class="brands-slider">
+        <div class="brands-track">
+          <!-- Слайд 1 (1–5) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img src="img/brands/11_logo_SORMAT.png" alt="химический анкер Sormat" title="химический анкер Sormat" /></div>
+            <div class="brands-item"><img src="img/brands/12_logo_HILTI.webp" alt="химический анкер HILTI" title="химический анкер HILTI" /></div>
+            <div class="brands-item"><img src="img/brands/13_logo_BIT.jpg" alt="химический анкер BIT" title="химический анкер BIT" /></div>
+            <div class="brands-item"><img src="img/brands/14_logo_techkrep.png" alt="химический анкер Tech‑Krep" title="химический анкер Tech‑Krep" /></div>
+            <div class="brands-item"><img src="img/brands/15_logo_rawlplug.jpg" alt="химический анкер RAWLPLUG" title="химический анкер RAWLPLUG" /></div>
+          </div>
+          <!-- Слайд 2 (6–10) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img src="img/brands/21_logo_SKIF.png" alt="химический анкер SKIF" title="химический анкер SKIF" /></div>
+            <div class="brands-item"><img src="img/brands/22_logo_HIMTEX.webp" alt="химический анкер HIMTEX" title="химический анкер HIMTEX" /></div>
+            <div class="brands-item"><img src="img/brands/23_logo_TYTAN.png" alt="химический анкер TYTAN" title="химический анкер TYTAN" /></div>
+            <div class="brands-item"><img src="img/brands/24_logo_UTECH.png" alt="химический анкер UTECH" title="химический анкер UTECH" /></div>
+            <div class="brands-item"><img src="img/brands/25_logo_Fasty.jpg" alt="химический анкер Fasty" title="химический анкер Fasty" /></div>
+          </div>
+          <!-- Слайд 3 (11–15) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img src="img/brands/31_logo_EMS_Dubell.jpg" alt="химический анкер EMS" title="химический анкер EMS" /></div>
+            <div class="brands-item"><img src="img/brands/32_logo_MKT.png" alt="химический анкер MKT" title="химический анкер MKT" /></div>
+            <div class="brands-item"><img src="img/brands/33_logo_FISCHER.png" alt="химический анкер Fischer" title="химический анкер Fischer" /></div>
+            <div class="brands-item"><img src="img/brands/34_logo_DAXMER.svg" alt="химический анкер Daxmer" title="химический анкер Daxmer" /></div>
+            <div class="brands-item"><img src="img/brands/35_logo_GRAF.png" alt="химический анкер GRAF" title="химический анкер GRAF" /></div>
+          </div>
+          <!-- Слайд 4 (16–20) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img src="img/brands/41_logo_KMP.jpg" alt="химический анкер КМП" title="химический анкер КМП" /></div>
+            <div class="brands-item"><img src="img/brands/42_logo_OKG.jpg" alt="химический анкер OKG" title="химический анкер OKG" /></div>
+            <div class="brands-item"><img src="img/brands/43_logo_STALMAX.jpg" alt="химический анкер STALMAX" title="химический анкер STALMAX" /></div>
+            <div class="brands-item"><img src="img/brands/44_logo_FIXAR.jpg" alt="химический анкер Фиксар" title="химический анкер Фиксар" /></div>
+            <div class="brands-item"><img src="img/brands/45_logo_ELEMENTA.webp" alt="химический анкер ELEMENTA" title="химический анкер ELEMENTA" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- КВИЗ -->
   <section id="quiz" class="section section--alt">
     <div class="container">
@@ -396,48 +394,7 @@
     </div>
   </section>
 
-  <!-- БРЕНДЫ (Узкий слайдер) -->
-  <section id="brands" class="brands-section">
-    <div class="container">
-      <h2 class="section__title--sm">Бренды, с которыми мы работаем</h2>
-      <div class="brands-slider">
-        <div class="brands-track">
-          <!-- Слайд 1 (1–5) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/11_logo_SORMAT.png" alt="химический анкер Sormat" title="химический анкер Sormat" /></div>
-            <div class="brands-item"><img src="img/brands/12_logo_HILTI.webp" alt="химический анкер HILTI" title="химический анкер HILTI" /></div>
-            <div class="brands-item"><img src="img/brands/13_logo_BIT.jpg" alt="химический анкер BIT" title="химический анкер BIT" /></div>
-            <div class="brands-item"><img src="img/brands/14_logo_techkrep.png" alt="химический анкер Tech‑Krep" title="химический анкер Tech‑Krep" /></div>
-            <div class="brands-item"><img src="img/brands/15_logo_rawlplug.jpg" alt="химический анкер RAWLPLUG" title="химический анкер RAWLPLUG" /></div>
-          </div>
-          <!-- Слайд 2 (6–10) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/21_logo_SKIF.png" alt="химический анкер SKIF" title="химический анкер SKIF" /></div>
-            <div class="brands-item"><img src="img/brands/22_logo_HIMTEX.webp" alt="химический анкер HIMTEX" title="химический анкер HIMTEX" /></div>
-            <div class="brands-item"><img src="img/brands/23_logo_TYTAN.png" alt="химический анкер TYTAN" title="химический анкер TYTAN" /></div>
-            <div class="brands-item"><img src="img/brands/24_logo_UTECH.png" alt="химический анкер UTECH" title="химический анкер UTECH" /></div>
-            <div class="brands-item"><img src="img/brands/25_logo_Fasty.jpg" alt="химический анкер Fasty" title="химический анкер Fasty" /></div>
-          </div>
-          <!-- Слайд 3 (11–15) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/31_logo_EMS_Dubell.jpg" alt="химический анкер EMS" title="химический анкер EMS" /></div>
-            <div class="brands-item"><img src="img/brands/32_logo_MKT.png" alt="химический анкер MKT" title="химический анкер MKT" /></div>
-            <div class="brands-item"><img src="img/brands/33_logo_FISCHER.png" alt="химический анкер Fischer" title="химический анкер Fischer" /></div>
-            <div class="brands-item"><img src="img/brands/34_logo_DAXMER.svg" alt="химический анкер Daxmer" title="химический анкер Daxmer" /></div>
-            <div class="brands-item"><img src="img/brands/35_logo_GRAF.png" alt="химический анкер GRAF" title="химический анкер GRAF" /></div>
-          </div>
-          <!-- Слайд 4 (16–20) -->
-          <div class="brands-slide">
-            <div class="brands-item"><img src="img/brands/41_logo_KMP.jpg" alt="химический анкер КМП" title="химический анкер КМП" /></div>
-            <div class="brands-item"><img src="img/brands/42_logo_OKG.jpg" alt="химический анкер OKG" title="химический анкер OKG" /></div>
-            <div class="brands-item"><img src="img/brands/43_logo_STALMAX.jpg" alt="химический анкер STALMAX" title="химический анкер STALMAX" /></div>
-            <div class="brands-item"><img src="img/brands/44_logo_FIXAR.jpg" alt="химический анкер Фиксар" title="химический анкер Фиксар" /></div>
-            <div class="brands-item"><img src="img/brands/45_logo_ELEMENTA.webp" alt="химический анкер ELEMENTA" title="химический анкер ELEMENTA" /></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Испытания -->
   <section id="testing" class="section">
@@ -603,13 +560,6 @@
     </div>
   </div>
 
-  <!-- Попап просмотра увеличенного сертификата -->
-  <div class="overlay cert-popup-overlay" id="certPopupOverlay" hidden>
-    <div class="cert-popup-container">
-      <img id="certPopupImg" class="cert-popup-img" src="" alt="Сертификат" />
-    </div>
-  </div>
-
   <!-- Попап с формой -->
   <div class="overlay" id="formPopupOverlay" hidden>
     <div class="popup" id="formPopupContent" role="dialog" aria-modal="true" aria-labelledby="formPopupTitle">
@@ -673,30 +623,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let timer = setInterval(()=>window.changeSlide(1), 6000);
     document.querySelector('.slider')?.addEventListener('mouseenter', ()=>clearInterval(timer));
   } catch(e){ console.warn('Slider init error:', e) }
-
-  // Просмотр сертификатов (Попап с закрытием кликом/тачем в любой области)
-  try {
-    const certOverlay = document.getElementById('certPopupOverlay');
-    const certImg = document.getElementById('certPopupImg');
-    const certs = document.querySelectorAll('.certs img');
-
-    certs.forEach(img => {
-      img.addEventListener('click', () => {
-        if (certImg && certOverlay) {
-          certImg.src = img.src;
-          certImg.alt = img.alt || 'Сертификат';
-          certOverlay.removeAttribute('hidden');
-        }
-      });
-    });
-
-    if (certOverlay) {
-      const closeCertPopup = () => certOverlay.setAttribute('hidden', '');
-      // Закрытие при клике или таче на любой области экрана
-      certOverlay.addEventListener('click', closeCertPopup);
-      certOverlay.addEventListener('touchend', closeCertPopup);
-    }
-  } catch(e){ console.warn('Cert popup init error:', e) }
 
   // Автоматический слайдер Брендов (каждые 3 секунды)
   try {
