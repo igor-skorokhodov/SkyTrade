@@ -280,7 +280,7 @@ white-space: nowrap;
 }
 .btn--primary{ background: var(--primary); color:#fff }
 .btn--primary:hover{ background: var(--primary-600) }
-.btn--ghost{ background: transparent; color: var(--primary); border-color: var(--primary) }
+.btn--ghost{ background: var(--primary); color: white; border-color: var(--primary); max-width: 200px; }
 .btn--ghost:hover{ background: rgba(31,94,142,0.08) }
 .btn--full{ width:100% }
 
@@ -344,7 +344,7 @@ white-space: nowrap;
   padding-left:12px;
 }
 .section__title::before{
-  content:''; position:absolute; left:0; top:0.48em;
+  content:''; position:absolute; left:0; top:0.2em;
   width:4px; height:1.2em; background: var(--primary); border-radius:3px;
 }
 
@@ -384,7 +384,8 @@ white-space: nowrap;
 .card__h{ font-size:16px; margin:0 0 6px }
 .card__p{ margin:0; color: var(--muted) }
 
-.card--note{ display:flex; flex-direction:column; gap:12px }
+.card--note{ display:flex; flex-direction:column; gap:12px; align-items: center; margin: 0 auto }
+.card--objects{ display:flex; flex-direction:column; gap:12px; align-items: center; max-width: 60%; margin: 0 auto }
 
 /* Text blocks */
 .text p{ margin:0 0 10px }
@@ -541,8 +542,277 @@ white-space: nowrap;
 .footer--dark .footer__link{ color:#c9e1f6 }
 .footer__top{ display:grid; grid-template-columns: 1.1fr .9fr 1fr; gap:16px; align-items:start; margin-bottom:16px }
 .footer__h{ margin:0 0 8px; font-size:16px }
-.footer__list{ list-style:none; margin:0; padding:0 }
+.footer__list{ list-style:none; margin:0; padding:0; color: #d2d9e1; }
 .footer__list li{ margin:6px 0; color:#d2d9e1 }
 .footer__bottom{ display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.12); padding-top:12px }
 .footer__map{ width:100%; height:180px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.2) }
 .brand--footer .brand__text span{ color:#cbd6e2 }
+
+
+/* Переменные и стили секции "Инженерный сервис" */
+:root {
+  --primary-color: #0d5cba;       /* Фирменный синий */
+  --primary-hover: #094796;
+  --accent-color: #e52d27;        /* Акцентный красный */
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 12px 20px -3px rgba(13, 92, 186, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.engineering-service {
+  background-color: var(--bg-light);
+  padding: 80px 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка секции */
+.section-header {
+  margin-bottom: 48px;
+}
+
+.text-center {
+}
+
+.section-subtitle-tag {
+  display: inline-block;
+  background: rgba(13, 92, 186, 0.1);
+  color: var(--primary-color);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.section-description {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 700px;
+}
+
+/* Сетка карточек */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Карточка */
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(13, 92, 186, 0.3);
+}
+
+/* Иконка */
+.card-icon-wrapper {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #edf4ff;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon-wrapper.accent {
+  background: #fff1f0;
+  color: var(--accent-color);
+}
+
+.card-icon-wrapper.lab {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Текст карточки */
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--text-dark);
+}
+
+.card-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+/* Оформительские элементы */
+.norm-tag {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e1;
+}
+
+.text-accent {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Полноширинная карточка (Лаборатория) */
+.full-width-card {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1.5px solid #cbd5e1;
+}
+
+.card-header-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* Кнопки действий */
+.service-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(229, 45, 39, 0.25);
+}
+
+.btn-primary:hover {
+  background: #d0221c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229, 45, 39, 0.35);
+}
+
+.btn-secondary {
+  background: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 92, 186, 0.25);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 92, 186, 0.35);
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--text-dark);
+  border: 2px solid #cbd5e1;
+}
+
+.btn-outline:hover {
+  background: #f1f5f9;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 992px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .full-width-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .engineering-service {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .service-card {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .service-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

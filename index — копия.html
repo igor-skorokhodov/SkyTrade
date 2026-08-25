@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,250 +11,6 @@
   <link href="css/index_v_5.css" rel="stylesheet" />
 
   <style>
-.card__h {
-    font-size: 20px;
-    margin: 0 0 6px;
-}
-        /* Quiz Section */
-        .quiz-section {
-            background: var(--bg-light);
-            padding: 40px 20px;
-            border-radius: 12px;
-            margin: 40px auto;
-            max-width: 800px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .quiz-title {
-            text-align: center;
-            font-size: 26px;
-            margin-bottom: 24px;
-            color: var(--text-dark);
-        }
-
-        .quiz-progress {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        .quiz-progress-bar {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            height: 4px;
-            background: #e2e8f0;
-            width: 100%;
-            z-index: 1;
-            transform: translateY(-50%);
-        }
-        .quiz-progress-fill {
-            height: 100%;
-            background: var(--primary);
-            width: 33.33%;
-            transition: width 0.3s ease;
-        }
-        .quiz-step-indicator {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #fff;
-            border: 2px solid #cbd5e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
-        .quiz-step-indicator.active {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: #fff;
-        }
-        .quiz-step-indicator.completed {
-            border-color: var(--primary);
-            background: #22c55e;
-            color: #fff;
-        }
-
-        .quiz-step {
-            display: none;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        .quiz-step.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .quiz-step h3 {
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .quiz-btn {
-            background: #fff;
-            border: 1px solid var(--primary);
-            padding: 14px 18px;
-            border-radius: var(--radius);
-            font-size: 15px;
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.2s ease;
-            outline: none;
-        }
-        .quiz-btn:hover {
-            border-color: var(--primary);
-            background: #f0f7ff;
-        }
-        .quiz-btn.selected {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .quiz-nav-btns {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .btn-prev, .btn-next {
-            padding: 10px 20px;
-            border-radius: var(--radius);
-            font-size: 15px;
-            cursor: pointer;
-            border: none;
-            font-weight: 600;
-        }
-        .btn-prev {
-            background: #e2e8f0;
-            color: var(--text-dark);
-        }
-        .btn-prev:hover {
-            background: #cbd5e0;
-        }
-        .btn-next {
-            background: var(--primary);
-            color: #fff;
-        }
-        .btn-next:hover {
-            background: var(--primary-hover);
-        }
-        .btn-next:disabled {
-            background: #cbd5e0;
-            cursor: not-allowed;
-        }
-
-        /* Result View */
-        .quiz-result {
-            display: none;
-            text-align: center;
-            padding: 20px 10px;
-            animation: fadeIn 0.4s ease;
-        }
-        .quiz-result.active {
-            display: block;
-        }
-
-        .result-card {
-            background: #fff;
-            padding: 24px;
-            border-radius: var(--radius);
-            border: 2px solid var(--primary);
-            margin: 20px 0;
-            text-align: center;
-        }
-        .result-product-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        .result-product-desc {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        .quiz-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .quiz-form input[type="text"],
-        .quiz-form input[type="tel"],
-        .quiz-form input[type="email"] {
-            padding: 12px 16px;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            font-size: 15px;
-        }
-        .quiz-form input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .privacy-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: var(--text-muted);
-            text-align: left;
-        }
-
-        .btn-submit {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 14px;
-            border-radius: var(--radius);
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-submit:hover {
-            background: var(--primary -hover);
-        }
-
-        .btn-reset {
-            margin-top: 16px;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .btn-reset:hover {
-            color: var(--text-dark);
-        }
-
-        .quiz-success-msg {
-            display: none;
-            background: #dcfce7;
-            color: #166534;
-            padding: 16px;
-            border-radius: var(--radius);
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-
     /* Стили для всплывающего окна формы */
     .overlay[hidden] {
       display: none !important;
@@ -642,10 +399,11 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__list" id="navMenu">
-        <li><a href="#benefits">Преимущества</a></li>
+        <li><a href="#about">О компании</a></li>
           <li><a href="#catalog">Ассортимент</a></li>
-        <li><a href="#testing">Испытания</a></li>
+        <li><a href="#testing">Проведение испытаний</a></li>
           <li><a href="#delivery">Доставка</a></li>
+          <li><a href="#contacts">Контакты</a></li>
         </ul>
       </nav>
 
@@ -766,310 +524,75 @@
   </section>
 
   <!-- КВИЗ -->
-<section class="quiz-section" id="quiz-block">
-            <h2 class="quiz-title">Не знаете, какой анкер выбрать?</h2>
-
-            <!-- Индикатор прогресса -->
-            <div class="quiz-progress" id="quiz-progress">
-                <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="progress-fill"></div></div>
-                <div class="quiz-step-indicator active" data-step-num="1">1</div>
-                <div class="quiz-step-indicator" data-step-num="2">2</div>
-                <div class="quiz-step-indicator" data-step-num="3">3</div>
+  <section id="quiz" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Не знаете, какой анкер выбрать?</h2>
+      <div class="quiz" aria-live="polite">
+        <div class="quiz__steps">
+          
+          <!-- Первый слайд -->
+          <div class="quiz__step is-active" data-step="1">
+            <div class="quiz__step-inner">
+              <div class="quiz__step-main">
+                <div class="quiz__q">Выберите материал основания</div>
+                <div class="quiz__opts">
+                  <button class="quiz__opt" data-value="бетон">Бетон</button>
+                  <button class="quiz__opt" data-value="кирпич">Кирпич</button>
+                  <button class="quiz__opt" data-value="газобетон">Газобетон</button>
+                </div>
+              </div>
+              <div class="quiz__step-media">
+                <img src="img/quastion.png" alt="Выберите материал основания" class="quiz__img" />
+              </div>
             </div>
+          </div>
 
-            <!-- Шаг 1: Материал -->
-            <div class="quiz-step active" data-step="1">
-                <h3>1. Выберите материал основания</h3>
-                <div class="quiz-options">
-                    <button type="button" class="quiz-btn" data-field="material" data-value="Бетон">Бетон</button>
-                    <button type="button" class="quiz-btn" data-field="material" data-value="Растянутая зона бетона">Растянутая зона бетона</button>
-                    <button type="button" class="quiz-btn" data-field="material" data-value="Кирпич">Кирпич</button>
-                    <button type="button" class="quiz-btn" data-field="material" data-value="Газобетон">Газобетон</button>
-                    <button type="button" class="quiz-btn" data-field="material" data-value="Природный камень">Природный камень</button>
-                </div>
+          <div class="quiz__step" data-step="2">
+            <div class="quiz__q">Условия монтажа</div>
+            <div class="quiz__opts">
+              <button class="quiz__opt" data-value="обычные">Обычные</button>
+              <button class="quiz__opt" data-value="мокрые">Мокрые отверстия</button>
+              <button class="quiz__opt" data-value="зима">Низкие температуры (зима)</button>
             </div>
+          </div>
 
-            <!-- Шаг 2: Условия монтажа -->
-            <div class="quiz-step" data-step="2">
-                <h3>2. Условия монтажа</h3>
-                <div class="quiz-options">
-                    <button type="button" class="quiz-btn" data-field="condition" data-value="Обычные">Обычные</button>
-                    <button type="button" class="quiz-btn" data-field="condition" data-value="Мокрые отверстия">Мокрые отверстия</button>
-                    <button type="button" class="quiz-btn" data-field="condition" data-value="Алмазное бурение">Алмазное бурение</button>
-                    <button type="button" class="quiz-btn" data-field="condition" data-value="Низкие температуры (зима)">Низкие температуры (зима)</button>
-                </div>
-                <div class="quiz-nav-btns">
-                    <button type="button" class="btn-prev">← Назад</button>
-                </div>
+          <div class="quiz__step" data-step="3">
+            <div class="quiz__q">Диаметр шпильки</div>
+            <div class="quiz__opts">
+              <button class="quiz__opt" data-value="м8-м12">М8–М12</button>
+              <button class="quiz__opt" data-value="м16+">М16 и выше</button>
+              <button class="quiz__opt" data-value="не_знаю">Не знаю</button>
             </div>
+          </div>
 
-            <!-- Шаг 3: Диаметр -->
-            <div class="quiz-step" data-step="3">
-                <h3>3. Диаметр шпильки или арматуры</h3>
-                <div class="quiz-options">
-                    <button type="button" class="quiz-btn" data-field="diameter" data-value="М8–М24">М8–М24</button>
-                    <button type="button" class="quiz-btn" data-field="diameter" data-value="М24 и выше">М24 и выше</button>
-                    <button type="button" class="quiz-btn" data-field="diameter" data-value="Не знаю">Не знаю</button>
-                </div>
-                <div class="quiz-nav-btns">
-                    <button type="button" class="btn-prev">← Назад</button>
-                </div>
+          <div class="quiz__step" data-step="4">
+            <div class="quiz__q">Подходящий вариант под ваши задачи:</div>
+            <div class="quiz__result">
+              <div class="quiz__rec"></div>
+              <form action="send.php" method="POST" class="form form--card quiz__form">
+                <input type="hidden" name="title" value="Заявка из квиза" />
+                <input type="hidden" name="form_name" value="quiz" />
+                <input type="hidden" name="rec_product" id="quizRecProduct" />
+                <label class="input">
+                  <input type="tel" name="phone" class="input__control" placeholder="Ваш телефон" required />
+                </label>
+                <button type="submit" class="btn btn--primary btn--full">Получить расчёт и КП</button>
+                <label class="check">
+                  <input type="checkbox" name="agree" checked />
+                  <span>Согласен с <a href="#" id="openPopupBtnQuiz">политикой конфиденциальности</a></span>
+                </label>
+              </form>
             </div>
-
-            <!-- Результат -->
-            <div class="quiz-result" data-step="result">
-                <h3>Подходящий вариант под ваши задачи:</h3>
-                <div class="result-card">
-                    <div class="result-product-title" id="recommended-product-name">ITH 410 Ve</div>
-                    <div class="result-product-desc" id="recommended-product-desc">Универсальный высокопрочный химический анкер</div>
-                </div>
-
-                <form class="quiz-form" id="quiz-form">
-                    <input type="hidden" name="quiz_material" id="input-quiz-material">
-                    <input type="hidden" name="quiz_condition" id="input-quiz-condition">
-                    <input type="hidden" name="quiz_diameter" id="input-quiz-diameter">
-                    <input type="hidden" name="quiz_recommendation" id="input-quiz-recommendation">
-
-                    <input type="text" name="name" placeholder="Ваше имя" required class="input form-popup__field">
-                    <input type="tel" name="phone" placeholder="Ваш телефон" required class="input form-popup__field">
-                    <label class="privacy-checkbox">
-                        <input type="checkbox" checked required> Согласен с политикой конфиденциальности
-                    </label>
-                    <button type="submit" class="btn-submit">Получить расчёт и КП</button>
-                </form>
-
-                <div class="quiz-success-msg" id="quiz-success-msg">
-                    Ваша заявка успешно отправлена! Наш инженер свяжется с вами в течение 15 минут.
-                </div>
-
-                <button type="button" class="btn-reset" id="btn-reset-quiz">Пройти опрос заново</button>
+            <div class="quiz__nav" style="margin-top:12px;">
+              <button class="btn" id="quizRestart">Пройти опрос заново</button>
             </div>
-        </section>
+          </div>
+
+        </div>
+        <div class="quiz__progress"><span class="quiz__bar"></span></div>
+      </div>
     </div>
-
-    <!-- СКРИПТ КВИЗА -->
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Поиск элементов квиза
-    const quizBlock = document.getElementById('quiz-block') || document.querySelector('.quiz-section');
-    if (!quizBlock) return;
-
-    const steps = quizBlock.querySelectorAll('.quiz-step');
-    const resultBlock = quizBlock.querySelector('.quiz-result');
-    const progressFill = document.getElementById('progress-fill');
-    const stepIndicators = quizBlock.querySelectorAll('.quiz-step-indicator');
-    const progressContainer = document.getElementById('quiz-progress');
-
-    // Кнопки возврата назад
-    const prevBtns = quizBlock.querySelectorAll('.btn-prev');
-    const btnReset = document.getElementById('btn-reset-quiz');
-
-    // Поля результата
-    const recommendedTitle = document.getElementById('recommended-product-name');
-    const recommendedDesc = document.getElementById('recommended-product-desc');
-
-    // Поля формы
-    const quizForm = document.getElementById('quiz-form');
-    const successMsg = document.getElementById('quiz-success-msg');
-    const inputMaterial = document.getElementById('input-quiz-material');
-    const inputCondition = document.getElementById('input-quiz-condition');
-    const inputDiameter = document.getElementById('input-quiz-diameter');
-    const inputRecommendation = document.getElementById('input-quiz-recommendation');
-
-    // Текущее состояние
-    let currentStep = 1;
-    let quizData = {
-        material: '',
-        condition: '',
-        diameter: ''
-    };
-
-    // 2. Функция подбора подходящего анкера
-    function getRecommendation(data) {
-        // Низкие температуры (зима)
-        if (data.condition && data.condition.includes('зима')) {
-            return {
-                name: 'ITH 410 Ve Winter (Зимний)',
-                desc: 'Винилэстеровый состав для быстрых монтажных работ при отрицательных температурах (до -20°C).'
-            };
-        }
-
-        // Высокие нагрузки / Алмазное бурение / Большой диаметр / Растянутая зона
-        if (data.material === 'Растянутая зона бетона' || data.condition === 'Алмазное бурение' || data.diameter === 'М24 и выше') {
-            return {
-                name: 'ITH 500 EPOX / BIT-EX',
-                desc: 'Чистый эпоксидный состав для высочайших нагрузок, глубокой анкеровки и алмазного бурения.'
-            };
-        }
-
-        // Кирпич / Газобетон
-        if (data.material === 'Кирпич' || data.material === 'Газобетон') {
-            return {
-                name: 'ITH 300 Pe (Полиэстер)',
-                desc: 'Оптимальный экономичный состав для пустотелого кирпича, пеноблока и легких бетонов.'
-            };
-        }
-
-        // Мокрые отверстия
-        if (data.condition === 'Мокрые отверстия') {
-            return {
-                name: 'ITH 410 Ve (Винилэстер)',
-                desc: 'Устойчив к влаге и воде в отверстиях, повышенная химическая стойкость и надежность.'
-            };
-        }
-
-        // Значение по умолчанию (Бетон, Обычные условия, М8-М24)
-        return {
-            name: 'ITH 410 Ve (Винилэстер)',
-            desc: 'Универсальный и эффективный химический анкер для бетона и сложного монтажа.'
-        };
-    }
-
-    // 3. Переключение на конкретный шаг
-    function goToStep(stepNum) {
-        currentStep = stepNum;
-
-        // Переключаем видимость шагов
-        steps.forEach(step => {
-            const stepIndex = parseInt(step.getAttribute('data-step'), 10);
-            if (stepIndex === currentStep) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
-        });
-
-        // Показываем/скрываем блок результата
-        if (stepNum === 'result') {
-            if (progressContainer) progressContainer.style.display = 'none';
-            steps.forEach(step => step.classList.remove('active'));
-            if (resultBlock) resultBlock.classList.add('active');
-
-            // Расчет и отображение результата
-            const recommendation = getRecommendation(quizData);
-            if (recommendedTitle) recommendedTitle.textContent = recommendation.name;
-            if (recommendedDesc) recommendedDesc.textContent = recommendation.desc;
-
-            // Заполнение скрытых полей формы
-            if (inputMaterial) inputMaterial.value = quizData.material;
-            if (inputCondition) inputCondition.value = quizData.condition;
-            if (inputDiameter) inputDiameter.value = quizData.diameter;
-            if (inputRecommendation) inputRecommendation.value = recommendation.name;
-
-        } else {
-            if (progressContainer) progressContainer.style.display = 'flex';
-            if (resultBlock) resultBlock.classList.remove('active');
-
-            // Обновление прогресс-бара
-            const percent = (currentStep / 3) * 100;
-            if (progressFill) progressFill.style.width = percent + '%';
-
-            // Обновление индикаторов шагов
-            stepIndicators.forEach(ind => {
-                const indStep = parseInt(ind.getAttribute('data-step-num'), 10);
-                ind.classList.remove('active', 'completed');
-                if (indStep === currentStep) {
-                    ind.classList.add('active');
-                } else if (indStep < currentStep) {
-                    ind.classList.add('completed');
-                }
-            });
-        }
-    }
-
-    // 4. Обработка клика по вариантам ответа
-    const optionBtns = quizBlock.querySelectorAll('.quiz-btn, .quiz-option');
-    optionBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const parentStep = btn.closest('.quiz-step');
-            if (!parentStep) return;
-
-            const stepNum = parseInt(parentStep.getAttribute('data-step'), 10);
-
-            // Снимаем выделение у соседних кнопок текущего шага
-            parentStep.querySelectorAll('.quiz-btn, .quiz-option').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-
-            // Сохраняем выбранное значение
-            const field = btn.getAttribute('data-field');
-            const value = btn.getAttribute('data-value') || btn.textContent.trim();
-
-            if (stepNum === 1 || field === 'material') {
-                quizData.material = value;
-                setTimeout(() => goToStep(2), 200);
-            } else if (stepNum === 2 || field === 'condition') {
-                quizData.condition = value;
-                setTimeout(() => goToStep(3), 200);
-            } else if (stepNum === 3 || field === 'diameter') {
-                quizData.diameter = value;
-                setTimeout(() => goToStep('result'), 200);
-            }
-        });
-    });
-
-    // 5. Обработка кнопок "Назад"
-    prevBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (typeof currentStep === 'number' && currentStep > 1) {
-                goToStep(currentStep - 1);
-            }
-        });
-    });
-
-    // 6. Сброс / Пройти опрос заново
-    if (btnReset) {
-        btnReset.addEventListener('click', function(e) {
-            e.preventDefault();
-            quizData = { material: '', condition: '', diameter: '' };
-
-            // Сбрасываем выбранные кнопки
-            optionBtns.forEach(btn => btn.classList.remove('selected'));
-
-            if (quizForm) quizForm.reset();
-            if (successMsg) successMsg.style.display = 'none';
-
-            goToStep(1);
-        });
-    }
-
-    // 7. Отправка формы квиза
-    if (quizForm) {
-        quizForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Сбор данных формы
-            const formData = new FormData(quizForm);
-            const submissionData = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                material: quizData.material,
-                condition: quizData.condition,
-                diameter: quizData.diameter,
-                recommendation: inputRecommendation ? inputRecommendation.value : ''
-            };
-
-            console.log('Данные квиза для отправки:', submissionData);
-
-            // Показываем сообщение об успешной отправке
-            if (successMsg) {
-                successMsg.style.display = 'block';
-            }
-
-            const submitBtn = quizForm.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Отправлено!';
-            }
-        });
-    }
-
-    // Инициализация первично
-    goToStep(1);
-});
-</script>
+  </section>
 
 <!-- СЕКЦИЯ КАТАЛОГА SKYTRADE -->
 <section class="catalog-section" id="catalog">
@@ -1537,8 +1060,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     .btn-order {
         display: inline-flex;
-gap: 5px;
-max-width:250px;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -1798,7 +1319,7 @@ max-width:250px;
 
                 <div class="trust-card company-card">
                     <div class="logo-box">
-                        <img src="https://cdn.bcs-express.ru/article-head/4362.jpg" alt="САМОЛЕТ" class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Logo_SMLT_Community.png" alt="САМОЛЕТ" class="company-logo">
                     </div>
                 </div>
 
@@ -1866,10 +1387,7 @@ max-width:250px;
 
             </div>
         </div>
-        <div class="card card--objects">
-          <p>Подберем оптимальное решение по нагрузкам и стоимости для вашего проекта</p>
-          <a href="#lead" class="btn btn--ghost js-open-form-popup" data-title="Оставить заявку">Оставить заявку</a>
-        </div>
+
     </div>
 </section>
 
@@ -2074,140 +1592,18 @@ max-width:250px;
 </style>
 
 
-<!-- Блок: Инженерный сервис СКАЙ ТРЕЙД -->
-<section class="engineering-service section-padding">
-  <div class="container">
-    
-    <!-- Заголовок и подзаголовок -->
-    <div class="section-header text-center">
-      <h2 class="section__title">Экспертная поддержка</h2>
-      <p class="section-description">
-        Поделимся опытом и экспертизой в использовании химических анкеров:
-      </p>
-    </div>
-
-    <!-- Сетка карточек преимуществ сервиса -->
-    <div class="service-grid">
-      
-      <!-- Карточка 1 -->
-      <div class="service-card">
-        <div class="card-icon-wrapper">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="m16 12-4-4-4 4"></path>
-            <path d="M12 16V8"></path>
-          </svg>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Подбор оптимального решения</h3>
-          <p class="card-text">
-            Подберем оптимальное решение для анкерного крепления с учетом типа основания, нагрузок и условий монтажа.
-          </p>
-        </div>
-      </div>
-
-      <!-- Карточка 2 -->
-      <div class="service-card">
-        <div class="card-icon-wrapper">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <line x1="10" y1="9" x2="8" y2="9"></line>
-          </svg>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Проектирование и расчеты</h3>
-          <p class="card-text">
-            Сделаем расчет в соответствии с <span class="norm-tag">СП 513.1325800.2022</span> «Анкерные крепления к бетону. Правила проектирования».
-          </p>
-        </div>
-      </div>
-
-      <!-- Карточка 3 -->
-      <div class="service-card highlight-card">
-        <div class="card-icon-wrapper accent">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="1" x2="12" y2="23"></line>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-          </svg>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Оптимизация бюджета</h3>
-          <p class="card-text">
-            Подберем проверенные аналоги и сэкономим <strong class="text-accent">до 45% бюджета</strong> без потери надежности узла.
-          </p>
-        </div>
-      </div>
-
-      <!-- Карточка 4 -->
-      <div class="service-card">
-        <div class="card-icon-wrapper">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <path d="m9 12 2 2 4-4"></path>
-          </svg>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Сопровождение и защита</h3>
-          <p class="card-text">
-            Защитим проектное решение и ответим на любые замечания строительной экспертизы или технического надзора.
-          </p>
-        </div>
-      </div>
-
-      <!-- Карточка 5 (Лаборатория — выделенный блок) -->
-      <div class="service-card full-width-card">
-        <div class="card-icon-wrapper lab">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A2 2 0 0 0 6.516 23h10.968a2 2 0 0 0 1.797-2.45L14.21 10.42a2 2 0 0 1-.21-.896V2"></path>
-            <path d="M8.5 2h7"></path>
-            <path d="M7 16h10"></path>
-          </svg>
-        </div>
-        <div class="card-content">
-          <div class="card-header-badge">
-            <h3 class="card-title">Испытательная лаборатория</h3>
-            <span class="status-badge">Натурные испытания на объекте</span>
-          </div>
-          <p class="card-text">
-            Проведем испытания на несущую способность непосредственно на вашем объекте. Определим расчетную нагрузку и оформим официальный протокол в соответствии со <span class="norm-tag">СТО 44416204-010-2010</span> и <span class="norm-tag">ГОСТ Р 71447-2024</span> «Крепления Анкерные».
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Кнопки целевых действий -->
-    <div class="service-actions">
-      <button class="btn-order" data-modal="modal-test">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-        Провести испытания
-      </button>
-
-      <button class="btn-order" data-modal="modal-calc">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
-        Заказать расчет
-      </button>
-
-      <button class="btn-order" data-modal="modal-discuss">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        Обсудить проект
-      </button>
-    </div>
-
-  </div>
-</section>
-
   <!-- Испытания -->
   <section id="testing" class="section">
     <div class="container">
-      <h2 class="section__title">Документы, сертификаты и паспорта</h2>
+      <h2 class="section__title">Испытания прочности</h2>
       <div class="grid grid--2">
         <div class="text">
-          <p>Предоставим все сертификаты и протоколы испытаний, подтверждающие качество продукции, ее соответствие техническим требованиям и условиям применения.</p>
-<p>В ассортименте компании анкера с техническим свидетельством и техоценкой Минстрой РФ, европейским техсвидетельством ETA (OPT 1 и OPT 7) паспортами безопасности, подтвержденной сейсмо- и огнестойкостью.</p>
+          <p>Предоставляем протоколы лабораторных испытаний и результаты натурных проверок несущей способности для разных оснований (бетон, кирпич, газобетон) и температурных режимов, включая «зимний» состав.</p>
+          <ul class="list">
+            <li>ETA/CE (при наличии для артикулов)</li>
+            <li>ТР ТС, паспорта качества</li>
+            <li>Рекомендации по сверлению, очистке, глубине анкеровки</li>
+          </ul>
         </div>
         <div class="certs">
           <img src="img/certs/cert-1.jpg" alt="Сертификат 1" />
@@ -2216,11 +1612,8 @@ max-width:250px;
         </div>
       </div>
     </div>
-        <div class="card card--objects">
-          <p>Подберем химический анкер по требованиям вашего проекта. Предложим аналоги</p>
-          <a href="#lead" class="btn btn--ghost js-open-form-popup" data-title="Оставить заявку">Оставить заявку</a>
-        </div>
   </section>
+
 
   <!-- Доставка -->
   <section id="delivery" class="section">
@@ -2269,14 +1662,15 @@ max-width:250px;
       <div class="footer__top">
         <div class="footer__col">
           <div class="brand brand--footer">
+            <img src="img/logo.svg" alt="SkyTrade" class="brand__logo" />
             <div class="brand__text">
               <strong>SkyTrade</strong>
               <span>Химические анкера оптом</span>
             </div>
           </div>
           <ul class="footer__list">
-            <li><a class="footer__list" href="tel:+74957241180">+7 (495) 724‑11‑80</a></li>
-            <li><a class="footer__list" href="mailto:info@skytrade.ru">info@skytrade.ru</a></li>
+            <li><a href="tel:+74957241180">+7 (495) 724‑11‑80</a></li>
+            <li><a href="mailto:info@skytrade.ru">info@skytrade.ru</a></li>
             <li>Режим работы: Пн–Пт, 9:00–18:00</li>
             <li>Адрес: г. Москва, пос. подсобного хоз‑ва Воскресенское, 24А</li>
           </ul>
@@ -2367,7 +1761,7 @@ max-width:250px;
   <div class="brands-modal-content">
     <div class="brands-modal-header">
       <h3>Все бренды</h3>
-      <span class="brands-modal-hint"></span>
+      <span class="brands-modal-hint">(нажмите в любой точке для закрытия)</span>
     </div>
     <div class="brands-modal-grid">
       <!-- Слайд 1 (1–5) -->
@@ -2424,7 +1818,7 @@ max-width:250px;
     border: none;
     border-radius: 6px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
   }
@@ -2553,8 +1947,7 @@ max-width:250px;
 
 <!-- JavaScript логика -->
 <script>
-
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('brandsModal');
     const openBtn = document.getElementById('openBrandsModalBtn');
 
@@ -2583,7 +1976,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+</script>
 
+<!-- ================= КОНЕЦ БЛОКА МОДАЛЬНОГО ОКНА БРЕНДОВ ================= -->
+
+
+
+
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   // Навигация (бургер)
   try {
@@ -2825,7 +2225,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } catch(e){ console.warn('Catalog init error:', e) }
 
+  // Квиз
+  try {
+    const quiz = document.querySelector('#quiz .quiz');
+    if (quiz) {
+      const steps = Array.from(quiz.querySelectorAll('.quiz__step'));
+      const bar = quiz.querySelector('.quiz__bar');
+      const recBox = quiz.querySelector('.quiz__rec');
+      const recInput = document.getElementById('quizRecProduct');
+      const answers = {};
+      const total = steps.length;
 
+      const recs = {
+        'ITH 300 Ve': { name: 'ITH 300 Ve', desc: 'Универсальный винилэстеровый анкер под бетон', img: 'img/anchors/ITH-300-Ve-300x107.png' },
+        'ITH 410 Ve': { name: 'ITH 410 Ve', desc: 'Для высоких нагрузок и больших диаметров в бетоне', img: 'img/anchors/ITH-410-Ve-1-300x117.png' },
+        'ITH 585 EPOXe': { name: 'ITH 585 EPOXe', desc: 'Чистый эпоксид для влажных условий и тяжелых конструкций', img: 'img/anchors/ITH-585-EPOXe-A-300x101.png' },
+        'ITH 300 Wi': { name: 'ITH 300 Wi', desc: 'Зимняя формула для работы при отрицательных температурах', img: 'img/anchors/ITH-300-Wi-1-300x92.png' },
+        'ITH 410 Wi': { name: 'ITH 410 Wi + гильзы ISH/IOV', desc: 'Зимний состав увеличенного объема для кладочных материалов', img: 'img/anchors/ITH-410-Wi-1-300x110.png' },
+        'ITH 165 Pe': { name: 'ITH 165 Pe + гильзы ISH/IOV', desc: 'Экономичный полиэстеровый состав для кирпича', img: 'img/anchors/ITH-165-Pe-300x108.png' },
+        'ITH 410 Pe': { name: 'ITH 410 Pe + гильзы IOV', desc: 'Оптимальный состав для ячеистого бетона (газобетона)', img: 'img/anchors/ITH-410-Pe-300x114.png' }
+      };
+
+      function go(stepIdx){
+        steps.forEach((s,i)=>s.classList.toggle('is-active', i===stepIdx));
+        bar.style.width = Math.round((stepIdx)/(total-1)*100)+'%';
+      }
+
+      function getRecKey(a){
+        const base = a['1'];
+        const cond = a['2'];
+        const dia  = a['3'];
+        if (base==='бетон' && cond==='обычные' && dia==='м8-м12') return 'ITH 300 Ve';
+        if (base==='бетон' && cond==='обычные' && dia!=='м8-м12') return 'ITH 410 Ve';
+        if (base==='бетон' && cond==='мокрые') return 'ITH 585 EPOXe';
+        if (base==='бетон' && cond==='зима') return 'ITH 300 Wi';
+        if (base==='кирпич' && cond==='зима') return 'ITH 410 Wi';
+        if (base==='кирпич') return 'ITH 165 Pe';
+        if (base==='газобетон') return 'ITH 410 Pe';
+        return 'ITH 300 Ve';
+      }
+
+      quiz.querySelectorAll('.quiz__opt').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const stepEl = btn.closest('.quiz__step');
+          const step = stepEl?.dataset.step;
+          answers[step] = btn.dataset.value;
+          const nextIdx = steps.findIndex(s=>s===stepEl)+1;
+
+          if (nextIdx < steps.length-1) {
+            go(nextIdx);
+          } else {
+            const recKey = getRecKey(answers);
+            const item = recs[recKey] || recs['ITH 300 Ve'];
+            recInput && (recInput.value = item.name);
+            recBox.innerHTML = `
+              <div style="display:flex; align-items:center; gap:16px;">
+                <div style="width:90px; height:70px; background:#fff; border-radius:10px; padding:6px; display:flex; align-items:center; justify-content:center; border:1px solid #e2e8f0; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+                  <img src="${item.img}" alt="${item.name}" style="max-width:100%; max-height:100%; object-fit:contain;">
+                </div>
+                <div>
+                  <div style="font-weight:700; font-size:17px; color:#1e293b; line-height:1.2;">${item.name}</div>
+                  <div style="font-size:13px; color:#64748b; margin-top:4px;">${item.desc}</div>
+                </div>
+              </div>
+              <div style="margin-top:12px; font-size:12px; color:#64748b; border-top:1px dashed #cbd5e1; padding-top:8px;">
+                Оставьте номер телефона, и мы рассчитаем точный расход и стоимость комплекта под ваш объект.
+              </div>`;
+            go(nextIdx);
+          }
+        });
+      });
+
+      quiz.querySelector('#quizRestart')?.addEventListener('click', ()=>{
+        Object.keys(answers).forEach(k=>delete answers[k]);
+        go(0);
+      });
+
+      go(0);
+    }
+  } catch(e){ console.warn('Quiz init error:', e) }
 
   // Карта
   try {
@@ -2839,6 +2317,5 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch(e){ console.warn('Map init error:', e) }
 });
 </script>
-
 </body>
 </html>
