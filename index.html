@@ -1094,15 +1094,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- 1. Химический анкер: Полиэстер -->
             <div class="product-card" data-category="chem-anchors">
                 <div class="card-slider">
-                    <button class="slider-arrow arrow-prev" onclick="changeSlide(this, -1)">&lt;</button>
-                    <img src="images/polyester-1.png" class="slider-img" alt="Полиэстер" data-images='["images/polyester-1.png", "images/polyester-2.png"]' data-index="0">
-                    <button class="slider-arrow arrow-next" onclick="changeSlide(this, 1)">&gt;</button>
+                    <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+                    <img src="images/polyester-1.png" class="slider-img" alt="Полиэстер" data-images='["images/polyester-2.png", "images/polyester-3.png", "images/polyester-1.png"]' data-index="0">
+                    <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
                 </div>
                 <div class="card-info">
                     <div>
                         <h3 class="product-title">Полиэстер</h3>
-                        <div class="param-row"><span class="param-label">Производители:</span> SORMAT, RAWLPLUG, SKIF, BIT</div>
-                        <div class="param-row"><span class="param-label">Артикулы / Объем:</span> 165, 300, 400, 410 мл</div>
+                        <div class="param-row"><span class="param-label">Производители:</span> SORMAT, HILTI, TECH KREP</div>
+                        <div class="param-row"><span class="param-label">Артикулы:</span>410 PE, HIT 1, PESF PRO</div>
+			<div class="param-row"><span class="param-label">Объем:</span> 165, 300, 400, 410 мл</div>
                         
                         <div class="base-materials">
                             <div class="base-materials-title">Материал основания:</div>
@@ -1135,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="card-actions">
-                        <button class="btn-order" onclick="openProductModal('Химический анкер Полиэстер')">Запросить КП</button>
+                        <button class="btn btn--primary js-open-form-popup" data-title="Запросить КП">Запросить КП</button>
                     </div>
                 </div>
             </div>
@@ -1152,6 +1153,106 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3 class="product-title">Винилэстер (Зимний / Мокрый бетон)</h3>
                         <div class="param-row"><span class="param-label">Производители:</span> SORMAT, RAWLPLUG, BIT, Mungo</div>
                         <div class="param-row"><span class="param-label">Артикулы / Объем:</span> 300, 400, 410 мл</div>
+                        
+                        <div class="base-materials">
+                            <div class="base-materials-title">Материал основания:</div>
+                            <div class="materials-icons">
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#E2E8F0"/><circle cx="10" cy="10" r="2" fill="#64748B"/><circle cx="22" cy="18" r="3" fill="#64748B"/></svg>
+                                    </div>
+                                    <span class="material-label">бетон / влажный бетон</span>
+                                </div>
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F1F5F9"/><circle cx="8" cy="8" r="1" fill="#94A3B8"/><circle cx="16" cy="12" r="1.5" fill="#94A3B8"/></svg>
+                                    </div>
+                                    <span class="material-label">газобетон</span>
+                                </div>
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#FCA5A5"/><rect x="4" y="6" width="11" height="8" rx="1" fill="#DC2626"/><rect x="17" y="6" width="11" height="8" rx="1" fill="#DC2626"/></svg>
+                                    </div>
+                                    <span class="material-label">кирпич полнотелый</span>
+                                </div>
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"/></svg>
+                                    </div>
+                                    <span class="material-label">гранит / камень</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-order" onclick="openProductModal('Химический анкер Винилэстер')">Запросить КП</button>
+                    </div>
+                </div>
+            </div>
+
+ <!-- 2. Химический анкер: Эпокси-акрилат -->
+            <div class="product-card" data-category="chem-anchors">
+                <div class="card-slider">
+                    <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+                    <img src="images/akrilat-1.png" class="slider-img" alt="Эпокси-акрилат" data-images='["images/akrilat-2.png", "images/akrilat-3.png", "images/akrilat-1.png"]' data-index="0">
+                    <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+                </div>
+                <div class="card-info">
+                    <div>
+                        <h3 class="product-title">Эпокси-акрилат</h3>
+                        <div class="param-row"><span class="param-label">Производители:</span> TECH KREP, UTECH, HIMTEX</div>
+                        <div class="param-row"><span class="param-label">Артикулы:</span>EASF 300, HITRE 100, EASF 150</div>
+			<div class="param-row"><span class="param-label">Объем:</span> </div>
+                        
+                        <div class="base-materials">
+                            <div class="base-materials-title">Материал основания:</div>
+                            <div class="materials-icons">
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#E2E8F0"/><circle cx="10" cy="10" r="2" fill="#64748B"/><circle cx="22" cy="18" r="3" fill="#64748B"/></svg>
+                                    </div>
+                                    <span class="material-label">бетон / влажный бетон</span>
+                                </div>
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F1F5F9"/><circle cx="8" cy="8" r="1" fill="#94A3B8"/><circle cx="16" cy="12" r="1.5" fill="#94A3B8"/></svg>
+                                    </div>
+                                    <span class="material-label">газобетон</span>
+                                </div>
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#FCA5A5"/><rect x="4" y="6" width="11" height="8" rx="1" fill="#DC2626"/><rect x="17" y="6" width="11" height="8" rx="1" fill="#DC2626"/></svg>
+                                    </div>
+                                    <span class="material-label">кирпич полнотелый</span>
+                                </div>
+                                <div class="material-item">
+                                    <div class="icon-box">
+                                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"/></svg>
+                                    </div>
+                                    <span class="material-label">гранит / камень</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-order" onclick="openProductModal('Химический анкер Винилэстер')">Запросить КП</button>
+                    </div>
+                </div>
+            </div>
+
+<!-- 2. Химический анкер: Эпоксидная смола -->
+            <div class="product-card" data-category="chem-anchors">
+                <div class="card-slider">
+                    <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+                    <img src="images/epoksi-1.png" class="slider-img" alt="Эпоксидная смола" data-images='["images/epoksi-2.png", "images/epoksi-3.png", "images/epoksi-1.png"]' data-index="0">
+                    <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+                </div>
+                <div class="card-info">
+                    <div>
+                        <h3 class="product-title">Эпоксидная смола</h3>
+                        <div class="param-row"><span class="param-label">Производители:</span>SORMAT, HILTI, SKIF</div>
+                        <div class="param-row"><span class="param-label">Артикулы:</span></div>
+			<div class="param-row"><span class="param-label">Объем:</span> </div>
                         
                         <div class="base-materials">
                             <div class="base-materials-title">Материал основания:</div>
@@ -1306,9 +1407,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- 7. Аксессуары для монтажа -->
             <div class="product-card" data-category="accessories">
                 <div class="card-slider">
-                    <button class="slider-arrow arrow-prev" onclick="changeSlide(this, -1)">&lt;</button>
+                    <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
                     <img src="images/accessory-1.png" class="slider-img" alt="Аксессуары" data-images='["images/accessory-1.png", "images/accessory-2.png"]' data-index="0">
-                    <button class="slider-arrow arrow-next" onclick="changeSlide(this, 1)">&gt;</button>
+                    <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
                 </div>
                 <div class="card-info">
                     <div>
@@ -1709,7 +1810,7 @@ max-width:250px;
     });
 
     // 2. Листание слайдера в карточках
-    function changeSlide(button, direction) {
+    function changeSlide1(button, direction) {
         const sliderContainer = button.parentElement;
         const imgEl = sliderContainer.querySelector('.slider-img');
         const images = JSON.parse(imgEl.getAttribute('data-images'));
