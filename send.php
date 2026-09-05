@@ -1,129 +1,102 @@
 <?php
-ini_set('display_errors', 'On');
-date_default_timezone_set('Europe/Moscow');
+/**
+ * Обработчик отправки формы заявки (AJAX)
+ * Ожидает POST-запрос с полями: name, phone, title, form_title, product_id, product_name, form_name
+ * Дополнительно могут быть quiz_* поля.
+ * Возвращает JSON: { success: bool, message: string }
+ */
 
-$thanks_file = 'form-ok.php';
-$phone = trim($_REQUEST['phone']);
-if (strlen($phone) > 11 ) {	
-	try {
+// Настройки
+$toEmail = 'i.vlad.sk@xmail.ru'; // замените на ваш email
+$subjectPrefix = 'Заявка с сайта Скай Трейд';
 
-		$name = trim($_REQUEST['name']);
-
-		$title = trim($_REQUEST['title']);
-		$comment = trim($_REQUEST['comment']);
-		$form_name = trim($_REQUEST['form_name']);
-		$form_type_model_name = trim($_REQUEST['form_type_model_name']);
-		$form_diler = trim($_REQUEST['form_diler']);
-		$marka = trim($_REQUEST['marka']);
-		$model = trim($_REQUEST['model']);
-		$year = trim($_REQUEST['year']);
-		$range_first_pay = trim($_REQUEST['range_first_pay']);
-		$range_period = trim($_REQUEST['range_period']);
-		
-        $ip = $_SERVER['REMOTE_ADDR'];
-		
-		$site = $_SERVER['HTTP_HOST'] . dirname($_SERVER['REQUEST_URL']);
-
-		
-		$from = array('noreply@' . $site);
-		$to = file(__DIR__ . '/email.cnf');
-		$to = array_map('trim', $to);
-		$subject = 'Новый заказ с сайта ' . $site;
-		$message = 'Поступил новый заказ с сайта ' . $site . ':
-			<table>
-				<tr>
-					<td><b>Дата:</b></td>
-					<td>' . date('d.m.Y H:i') . '</td>
-				</tr>';
-      		if($name != '') {
-				$message .= '<tr>
-					<td><b>Имя:</b></td>
-					<td>' . $name . '</td>
-				</tr>';
-			}	
-			if($phone != '') {
-				$message .= '<tr>
-					<td><b>Телефон:</b></td>
-					<td>' . $phone . '</td>
-				</tr>';
-			}
-			if($title != '') {
-				$message .= '<tr>
-					<td><b>Форма:</b></td>
-					<td>' . $title . '</td>
-				</tr>';
-			}
-			if($comment != '') {
-				$message .= '<tr>
-					<td><b>comment:</b></td>
-					<td>' . $comment . '</td>
-				</tr>';
-			}			
-			if($form_type_model_name != '') {
-				$message .= '<tr>
-					<td><b>form_type_model_name:</b></td>
-					<td>' . $form_type_model_name . '</td>
-				</tr>';
-			}
-			if($form_diler != '') {
-				$message .= '<tr>
-					<td><b>form_diler:</b></td>
-					<td>' . $form_diler . '</td>
-				</tr>';
-			}
-			if($marka != '') {
-				$message .= '<tr>
-					<td><b>Марка:</b></td>
-					<td>' . $marka . '</td>
-				</tr>';
-			}
-			if($model != '') {
-				$message .= '<tr>
-					<td><b>Модель:</b></td>
-					<td>' . $model . '</td>
-				</tr>';
-			}
-			if($year != '') {
-				$message .= '<tr>
-					<td><b>Год:</b></td>
-					<td>' . $year . '</td>
-				</tr>';
-			}
-			if($range_first_pay != '') {
-				$message .= '<tr>
-					<td><b>Первоначальный взнос:</b></td>
-					<td>' . $range_first_pay . '</td>
-				</tr>';
-			}
-			if($range_period != '') {
-				$message .= '<tr>
-					<td><b>Срок кредита, мес:</b></td>
-					<td>' . $range_period . '</td>
-				</tr>';
-			}
-     		if($ip != '') {
-				$message .= '<tr>
-					<td><b>IP address:</b></td>
-					<td>' . $ip . '</td>
-				</tr>';
-			}
-						
-	    $message .= '</table>';				
-		
-		$headers = "MIME-Version: 1.0\r\n";
-		$headers .= "Content-type: text/html; charset=utf-8\r\n";
-		$headers .= "From: " . implode(',', $from) . "\r\n";
-
-		$result = mail(implode(',', $to), $subject, $message, $headers);
-		
-		if($result) {
-			header('Location: ' . $thanks_file);
-		}
-		else {
-			echo 'Ошибка';
-		}
-	}
-	catch(Exception $e) {
-		echo 'Ошибка';
-	}
+// Проверяем, что запрос POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Метод не разрешён']);
+    exit;
 }
+
+// Получаем данные
+$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
+$title = isset($_POST['title']) ? trim($_POST['title']) : '';
+$formTitle = isset($_POST['form_title']) ? trim($_POST['form_title']) : '';
+$productId = isset($_POST['product_id']) ? trim($_POST['product_id']) : '';
+$productName = isset($_POST['product_name']) ? trim($_POST['product_name']) : '';
+$formName = isset($_POST['form_name']) ? trim($_POST['form_name']) : '';
+
+// Дополнительные поля квиза (если есть)
+$quizMaterial = isset($_POST['quiz_material']) ? trim($_POST['quiz_material']) : '';
+$quizCondition = isset($_POST['quiz_condition']) ? trim($_POST['quiz_condition']) : '';
+$quizDiameter = isset($_POST['quiz_diameter']) ? trim($_POST['quiz_diameter']) : '';
+$quizRecommendation = isset($_POST['quiz_recommendation']) ? trim($_POST['quiz_recommendation']) : '';
+
+// Валидация обязательных полей
+$errors = [];
+if (empty($name)) {
+    $errors[] = 'Имя обязательно для заполнения';
+}
+if (empty($phone)) {
+    $errors[] = 'Телефон обязателен для заполнения';
+} elseif (!preg_match('/^[\+\d\(\)\s\-]{7,20}$/', $phone)) {
+    // Проверка на допустимые символы (нестрогая)
+    $errors[] = 'Введите корректный номер телефона';
+}
+
+if (!empty($errors)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => implode(', ', $errors)]);
+    exit;
+}
+
+// Формируем письмо
+$subject = $subjectPrefix;
+if (!empty($formTitle)) {
+    $subject .= ' — ' . $formTitle;
+}
+
+$message = "Поступила новая заявка с сайта.\n\n";
+$message .= "Имя: $name\n";
+$message .= "Телефон: $phone\n";
+
+if (!empty($formTitle)) {
+    $message .= "Тема заявки: $formTitle\n";
+}
+if (!empty($formName)) {
+    $message .= "Тип формы: $formName\n";
+}
+if (!empty($productName)) {
+    $message .= "Товар: $productName (ID: $productId)\n";
+}
+if (!empty($title)) {
+    $message .= "Доп. заголовок: $title\n";
+}
+
+// Данные квиза
+$quizData = [];
+if (!empty($quizMaterial)) $quizData[] = "Материал основания: $quizMaterial";
+if (!empty($quizCondition)) $quizData[] = "Условия монтажа: $quizCondition";
+if (!empty($quizDiameter)) $quizData[] = "Диаметр: $quizDiameter";
+if (!empty($quizRecommendation)) $quizData[] = "Рекомендация: $quizRecommendation";
+if (!empty($quizData)) {
+    $message .= "\n--- Данные квиза ---\n";
+    $message .= implode("\n", $quizData) . "\n";
+}
+
+// Заголовки письма
+$headers = "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/plain; charset=utf-8\r\n";
+$headers .= "From: Сайт Скай Трейд <no-reply@sky-trade.ru>\r\n";
+$headers .= "Reply-To: $name <$toEmail>\r\n"; // можно указать email клиента, если есть
+
+// Отправка
+$mailSent = mail($toEmail, $subject, $message, $headers);
+
+if ($mailSent) {
+    echo json_encode(['success' => true, 'message' => 'Заявка успешно отправлена!']);
+} else {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Ошибка при отправке письма. Попробуйте позже.']);
+}
+

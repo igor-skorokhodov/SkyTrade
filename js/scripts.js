@@ -1253,3 +1253,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }, true); // Используем фазу захвата, чтобы перехватить до консоли
 
 })();
+
