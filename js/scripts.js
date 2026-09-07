@@ -397,101 +397,118 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // =========================================================
 // МОБИЛЬНЫЙ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ КАТАЛОГА
+// Вертикальный свайп оставляет прокрутку страницы доступной.
 // =========================================================
 
 const mobileCatalogGrid = document.querySelector('.catalog-grid');
 
 if (mobileCatalogGrid) {
-  let touchStartX = 0;
-  let touchStartY = 0;
+  let startX = 0;
+  let startY = 0;
   let startScrollLeft = 0;
   let gestureDirection = null;
 
-  const SWIPE_THRESHOLD = 8;
+  const MOBILE_QUERY = window.matchMedia('(max-width: 768px)');
+  const DIRECTION_THRESHOLD = 10;
+  const HORIZONTAL_SENSITIVITY = 1.2;
 
   mobileCatalogGrid.addEventListener(
     'touchstart',
     function (event) {
-      if (!window.matchMedia('(max-width: 768px)').matches) {
+      if (!MOBILE_QUERY.matches || !event.touches.length) {
         return;
       }
 
       const touch = event.touches[0];
 
-      touchStartX = touch.pageX;
-      touchStartY = touch.pageY;
+      startX = touch.clientX;
+      startY = touch.clientY;
       startScrollLeft = mobileCatalogGrid.scrollLeft;
 
-      /*
-       * Направление определяем только после небольшого движения:
-       * horizontal — листаем каталог;
-       * vertical — не вмешиваемся, чтобы сайт прокручивался вверх/вниз.
-       */
+      // Направление определяется после первого заметного движения.
       gestureDirection = null;
     },
-    { passive: true }
+    {
+      passive: true,
+      capture: true
+    }
   );
 
   mobileCatalogGrid.addEventListener(
     'touchmove',
     function (event) {
-      if (!window.matchMedia('(max-width: 768px)').matches) {
+      if (!MOBILE_QUERY.matches || !event.touches.length) {
         return;
       }
 
       const touch = event.touches[0];
 
-      const deltaX = touch.pageX - touchStartX;
-      const deltaY = touch.pageY - touchStartY;
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
 
-      if (gestureDirection === null) {
-        const absX = Math.abs(deltaX);
-        const absY = Math.abs(deltaY);
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
 
-        /*
-         * Пока палец почти не сдвинулся — ничего не делаем.
-         */
-        if (absX < SWIPE_THRESHOLD && absY < SWIPE_THRESHOLD) {
-          return;
-        }
-
-        /*
-         * Если движение преимущественно вертикальное,
-         * не вызываем preventDefault — браузер прокрутит страницу.
-         */
-        gestureDirection = absY > absX ? 'vertical' : 'horizontal';
+      // Пока пользователь почти не сдвинул палец — ничего не делаем.
+      if (
+        gestureDirection === null &&
+        absX < DIRECTION_THRESHOLD &&
+        absY < DIRECTION_THRESHOLD
+      ) {
+        return;
       }
 
+      // Фиксируем тип жеста один раз.
+      if (gestureDirection === null) {
+        gestureDirection = absX > absY ? 'horizontal' : 'vertical';
+      }
+
+      /*
+       * КРИТИЧЕСКИ ВАЖНО:
+       * вертикальное движение не отменяем.
+       * Благодаря этому сайт прокручивается вверх / вниз.
+       */
       if (gestureDirection === 'vertical') {
         return;
       }
 
       /*
-       * Горизонтальный жест остаётся внутри каталога.
+       * Отменяем стандартное действие только при явном
+       * горизонтальном жесте — чтобы листать каталог.
        */
-      event.preventDefault();
+      if (event.cancelable) {
+        event.preventDefault();
+      }
 
-      const sensitivity = 1.2;
       mobileCatalogGrid.scrollLeft =
-        startScrollLeft - deltaX * sensitivity;
+        startScrollLeft - deltaX * HORIZONTAL_SENSITIVITY;
     },
-    { passive: false }
+    {
+      passive: false,
+      capture: true
+    }
   );
+
+  function resetCatalogGesture() {
+    gestureDirection = null;
+  }
 
   mobileCatalogGrid.addEventListener(
     'touchend',
-    function () {
-      gestureDirection = null;
-    },
-    { passive: true }
+    resetCatalogGesture,
+    {
+      passive: true,
+      capture: true
+    }
   );
 
   mobileCatalogGrid.addEventListener(
     'touchcancel',
-    function () {
-      gestureDirection = null;
-    },
-    { passive: true }
+    resetCatalogGesture,
+    {
+      passive: true,
+      capture: true
+    }
   );
 }
 

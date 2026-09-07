@@ -1,3 +1,16 @@
+/* Каталог: разрешаем нормальную вертикальную прокрутку страницы */
+.catalog-grid,
+.catalog-grid .product-card,
+.catalog-grid .card-slider,
+.catalog-grid .card-info,
+.catalog-grid .card-bottom,
+.catalog-grid img,
+.catalog-grid svg,
+.catalog-grid span,
+.catalog-grid div {
+  touch-action: pan-y;
+}
+
 /* Карточки плавно меняют положение и прозрачность */
 .catalog-grid .product-card {
     opacity: 1;
@@ -3559,4 +3572,9 @@ body.brands-modal-open { overflow: hidden; }
 #formPopupSubmit.disabled:hover {
   transform: none;
   box-shadow: none;
+}
+
+/* Каталог: разрешаем вертикальную прокрутку сайта при свайпе по карточке */
+#catalog .catalog-grid {
+  touch-action: pan-y pinch-zoom !important;
 }
