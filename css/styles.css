@@ -1,3 +1,190 @@
+/* Карточки плавно меняют положение и прозрачность */
+.catalog-grid .product-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition:
+        opacity 0.26s ease,
+        transform 0.26s ease;
+    will-change: opacity, transform;
+}
+
+/* Полностью исключаем скрытые карточки из сетки */
+.catalog-grid .product-card.is-hidden {
+    display: none;
+}
+
+/* Начальная позиция карточек при появлении */
+.catalog-grid .product-card.is-entering {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+}
+
+/* Состояние карточек перед скрытием */
+.catalog-grid .product-card.is-leaving {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.985);
+    pointer-events: none;
+}
+
+/* Пока переключается категория — нельзя нажимать элементы карточек */
+.catalog-grid.is-switching {
+    pointer-events: none;
+}
+
+/* Активная вкладка */
+.catalog-tabs .tab-btn.is-active {
+    color: #fff;
+    background-color: #1e3a5f;
+    border-color: #1e3a5f;
+}
+
+/* Учитываем настройку ОС «уменьшить движение» */
+@media (prefers-reduced-motion: reduce) {
+    .catalog-grid .product-card {
+        transition: none;
+    }
+}
+
+/* ===== Испытания ===== */
+.testing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.testing-card {
+  background: var(--color-bg-light, #f8fafc);
+  padding: 24px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border, #e2e8f0);
+}
+
+.testing-card--highlight {
+  grid-column: 1 / -1;
+  background: var(--color-bg-accent, #f0f7ff);
+  border-color: var(--color-primary, #2563eb);
+}
+
+.testing-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--color-text, #0f172a);
+}
+
+.testing-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.testing-card__list li {
+  padding: 6px 0 6px 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") left center no-repeat;
+  background-size: 16px;
+}
+
+.testing-stage {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.testing-stage:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.testing-stage h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--color-primary, #2563eb);
+}
+
+.testing-stage p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.testing-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testing-benefit {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.testing-benefit__icon {
+  font-size: 28px;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.testing-benefit strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--color-text, #0f172a);
+}
+
+.testing-benefit p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary, #334155);
+}
+
+.testing-cta {
+  text-align: center;
+  background: var(--color-bg-dark, #0f172a);
+  color: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+}
+
+.testing-cta p {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+}
+
+.testing-cta .btn {
+  background: #fff;
+  color: var(--color-bg-dark, #0f172a);
+}
+
+.testing-cta .btn:hover {
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .testing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testing-card__list {
+    grid-template-columns: 1fr;
+  }
+
+  .testing-card--highlight {
+    grid-column: 1;
+  }
+}
+
 /* ЛИД ФОРМА */
 .lead-modal {
     position: fixed;
@@ -2445,9 +2632,9 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: 0.25s;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(12px);
+  transition: opacity .35s ease, transform .35s ease;
 }
 
 .catalog-card.show {
@@ -2477,6 +2664,22 @@ img {
 .catalog-card__sub {
   font-size: 12px;
   color: var(--muted);
+}
+
+#catalog-items {
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+#catalog-items.is-leaving {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+
+
+.catalog-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Quiz */
