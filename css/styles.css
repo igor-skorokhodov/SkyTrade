@@ -396,6 +396,7 @@ body.modal-open {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
   gap: 25px;
+  touch-action: pan-y;
 }
 
 /* Новая структура карточки с GRID */

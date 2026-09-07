@@ -395,54 +395,105 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // =========================================================
-  // МОБИЛЬНЫЙ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ КАТАЛОГА
-  // =========================================================
+// =========================================================
+// МОБИЛЬНЫЙ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ КАТАЛОГА
+// =========================================================
 
-  const mobileCatalogGrid = document.querySelector('.catalog-grid');
+const mobileCatalogGrid = document.querySelector('.catalog-grid');
 
-  if (mobileCatalogGrid) {
-    let isDraggingCatalog = false;
-    let startX = 0;
-    let scrollLeftStart = 0;
+if (mobileCatalogGrid) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let startScrollLeft = 0;
+  let gestureDirection = null;
 
-    mobileCatalogGrid.addEventListener(
-      'touchstart',
-      function (event) {
-        if (!window.matchMedia('(max-width: 768px)').matches) {
+  const SWIPE_THRESHOLD = 8;
+
+  mobileCatalogGrid.addEventListener(
+    'touchstart',
+    function (event) {
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        return;
+      }
+
+      const touch = event.touches[0];
+
+      touchStartX = touch.pageX;
+      touchStartY = touch.pageY;
+      startScrollLeft = mobileCatalogGrid.scrollLeft;
+
+      /*
+       * Направление определяем только после небольшого движения:
+       * horizontal — листаем каталог;
+       * vertical — не вмешиваемся, чтобы сайт прокручивался вверх/вниз.
+       */
+      gestureDirection = null;
+    },
+    { passive: true }
+  );
+
+  mobileCatalogGrid.addEventListener(
+    'touchmove',
+    function (event) {
+      if (!window.matchMedia('(max-width: 768px)').matches) {
+        return;
+      }
+
+      const touch = event.touches[0];
+
+      const deltaX = touch.pageX - touchStartX;
+      const deltaY = touch.pageY - touchStartY;
+
+      if (gestureDirection === null) {
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+
+        /*
+         * Пока палец почти не сдвинулся — ничего не делаем.
+         */
+        if (absX < SWIPE_THRESHOLD && absY < SWIPE_THRESHOLD) {
           return;
         }
 
-        isDraggingCatalog = true;
-        startX = event.touches[0].pageX;
-        scrollLeftStart = mobileCatalogGrid.scrollLeft;
-      },
-      { passive: true }
-    );
+        /*
+         * Если движение преимущественно вертикальное,
+         * не вызываем preventDefault — браузер прокрутит страницу.
+         */
+        gestureDirection = absY > absX ? 'vertical' : 'horizontal';
+      }
 
-    mobileCatalogGrid.addEventListener(
-      'touchmove',
-      function (event) {
-        if (!isDraggingCatalog) {
-          return;
-        }
+      if (gestureDirection === 'vertical') {
+        return;
+      }
 
-        const x = event.touches[0].pageX;
-        const walk = (startX - x) * 1.5;
+      /*
+       * Горизонтальный жест остаётся внутри каталога.
+       */
+      event.preventDefault();
 
-        mobileCatalogGrid.scrollLeft = scrollLeftStart + walk;
-      },
-      { passive: true }
-    );
+      const sensitivity = 1.2;
+      mobileCatalogGrid.scrollLeft =
+        startScrollLeft - deltaX * sensitivity;
+    },
+    { passive: false }
+  );
 
-    mobileCatalogGrid.addEventListener(
-      'touchend',
-      function () {
-        isDraggingCatalog = false;
-      },
-      { passive: true }
-    );
-  }
+  mobileCatalogGrid.addEventListener(
+    'touchend',
+    function () {
+      gestureDirection = null;
+    },
+    { passive: true }
+  );
+
+  mobileCatalogGrid.addEventListener(
+    'touchcancel',
+    function () {
+      gestureDirection = null;
+    },
+    { passive: true }
+  );
+}
 
   // =========================================================
   // КАТАЛОГ И ВКЛАДКИ КАТЕГОРИЙ
