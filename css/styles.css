@@ -2415,6 +2415,14 @@ img {
   min-height: 100px;
 }
 
+.certs_logos img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+}
+
 .certs img {
   width: 100%;
   height: 140px;
