@@ -1,1446 +1,1682 @@
-
 <!DOCTYPE html>
 
 <html lang="ru">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="favicon.ico" rel="icon"/>
-<title>Скай Трейд — химические анкеры оптом</title>
-<!-- Единый минимальный стиль -->
-<link href="css/styles.css" rel="stylesheet"/>
-<script src="js/scripts.js"></script>
-<script src="js/form-handler.js"></script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="favicon.ico" rel="icon" />
+  <title>Скай Трейд — химические анкеры оптом</title>
+  <!-- Единый минимальный стиль -->
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="js/scripts.js"></script>
+  <script src="js/form-handler.js"></script>
 </head>
+
 <body>
-<!-- Шапка -->
-<header class="header">
-<div class="container header__row">
-<a class="brand" href="/">
-<img alt="Скай Трейд — химические анкеры" class="brand__logo" src="img/logo.svg"/>
-<div class="brand__text">
-<strong>Скай Трейд</strong>
-<span>Химические анкера оптом</span>
-</div>
-</a>
-<nav aria-label="Основная навигация" class="nav">
-<button aria-label="Открыть меню" class="nav__toggle" type="button">
-<span></span>
-<span></span>
-<span></span>
-</button>
-<ul class="nav__list" id="navMenu">
-<li><a href="#benefits">Преимущества</a></li>
-<li><a href="#catalog">Ассортимент</a></li>
-<li><a href="#testing">Испытания</a></li>
-<li><a href="#delivery">Доставка</a></li>
-</ul>
-</nav>
-<div class="header__cta">
-<a class="header__phone" href="tel:+74957241180">+7 (495) 724-11-80</a>
-<a class="btn btn--primary js-open-form-popup" data-title="Заказать звонок" href="#lead">Заказать звонок</a>
-</div>
-</div>
-</header>
-<div class="banner">
-<!-- СЛАЙДЕР -->
-<div class="slider">
-<!-- Текст-оверлей -->
-<div class="slider-caption">
-<h1>Большой выбор химических анкеров по низким ценам</h1>
-<ul class="slider-bullets">
-<li>Сэкономьте до 45% бюджета</li>
-<li>На рынке более 15 лет</li>
-<li>Сертифицированная продукция</li>
-</ul>
-</div>
-<div class="slide active">
-<img alt="Banner desktop" src="img/banners/slide-1-desktop.png"/>
-</div>
-<div class="slide">
-<img alt="Banner desktop" src="img/banners/slide-2-desktop.png"/>
-</div>
-<div class="slide">
-<img alt="Banner desktop" src="img/banners/slide-3-desktop.png"/>
-</div>
-<button class="slider-btn prev" onclick="changeSlide(-1)">←</button>
-<button class="slider-btn next" onclick="changeSlide(1)">→</button>
-<div class="slider-dots">
-<button class="dot active" onclick="goToSlide(0)"></button>
-<button class="dot" onclick="goToSlide(1)"></button>
-<button class="dot" onclick="goToSlide(2)"></button>
-</div>
-</div>
-<!-- ПРАВЫЙ ВЕРХНИЙ -->
-<div class="banner-item banner-item-1" style="overflow: hidden; padding: 0;">
-<video autoplay="" loop="" muted="" playsinline="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-<source src="video/video.mp4" type="video/mp4"/>
-        Ваш браузер не поддерживает видео.
-      </video>
-</div>
-<!-- ПРАВЫЙ НИЖНИЙ -->
-<div class="banner-item banner-item-2">
-<form action="#" class="form form--card" id="lead" method="get">
-<button class="btn btn--primary btn--full js-open-form-popup" data-title="Оставить заявку" type="button">Оставить заявку</button></form>
-</div>
-</div>
-<!-- БРЕНДЫ (Узкий слайдер) -->
-<section class="brands-section" id="brands">
-<div class="container">
-<div class="brands-header">
-<h2 class="section__title">Бренды, с которыми мы работаем</h2>
-<button class="btn-order" id="openBrandsModalBtn" type="button">
-          Посмотреть все
-          <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-</button>
-</div>
-<div class="brands-slider">
-<div class="brands-track">
-<!-- Слайд 1 (1–5) -->
-<div class="brands-slide">
-<div class="brands-item"><img alt="химический анкер Sormat" src="img/brands/11_logo_SORMAT.png" title="химический анкер Sormat"/></div>
-<div class="brands-item"><img alt="химический анкер HILTI" src="img/brands/12_logo_HILTI.webp" title="химический анкер HILTI"/></div>
-<div class="brands-item"><img alt="химический анкер BIT" src="img/brands/13_logo_BIT.png" title="химический анкер BIT"/></div>
-<div class="brands-item"><img alt="химический анкер Tech‑Krep" src="img/brands/14_logo_techkrep.png" title="химический анкер Tech‑Krep"/></div>
-<div class="brands-item"><img alt="химический анкер RAWLPLUG" src="img/brands/15_logo_rawlplug.jpg" title="химический анкер RAWLPLUG"/></div>
-</div>
-<!-- Слайд 2 (6–10) -->
-<div class="brands-slide">
-<div class="brands-item"><img alt="химический анкер SKIF" src="img/brands/21_logo_SKIF.png" title="химический анкер SKIF"/></div>
-<div class="brands-item"><img alt="химический анкер HIMTEX" src="img/brands/22_logo_HIMTEX.png" title="химический анкер HIMTEX"/></div>
-<div class="brands-item"><img alt="химический анкер TYTAN" src="img/brands/23_logo_TYTAN.png" title="химический анкер TYTAN"/></div>
-<div class="brands-item"><img alt="химический анкер UTECH" src="img/brands/24_logo_UTECH.png" title="химический анкер UTECH"/></div>
-<div class="brands-item"><img alt="химический анкер Fasty" src="img/brands/25_logo_Fasty.png" title="химический анкер Fasty"/></div>
-</div>
-<!-- Слайд 3 (11–15) -->
-<div class="brands-slide">
-<div class="brands-item"><img alt="химический анкер EMS" src="img/brands/31_logo_EMS_Dubell.png" title="химический анкер EMS"/></div>
-<div class="brands-item"><img alt="химический анкер MKT" src="img/brands/32_logo_MKT.png" title="химический анкер MKT"/></div>
-<div class="brands-item"><img alt="химический анкер Fischer" src="img/brands/33_logo_FISCHER.png" title="химический анкер Fischer"/></div>
-<div class="brands-item"><img alt="химический анкер Daxmer" src="img/brands/34_logo_DAXMER.svg" title="химический анкер Daxmer"/></div>
-<div class="brands-item"><img alt="химический анкер GRAF" src="img/brands/35_logo_GRAF.png" title="химический анкер GRAF"/></div>
-</div>
-<!-- Слайд 4 (16–20) -->
-<div class="brands-slide">
-<div class="brands-item"><img alt="химический анкер КМП" src="img/brands/41_logo_KMP.png" title="химический анкер КМП"/></div>
-<div class="brands-item"><img alt="химический анкер OKG" src="img/brands/42_logo_OKG.png" title="химический анкер OKG"/></div>
-<div class="brands-item"><img alt="химический анкер STALMAX" src="img/brands/43_logo_STALMAX.png" title="химический анкер STALMAX"/></div>
-<div class="brands-item"><img alt="химический анкер Фиксар" src="img/brands/44_logo_FIXAR.png" title="химический анкер Фиксар"/></div>
-<div class="brands-item"><img alt="химический анкер ELEMENTA" src="img/brands/45_logo_ELEMENTA.webp" title="химический анкер ELEMENTA"/></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- КВИЗ -->
-<section class="quiz-section" id="quiz-block">
-<h2 class="quiz-title">Не знаете, какой анкер выбрать?</h2>
-<!-- Индикатор прогресса -->
-<div class="quiz-progress" id="quiz-progress">
-<div class="quiz-progress-bar"><div class="quiz-progress-fill" id="progress-fill"></div></div>
-<div class="quiz-step-indicator active" data-step-num="1">1</div>
-<div class="quiz-step-indicator" data-step-num="2">2</div>
-<div class="quiz-step-indicator" data-step-num="3">3</div>
-</div>
-<!-- Шаг 1: Материал -->
-<div class="quiz-step active" data-step="1">
-<h3>1. Выберите материал основания</h3>
-<div class="quiz-options">
-<button class="quiz-btn" data-field="material" data-value="Бетон" type="button">Бетон</button>
-<button class="quiz-btn" data-field="material" data-value="Растянутая зона бетона" type="button">Растянутая зона бетона</button>
-<button class="quiz-btn" data-field="material" data-value="Кирпич" type="button">Кирпич</button>
-<button class="quiz-btn" data-field="material" data-value="Газобетон" type="button">Газобетон</button>
-<button class="quiz-btn" data-field="material" data-value="Природный камень" type="button">Природный камень</button>
-</div>
-</div>
-<!-- Шаг 2: Условия монтажа -->
-<div class="quiz-step" data-step="2">
-<h3>2. Условия монтажа</h3>
-<div class="quiz-options">
-<button class="quiz-btn" data-field="condition" data-value="Обычные" type="button">Обычные</button>
-<button class="quiz-btn" data-field="condition" data-value="Мокрые отверстия" type="button">Мокрые отверстия</button>
-<button class="quiz-btn" data-field="condition" data-value="Алмазное бурение" type="button">Алмазное бурение</button>
-<button class="quiz-btn" data-field="condition" data-value="Низкие температуры (зима)" type="button">Низкие температуры (зима)</button>
-</div>
-<div class="quiz-nav-btns">
-<button class="btn-prev" type="button">← Назад</button>
-</div>
-</div>
-<!-- Шаг 3: Диаметр -->
-<div class="quiz-step" data-step="3">
-<h3>3. Диаметр шпильки или арматуры</h3>
-<div class="quiz-options">
-<button class="quiz-btn" data-field="diameter" data-value="М8–М24" type="button">М8–М24</button>
-<button class="quiz-btn" data-field="diameter" data-value="М24 и выше" type="button">М24 и выше</button>
-<button class="quiz-btn" data-field="diameter" data-value="Не знаю" type="button">Не знаю</button>
-</div>
-<div class="quiz-nav-btns">
-<button class="btn-prev" type="button">← Назад</button>
-</div>
-</div>
-<!-- Результат -->
-<div class="quiz-result" data-step="result">
-<h3>Подходящий вариант под ваши задачи:</h3>
-<div class="result-card">
-<div class="result-product-image">
-<img alt="Химический анкер ITH 410 Ve" id="recommended-product-image" src="/images/products/ith-410-ve.webp"/>
-</div>
-<div class="result-product-info">
-<div class="result-product-title" id="recommended-product-name">
-            ITH 410 Ve
-          </div>
-<div class="result-product-desc" id="recommended-product-desc">
-            Универсальный высокопрочный химический анкер
-          </div>
-</div>
-</div>
-<form class="quiz-form" id="quiz-form" novalidate="">
-<input id="input-quiz-material" name="quiz_material" type="hidden"/>
-<input id="input-quiz-condition" name="quiz_condition" type="hidden"/>
-<input id="input-quiz-diameter" name="quiz_diameter" type="hidden"/>
-<input id="input-quiz-recommendation" name="quiz_recommendation" type="hidden"/>
-
-
-
-<button class="btn-submit js-open-form-popup" data-lead-source="quiz" data-title="Получить расчёт и КП" type="button">Получить расчёт и КП</button>
-</form>
-<div class="quiz-success-msg" id="quiz-success-msg">
-        Ваша заявка успешно отправлена! Наш инженер свяжется с вами в течение 15 минут.
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__row">
+      <a class="brand" href="/">
+        <img alt="Скай Трейд — химические анкеры" class="brand__logo" src="img/logo.svg" />
+        <div class="brand__text">
+          <strong>Скай Трейд</strong>
+          <span>Химические анкера оптом</span>
+        </div>
+      </a>
+      <nav aria-label="Основная навигация" class="nav">
+        <button aria-label="Открыть меню" class="nav__toggle" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav__list" id="navMenu">
+          <li><a href="#benefits">Преимущества</a></li>
+          <li><a href="#catalog">Ассортимент</a></li>
+          <li><a href="#testing">Испытания</a></li>
+          <li><a href="#delivery">Доставка</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a class="header__phone" href="tel:+74957241180">+7 (495) 724-11-80</a>
+        <a class="btn btn--primary js-open-form-popup" data-title="Заказать звонок" href="#lead">Заказать звонок</a>
       </div>
-<button class="btn-reset" id="btn-reset-quiz" type="button">
-        Пройти опрос заново
-      </button>
-</div>
-</section>
-<!-- СЕКЦИЯ КАТАЛОГА SKYTRADE -->
-<section class="catalog-section" id="catalog">
-<div class="catalog-container">
-<h2 class="section__title">Каталог продукции</h2>
-<!-- Переключатель категорий товаров -->
-<div class="catalog-tabs">
-<button class="tab-btn" data-category="chem-anchors">Химические анкеры</button>
-<button class="tab-btn" data-category="capsules">Анкер-капсулы</button>
-<button class="tab-btn" data-category="guns">Пистолеты</button>
-<button class="tab-btn" data-category="studs">Шпильки</button>
-<button class="tab-btn" data-category="sleeves">Сетчатые гильзы</button>
-<button class="tab-btn" data-category="accessories">Аксессуары для монтажа</button>
-</div>
-<!-- Сетка / Горизонтальная карусель карточек товаров -->
-<div class="catalog-grid">
-<!-- 1. Химический анкер: Полиэстер -->
-<div class="product-card" data-category="chem-anchors" data-product-id="polyester" data-product-name="Полиэстер">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Полиэстер" class="slider-img" data-images='["images/polyester-2.png", "images/polyester-3.png", "images/polyester-1.png"]' data-index="0" src="images/polyester-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Полиэстер</h3>
-<div class="param-row"><span class="param-label">Производители:</span> Sormat, Hilti. Tech Krep, Tytan, SKIF, BIT, FISCHER, RAWLPLUG
-HIMTEX, STALMAX, BIT, GRAF, Фиксар, IRFIX, JETFIX, Bull, КМП</div>
-<div class="param-row"><span class="param-label">Артикулы:</span>ITH Pe, PE, BIT-PE 300, R-KEM, R-KEM-II, PESF, VM-PY, FIS P, П 410, S-1200, CA900, ECO 300, A-PE, PE 300 s</div>
-<div class="param-row"><span class="param-label">Объем картриджа, мл:</span>165, 175, 280, 300, 350, 360, 380, 400, 410, 420</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#F1F5F9" height="32" rx="4" width="32"></rect><circle cx="8" cy="8" fill="#94A3B8" r="1"></circle><circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle><circle cx="24" cy="8" fill="#94A3B8" r="1"></circle></svg>
-</div>
-<span class="material-label">пеноблок (газобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#FCA5A5" height="32" rx="4" width="32"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect></svg>
-</div>
-<span class="material-label">кирпич пустотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
-<rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
-<path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
-</svg>
-</div>
-<span class="material-label">кирпич полнотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 2. Химический анкер: Винилэстер -->
-<div class="product-card" data-category="chem-anchors" data-product-id="vinylester" data-product-name="Винилэстер">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Винилэстер" class="slider-img" data-images='["images/vinylester-2.png", "images/vinylester-3.png", "images/vinylester-1.png"]' data-index="0" src="images/vinylester-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Винилэстер</h3>
-<div class="param-row"><span class="param-label">Бренды: </span>SKIF, Sormat, BIT, RAWLPLUG, HIMTEX, Tech Krep, FISCHER, DAXMER, Stalmax, GRAF, IRFIX, SOUDAL, BOSSONG, KMP, TECFI, FASTY, MUNGO, МОМЕНТ, Tech-Krep, EASYFIX, ELNAR, MKT, ELEMENTA</div>
-<div class="param-row"><span class="param-label">Артикулы: </span>VESF, ITH Ve, R-KER, FIS V, Ve, FIS VW, BIT-200, VE-SF, R-KER-S, VE-200, VMU, VMZ, FIS VS, FIS SB, FIS HB</div>
-<div class="param-row"><span class="param-label">Объем, мл: </span>165, 280, 300, 350, 360, 380, 400, 410, 420</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#F1F5F9" height="32" rx="4" width="32"></rect><circle cx="8" cy="8" fill="#94A3B8" r="1"></circle><circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle><circle cx="24" cy="8" fill="#94A3B8" r="1"></circle></svg>
-</div>
-<span class="material-label">пеноблок (газобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#FCA5A5" height="32" rx="4" width="32"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect></svg>
-</div>
-<span class="material-label">кирпич пустотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
-<rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
-<path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
-</svg>
-</div>
-<span class="material-label">кирпич полнотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 3. Химический анкер: Эпокси-акрилат -->
-<div class="product-card" data-category="chem-anchors" data-product-id="epoxy-acrylate" data-product-name="Эпокси-акрилат">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Эпокси-акрилат" class="slider-img" data-images='["images/akrilat-2.png", "images/akrilat-3.png", "images/akrilat-1.png"]' data-index="0" src="images/akrilat-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Эпокси-акрилат</h3>
-<div class="param-row"><span class="param-label">Бренды:</span> Tech Krep, utech, HIMTEX, BIT, GRAF, КМП, DAXMER, STALMAX, Mungo</div>
-<div class="param-row"><span class="param-label">Артикулы:</span> ITH EA, EASF, BIT EA, EASF S, MIT-E, WIT-EA, ANW</div>
-<div class="param-row"><span class="param-label">Объем, мл:</span> 150, 300, 330, 380, 400, 410</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#F1F5F9" height="32" rx="4" width="32"></rect><circle cx="8" cy="8" fill="#94A3B8" r="1"></circle><circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle><circle cx="24" cy="8" fill="#94A3B8" r="1"></circle></svg>
-</div>
-<span class="material-label">пеноблок (газобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#FCA5A5" height="32" rx="4" width="32"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect></svg>
-</div>
-<span class="material-label">кирпич пустотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
-<rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
-<path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
-</svg>
-</div>
-<span class="material-label">кирпич полнотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 4. Химический анкер: Эпоксидная смола -->
-<div class="product-card" data-category="chem-anchors" data-product-id="epoxy-resin" data-product-name="Эпоксидная смола">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Эпоксидная смола" class="slider-img" data-images='["images/epoksi-2.png", "images/epoksi-3.png", "images/epoksi-1.png"]' data-index="0" src="images/epoksi-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Эпоксидная смола</h3>
-<div class="param-row"><span class="param-label">Бренды: </span>Sormat, hilti, SKIF, utech, Tech Krep, RAWLPLUG, HIMTEX, Elementa, FASTY, BIT, GRAF, КМП, MUNGO, MKT, FISCHER, OKG, STALMAX, WUERTH, EASYFIX</div>
-<div class="param-row"><span class="param-label">Артикулы: </span>ITH EPOXE, HIT-RE 500, 585 EPOXe, R-KEX-II, EPOXY PE-500, BIT-500, EPOXY, TE 100/500, BIT-EX, HITRE 500, TE 70/500, A-EX 400, VME 600, FIS EM, MIT600RE, PE-500 385 s, HIT-RE 100, VME, EPX 400S</div>
-<div class="param-row"><span class="param-label">Объем, мл: </span>330, 385, 390, 400, 450, 470, 500, 585, 600, 1000</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<rect fill="#CBD5E1" height="16" rx="2" width="22" x="5" y="8"></rect>
-<circle cx="9" cy="12" fill="#94A3B8" r="1.3"></circle>
-<circle cx="15" cy="13.5" fill="#94A3B8" r="0.9"></circle>
-<circle cx="20" cy="16" fill="#94A3B8" r="1.1"></circle>
-<circle cx="12" cy="20" fill="#94A3B8" r="0.9"></circle>
-<circle cx="22" cy="19" fill="#94A3B8" r="0.7"></circle>
-<path d="M9.2 11.5 L12 13.6 L11 15.8 L14 17.4 L13.2 19.6 L16 20.2" stroke="#334155" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-<path d="M12 13.6 L10.8 14.2" stroke="#475569" stroke-linecap="round" stroke-width="1.0"></path>
-<path d="M14 17.4 L15.2 16.6" stroke="#475569" stroke-linecap="round" stroke-width="1.0"></path>
-<path d="M13.2 19.6 L14.6 18.8" stroke="#475569" stroke-linecap="round" stroke-width="1.0"></path>
-<path d="M17.6 12.2 L18.8 13.0" stroke="#475569" stroke-linecap="round" stroke-width="0.9"></path>
-<path d="M19 15 L18.2 15.6" stroke="#475569" stroke-linecap="round" stroke-width="0.9"></path>
-</svg>
-</div>
-<span class="material-label">Растянутая зона бетона</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 5. Химический анкер: Зимний состав для низких температур -->
-<div class="product-card" data-category="chem-anchors" data-product-id="winter-compound" data-product-name="Зимний состав для низких температур">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Зимний состав для низких температур" class="slider-img" data-images='["images/zima-2.png", "images/zima-3.png", "images/zima-1.png"]' data-index="0" src="images/zima-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Зимний состав для низких температур</h3>
-<div class="param-row"><span class="param-label">Бренды:</span> RAWLPLUG, Sormat, SKIF, HIMTEX, Tech Krep, HILTI, BIT, FISCHER, UTECH, STALMAX, MUNGO, EASYFIX, MKT, wurth, TYTAN, Elementa, Fasty, КМП</div>
-<div class="param-row"><span class="param-label">Артикулы:</span> ITH Wi, FIS VW, BIT-NORD, HIT-ICE, ICE 500, PRO 3000 V-ICE EASF, Arctic Profi 200, PESF-100 WINTER, VE-100SF, BCR400 V-PLUS Winter, Arctic 410, VE-POLAR, R-KER-W, R-KEM-II-W, Mit-Cool, EASF 300W s, BIT NORD, EV-W, VM-Polar, FIS SB, FIS VW PLUS, EAF 350Ws</div>
-<div class="param-row"><span class="param-label">Объем, мл:</span> 165, 175, 280, 300, 350, 360, 380, 400, 410, 420</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#F1F5F9" height="32" rx="4" width="32"></rect><circle cx="8" cy="8" fill="#94A3B8" r="1"></circle><circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle><circle cx="24" cy="8" fill="#94A3B8" r="1"></circle></svg>
-</div>
-<span class="material-label">пеноблок (газобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#FCA5A5" height="32" rx="4" width="32"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect></svg>
-</div>
-<span class="material-label">кирпич пустотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
-<rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
-<path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
-</svg>
-</div>
-<span class="material-label">кирпич полнотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 6. Химический анкер: Уретан-метакрилат -->
-<div class="product-card" data-category="chem-anchors" data-product-id="urethane-methacrylate" data-product-name="Уретан-метакрилат">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Уретан-метакрилат" class="slider-img" data-images='["images/uretan-2.png", "images/uretan-3.png", "images/uretan-1.png"]' data-index="0" src="images/uretan-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Уретан-метакрилат</h3>
-<div class="param-row"><span class="param-label">Бренды:</span> HILTI</div>
-<div class="param-row"><span class="param-label">Артикулы:</span> HIT HY, HIT MM</div>
-<div class="param-row"><span class="param-label">Объем, мл:</span> 296, 300, 330, 500</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#F1F5F9" height="32" rx="4" width="32"></rect><circle cx="8" cy="8" fill="#94A3B8" r="1"></circle><circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle><circle cx="24" cy="8" fill="#94A3B8" r="1"></circle></svg>
-</div>
-<span class="material-label">пеноблок (газобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#FCA5A5" height="32" rx="4" width="32"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect><rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect></svg>
-</div>
-<span class="material-label">кирпич пустотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
-<rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
-<path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
-<path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
-</svg>
-</div>
-<span class="material-label">кирпич полнотелый</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 7. Анкер-капсулы -->
-<div class="product-card" data-category="capsules" data-product-id="chemical-anchor-capsules" data-product-name="Химический анкер в капсулах">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Анкер-капсулы" class="slider-img" data-images='["images/capsule-2.png", "images/capsule-3.png", "images/capsule-4.png", "images/capsule-1.png"]' data-index="0" src="images/capsule-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">Химический анкер в капсулах</h3>
-<div class="param-row"><span class="param-label">Бренды:</span> SORMAT, RAWLPLUG, HILTI, HIMTEX, FISCHER, BIT, MKT</div>
-<div class="param-row"><span class="param-label">Артикулы:</span> KEM VE, R CAS, R-HAC, HVU, SUPERCAP, RM II</div>
-<div class="param-row"><span class="param-label">Диаметр шпильки:</span> М8, М10, М12, М14, М16, М20, М24, М27, М30</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials">
-<div class="base-materials-title">Материал основания:</div>
-<div class="materials-icons">
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><rect fill="#E2E8F0" height="32" rx="4" width="32"></rect><circle cx="10" cy="10" fill="#64748B" r="2"></circle><circle cx="22" cy="18" fill="#64748B" r="3"></circle><circle cx="12" cy="24" fill="#64748B" r="1.5"></circle></svg>
-</div>
-<span class="material-label">бетон</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
-<circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
-<circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
-<circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
-<circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
-<path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
-</svg>
-</div>
-<span class="material-label">армированный бетон (железобетон)</span>
-</div>
-<div class="material-item">
-<div class="icon-box">
-<svg fill="none" height="24" viewbox="0 0 32 32" width="24"><path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path></svg>
-</div>
-<span class="material-label">природный камень</span>
-</div>
-</div>
-</div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 8. Пистолеты -->
-<div class="product-card" data-category="guns" data-product-id="ipu-150-300" data-product-name="IPU 150/300">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Пистолеты" class="slider-img" data-images='["images/gun-150-2.png", "images/gun-150-1.png"]' data-index="0" src="images/gun-150-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IPU 150/300</h3>
-<div class="param-row">Высококачественный инструмент для химических анкеров в картриджах</div>
-<div class="param-row"><span class="param-label">Под картриджи:</span> 165 мл, 280 мл и 300 мл</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="guns" data-product-id="ipu-410" data-product-name="IPU 410">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Пистолеты" class="slider-img" data-images='["images/gun-410-2.png", "images/gun-410-1.png"]' data-index="0" src="images/gun-410-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IPU 410</h3>
-<div class="param-row">Профессиональный пистолет для химанкров</div>
-<div class="param-row"><span class="param-label">Под картриджи:</span> 380 мл, 400 мл и 410 мл</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="guns" data-product-id="ipu-385-585" data-product-name="IPU 385/585">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Пистолеты" class="slider-img" data-images='["images/gun-385-2.png", "images/gun-385-1.png"]' data-index="0" src="images/gun-385-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IPU 385/585</h3>
-<div class="param-row">Надежный механический пистолет для эпоксидных составов</div>
-<div class="param-row"><span class="param-label">Под картриджи:</span> 385 мл, 450 мл и 585 мл</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="guns" data-product-id="ipu-380-pi" data-product-name="IPU 380 PI">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Пистолеты" class="slider-img" data-images='["images/gun-380-2.png", "images/gun-380-1.png"]' data-index="0" src="images/gun-380-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IPU 380 PI</h3>
-<div class="param-row">Пневматический дозатор</div>
-<div class="param-row"><span class="param-label">Под картриджи:</span> 380 мл, 400 мл и 410 мл</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="guns" data-product-id="ipu-385-585-pi" data-product-name="IPU 385/585 PI">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Пистолеты" class="slider-img" data-images='["images/gun-385PI-2.png", "images/gun-385PI-1.png"]' data-index="0" src="images/gun-385PI-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IPU 385/585 PI</h3>
-<div class="param-row">Пневматический дозатор для эпоксидных составов</div>
-<div class="param-row"><span class="param-label">Под картриджи:</span> 385 мл, 450 мл и 585 мл</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 9. Шпильки -->
-<div class="product-card" data-category="studs" data-product-id="keva" data-product-name="KEVA">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="шпильки KEVA" class="slider-img" data-images='["images/keva-2.png", "images/keva-1.png"]' data-index="0" src="images/keva-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">KEVA</h3>
-<div class="param-row">Оцинкованные шпильки для химического анкера, применение внутри сухих помещений</div>
-<div class="param-row"><span class="param-label">Класс прочности:</span> 5.8, 8.8</div>
-<div class="param-row"><span class="param-label">Размеры:</span> М6, М8, М10, М12, М16, М20, М24, М30</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="studs" data-product-id="vks" data-product-name="VKS">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="шпильки VKS" class="slider-img" data-images='["images/vks-2.png", "images/vks-1.png"]' data-index="0" src="images/vks-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">VKS</h3>
-<div class="param-row">Анкерные шпильки с цинклмельным, flZn, Delta, ТДЦ или горячеоцинкованным HDG покрытием для среднеагрессивной среды</div>
-<div class="param-row"><span class="param-label">Класс прочности:</span> 5.8, 8.8</div>
-<div class="param-row"><span class="param-label">Размеры:</span> М6, М8, М10, М12, М16, М20, М24, М30</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="studs" data-product-id="vh" data-product-name="VH">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="шпильки VH" class="slider-img" data-images='["images/vh-2.png", "images/vh-1.png"]' data-index="0" src="images/vh-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">VH</h3>
-<div class="param-row">Шпильки для химанкера из нержавеющей стали А4 (AISI 316) для монтажа в агрессивных средах</div>
-<div class="param-row"><span class="param-label">Размеры:</span> М6, М8, М10, М12, М16, М20, М24, М30</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 10. Сетчатые гильзы -->
-<div class="product-card" data-category="sleeves" data-product-id="iov" data-product-name="IOV">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Сетчатые гильзы IOV" class="slider-img" data-images='["images/iov-2.png", "images/iov-1.png"]' data-index="0" src="images/iov-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IOV</h3>
-<div class="param-row">Сетчатые гильзы-втулки для монтажа химических анкеров в пустотелые и перфорированные основания</div>
-<div class="param-row"><span class="param-label">Диаметр применяемой шпильки:</span> М8, М10, М12, М16</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="sleeves" data-product-id="ish" data-product-name="ISH">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Сетчатые гильзы ISH" class="slider-img" data-images='["images/ish-2.png", "images/ish-1.png"]' data-index="0" src="images/ish-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">ISH</h3>
-<div class="param-row">Втулка с внутренней резьбой для создания разъемного соединения с болтами или резьбовыми шпильками</div>
-<div class="param-row"><span class="param-label">Размер резьбы:</span> М6, М8, М10, М12</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<!-- 11. Аксессуары для монтажа -->
-<div class="product-card" data-category="accessories" data-product-id="ipum" data-product-name="IPUM">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Аксессуары" class="slider-img" data-images='["images/ipum-2.png", "images/ipum-1.png"]' data-index="0" src="images/ipum-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">IPUM</h3>
-<div class="param-row">Эффективный насос для тщательной очистки отверстий от буровой пыли</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="accessories" data-product-id="mb" data-product-name="MB">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Аксессуары" class="slider-img" data-images='["images/mb-2.png", "images/mb-1.png"]' data-index="0" src="images/mb-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">MB</h3>
-<div class="param-row">Металлическая щетка для очистки просверленных отверстий</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="accessories" data-product-id="isl" data-product-name="ISL">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Аксессуары" class="slider-img" data-images='["images/isl-2.png", "images/isl-1.png"]' data-index="0" src="images/isl-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">ISL</h3>
-<div class="param-row">Высококлассный носик-смеситель для химических анкеров</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-<div class="product-card" data-category="accessories" data-product-id="isl-ext" data-product-name="ISL EXT">
-<div class="card-slider">
-<button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
-<img alt="Аксессуары" class="slider-img" data-images='["images/islext-2.png", "images/islext-1.png"]' data-index="0" src="images/islext-1.png"/>
-<button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
-</div>
-<div class="card-info">
-<h3 class="product-title">ISL EXT</h3>
-<div class="param-row">Удлинитель носика для монтажа химанкера в глубоких отверстиях</div>
-</div>
-<div class="card-bottom">
-<div class="base-materials"></div>
-<div class="card-actions">
-<button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Преимущества -->
-<section class="section section--alt" id="benefits">
-<div class="container">
-<h2 class="section__title">Наши преимущества</h2>
-<div class="grid">
-<div class="card">
-<h3 class="card__h">5000+</h3>
-<p class="card__p">клиентов с 2010 года</p>
-</div>
-<div class="card">
-<h3 class="card__h">Официальный дилер</h3>
-<p class="card__p">Скай Трейд - партнер известных мировых производителей и брендов</p>
-</div>
-<div class="card">
-<h3 class="card__h">до 45%</h3>
-<p class="card__p">экономия бюджета при верном выборе состава или подборе аналогов</p>
-</div>
-<div class="card">
-<h3 class="card__h">3 часа</h3>
-<p class="card__p">срочная доставка до вашего объекта или терминала транспортной компании в Москве</p>
-</div>
-<div class="card">
-<h3 class="card__h">Инженерная поддержка</h3>
-<p class="card__p">Проведем испытания и оформим протокол. Подберем оптимальное решение для анкерных креплений. Осуществляем расчеты несущей способности и расхода</p>
-</div>
-<div class="card">
-<h3 class="card__h">Разрешительные документы</h3>
-<p class="card__p">предоставим сертификаты, технические свидетельство, протокол испытаний, паспорта на продукцию</p>
-</div>
-</div>
-</div>
-</section>
-<!-- СЕКЦИЯ "НАМ ДОВЕРЯЮТ" -->
-<section class="trust-section" id="trust">
-<div class="trust-container">
-<h2 class="section__title">Нам доверяют</h2>
-<p class="trust-subtitle">
-        Благодаря экспертности, качеству, опыту и ценовой политике для реализации проектов нас выбирают компании от малого бизнеса до крупных корпораций на самых ответственных объектах:
-      </p>
-<div class="trust-category">
-<h3 class="category-title">Компании</h3>
-<div class="trust-grid">
-<div class="trust-card company-card">
-<div class="logo-box">
-<img alt="ГАЗПРОМ" class="company-logo" src="img/clients/gazprom.svg"/>
-</div>
-</div>
-<div class="trust-card company-card">
-<div class="logo-box">
-<img alt="САМОЛЕТ" class="company-logo" src="img/clients/samolet.jpg"/>
-</div>
-</div>
-<div class="trust-card company-card">
-<div class="logo-box">
-<img alt="СЕВЕРСТАЛЬ" class="company-logo" src="img/clients/severstal.svg"/>
-</div>
-</div>
-<div class="trust-card company-card">
-<div class="logo-box">
-<img alt="Московский метрополитен" class="company-logo" src="img/clients/metro.svg"/>
-</div>
-</div>
-<div class="trust-card company-card">
-<div class="logo-box">
-<img alt="ТАТПРОФ" class="company-logo" src="img/clients/tatprof.png"/>
-</div>
-</div>
-</div>
-</div>
-<div class="trust-category">
-<h3 class="category-title">Объекты</h3>
-<div class="trust-grid">
-<div class="trust-card object-card">
-<div class="object-img-box">
-<img alt="Парящий мост в Зарядье" class="object-img" src="img/obj/most.jpg"/>
-</div>
-<span class="card-label">Парящий мост в Зарядье</span>
-</div>
-<div class="trust-card object-card">
-<div class="object-img-box">
-<img alt="Большой кремлевский дворец" class="object-img" src="img/obj/palace.jpg"/>
-</div>
-<span class="card-label">Государственный кремлевский дворец</span>
-</div>
-<div class="trust-card object-card">
-<div class="object-img-box">
-<img alt="Сберсити" class="object-img" src="img/obj/sber.jpg"/>
-</div>
-<span class="card-label">Сберсити</span>
-</div>
-<div class="trust-card object-card">
-<div class="object-img-box">
-<img alt="Московское метро" class="object-img" src="img/obj/metro.jpg"/>
-</div>
-<span class="card-label">Московское метро</span>
-</div>
-<div class="trust-card object-card">
-<div class="object-img-box">
-<img alt="Москва Сити" class="object-img" src="img/obj/mosc_city.jpg"/>
-</div>
-<span class="card-label">Москва Сити</span>
-</div>
-</div>
-<div class="card card--note">
-<p>Подберем оптимальное решение по нагрузкам и стоимости для вашего проекта</p>
-<a class="btn btn--ghost js-open-form-popup" data-title="Оставить заявку" href="#lead">Оставить заявку</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Блок: Инженерный сервис СКАЙ ТРЕЙД -->
-<section class="engineering-service section-padding">
-<div class="container">
-<div class="section-header text-center">
-<h2 class="section__title">Экспертная поддержка</h2>
-<p class="section-description">
-          Поделимся опытом и экспертизой в использовании химических анкеров:
-        </p>
-</div>
-<div class="service-grid">
-<div class="service-card">
-<div class="card-icon-wrapper">
-<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
-<circle cx="12" cy="12" r="10"></circle>
-<path d="m16 12-4-4-4 4"></path>
-<path d="M12 16V8"></path>
-</svg>
-</div>
-<div class="card-content">
-<h3 class="card-title">Подбор оптимального решения</h3>
-<p class="card-text">
-              Подберем оптимальное решение для анкерного крепления с учетом типа основания, нагрузок и условий монтажа.
-            </p>
-</div>
-</div>
-<div class="service-card">
-<div class="card-icon-wrapper">
-<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
-<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-<line x1="10" x2="8" y1="9" y2="9"></line>
-</svg>
-</div>
-<div class="card-content">
-<h3 class="card-title">Проектирование и расчеты</h3>
-<p class="card-text">
-              Сделаем расчет в соответствии с <span class="norm-tag">СП 513.1325800.2022</span> «Анкерные крепления к бетону. Правила проектирования».
-            </p>
-</div>
-</div>
-<div class="service-card highlight-card">
-<div class="card-icon-wrapper accent">
-<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
-<line x1="12" x2="12" y1="1" y2="23"></line>
-<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-</svg>
-</div>
-<div class="card-content">
-<h3 class="card-title">Оптимизация бюджета</h3>
-<p class="card-text">
-              Подберем проверенные аналоги и сэкономим <strong class="text-accent">до 45% бюджета</strong> без потери надежности узла.
-            </p>
-</div>
-</div>
-<div class="service-card">
-<div class="card-icon-wrapper">
-<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
-<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-<path d="m9 12 2 2 4-4"></path>
-</svg>
-</div>
-<div class="card-content">
-<h3 class="card-title">Сопровождение и защита</h3>
-<p class="card-text">
-              Защитим проектное решение и ответим на любые замечания строительной экспертизы или технического надзора.
-            </p>
-</div>
-</div>
-<div class="service-card full-width-card">
-<div class="card-icon-wrapper lab">
-<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32">
-<path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A2 2 0 0 0 6.516 23h10.968a2 2 0 0 0 1.797-2.45L14.21 10.42a2 2 0 0 1-.21-.896V2"></path>
-<path d="M8.5 2h7"></path>
-<path d="M7 16h10"></path>
-</svg>
-</div>
-<div class="card-content">
-<div class="card-header-badge">
-<h3 class="card-title">Испытательная лаборатория</h3>
-<span class="status-badge">Натурные испытания на объекте</span>
-</div>
-<p class="card-text">
-              Проведем испытания на несущую способность непосредственно на вашем объекте. Определим расчетную нагрузку и оформим официальный протокол в соответствии со <span class="norm-tag">СТО 44416204-010-2010</span> и <span class="norm-tag">ГОСТ Р 71447-2024</span> «Крепления Анкерные».
-            </p>
-</div>
-</div>
-</div>
-<div class="service-actions">
-<button class="btn-order js-open-form-popup" data-title="Провести испытания" type="button">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          Провести испытания
-        </button>
-<button class="btn-order js-open-form-popup" data-title="Заказать расчет" type="button">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="20" rx="2" width="16" x="4" y="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
-          Заказать расчет
-        </button>
-<button class="btn-order js-open-form-popup" data-title="Обсудить проект" type="button">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-          Обсудить проект
-        </button>
-</div>
-</div>
-</section>
-<!-- Испытания
-<section class="section" id="testing">
-<div class="container">
-<h2 class="section__title">Документы, сертификаты и паспорта</h2>
-<div class="grid grid--2">
-<div class="text">
-<p>Предоставим все сертификаты и протоколы испытаний, подтверждающие качество продукции, её соответствие техническим требованиям и условиям применения.</p>
-<p>В ассортименте компании анкера с техническим свидетельством и техоценкой Минстрой РФ, европейским техсвидетельством ETA (OPT 1 и OPT 7), паспортами безопасности, подтверждённой сейсмо- и огнестойкостью.</p>
-</div>
-<div class="certs">
-<img alt="Сертификат 1" src="img/certs/cert-1.jpg"/>
-<img alt="Сертификат 2" src="img/certs/cert-2.jpg"/>
-<img alt="Сертификат 3" src="img/certs/cert-3.jpg"/>
-</div>
-</div>
-<div class="card card--objects">
-<p>Подберем химический анкер по требованиям вашего проекта. Предложим аналоги</p>
-<a class="btn btn--ghost js-open-form-popup" data-title="Оставить заявку" href="#lead">Оставить заявку</a>
-</div>
-</div>
-</section> -->
-<!-- Испытания -->
-<section class="section" id="testing">
-  <div class="container">
-    <h2 class="section__title">Сертифицированная лаборатория. Проведение испытаний анкерных креплений по ГОСТ Р 71447-2024</h2>
-    <p class="section-description" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-      Компания «Скай Трейд» проводит полевые испытания для определения несущей способности или контроля расчетного сопротивления на вырыв анкерных креплений и арматурных выпусков на строительных объектах. В соответствии с <strong>ГОСТ Р 71447-2024</strong> натурные испытания — обязательный этап для проектирования и сдачи большинства фасадных и несущих креплений.
-    </p>
-
-    <div class="testing-grid">
-      <!-- Какие крепления испытываем -->
-      <div class="testing-card">
-        <h3 class="testing-card__title">Какие виды и типы креплений мы испытываем?</h3>
-        <ul class="testing-card__list">
-          <li>Механические анкеры (ГОСТ Р 56731-2015)</li>
-          <li>Химические (клеевые) анкеры (ГОСТ Р 58387-2019)</li>
-          <li>Клиновые анкеры</li>
-          <li>Фасадные анкеры</li>
-          <li>Анкер-шурупы</li>
-          <li>Тарельчатые дюбели для крепления теплоизоляции</li>
-          <li>Арматурные выпуски</li>
-          <li>Кровельный крепеж и саморезы для сэндвич-панелей</li>
+    </div>
+  </header>
+  <div class="banner">
+    <!-- СЛАЙДЕР -->
+    <div class="slider">
+      <!-- Текст-оверлей -->
+      <div class="slider-caption">
+        <h1>Большой выбор химических анкеров по низким ценам</h1>
+        <ul class="slider-bullets">
+          <li>Сэкономьте до 45% бюджета</li>
+          <li>На рынке более 15 лет</li>
+          <li>Сертифицированная продукция</li>
         </ul>
       </div>
-
-      <!-- На каких этапах проводим -->
-      <div class="testing-card">
-        <h3 class="testing-card__title">На каких этапах надо проводить испытания?</h3>
-        <div class="testing-stage">
-          <h4>Испытания для проектирования (определение сопротивления)</h4>
-          <p><strong>Для чего:</strong> получить данные о несущей способности конкретного анкера в конкретном основании (бетон, природный камень, кирпич, газоблок, газобетон).</p>
-          <p><strong>Как проводятся:</strong> испытания до разрушения с фиксацией максимальной нагрузки и перемещений.</p>
-          <p><strong>Результат:</strong> протокол с расчетным сопротивлением для проектирования безопасного и экономичного крепления.</p>
-        </div>
-        <div class="testing-stage">
-          <h4>Контрольные испытания для сдачи объекта или проверки качества монтажа</h4>
-          <p><strong>Для чего:</strong> подтвердить, что установленные анкеры выдерживают проектную нагрузку.</p>
-          <p><strong>Как проводим:</strong> неразрушающие испытания, к анкерному креплению прикладывается проектная нагрузка с небольшим запасом.</p>
-          <p><strong>Результат:</strong> официальный протокол с графиками «нагрузка – перемещение» по каждой точке, который является основанием для акта приемки работ.</p>
-        </div>
+      <div class="slide active">
+        <img alt="Banner desktop" src="img/banners/slide-1-desktop.png" />
       </div>
-
-      <!-- Что вы получаете? -->
-      <div class="testing-card testing-card--highlight">
-        <h3 class="testing-card__title">Что вы получаете? Почему стоит выбрать нашу лабораторию</h3>
-        <div class="testing-benefits">
-          <div class="testing-benefit">
-            <span class="testing-benefit__icon">📄</span>
-            <div>
-              <strong>Протокол испытаний от сертифицированной лаборатории</strong>
-              <p>Документ полностью соответствует <strong>СТО 44416204-010-2010</strong> «Крепления анкерные. Метод определения несущей способности по результатам натурных испытаний» и <strong>ГОСТ Р 71447-2024</strong> «Крепления Анкерные».</p>
-            </div>
-          </div>
-          <div class="testing-benefit">
-            <span class="testing-benefit__icon">👨‍🔧</span>
-            <div>
-              <strong>Экспертная поддержка и консультации наших инженеров</strong>
-              <p>Подбираем оптимальное решение для анкерных креплений. Осуществляем расчеты в соответствии <strong>СП 513.1325800.2022</strong> «Анкерные крепления к бетону. Правила проектирования». Отрабатываем замечания строительной экспертизы и/или технадзора.</p>
-            </div>
-          </div>
-          <div class="testing-benefit">
-            <span class="testing-benefit__icon">🔧</span>
-            <div>
-              <strong>Испытания всех видов анкерных креплений</strong>
-              <p>Мы предлагаем испытания профессиональных анкеров как для строительства, так и для узкоспециализированных инженерных работ.</p>
-            </div>
-          </div>
-        </div>
+      <div class="slide">
+        <img alt="Banner desktop" src="img/banners/slide-2-desktop.png" />
+      </div>
+      <div class="slide">
+        <img alt="Banner desktop" src="img/banners/slide-3-desktop.png" />
+      </div>
+      <button class="slider-btn prev" onclick="changeSlide(-1)">←</button>
+      <button class="slider-btn next" onclick="changeSlide(1)">→</button>
+      <div class="slider-dots">
+        <button class="dot active" onclick="goToSlide(0)"></button>
+        <button class="dot" onclick="goToSlide(1)"></button>
+        <button class="dot" onclick="goToSlide(2)"></button>
       </div>
     </div>
-
-    <div class="testing-cta">
-      <p><strong>Закажите испытания сейчас!</strong> Свяжитесь с нами, чтобы согласовать выезд на объект и получить протоколы в кратчайшие сроки.</p>
-      <a class="btn btn--primary js-open-form-popup" data-title="Заказать испытания" href="#lead">Заказать испытания</a>
+    <!-- ПРАВЫЙ ВЕРХНИЙ -->
+    <div class="banner-item banner-item-1" style="overflow: hidden; padding: 0;">
+      <video autoplay="" loop="" muted="" playsinline=""
+        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <source src="video/video.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
+    </div>
+    <!-- ПРАВЫЙ НИЖНИЙ -->
+    <div class="banner-item banner-item-2">
+      <form action="#" class="form form--card" id="lead" method="get">
+        <button class="btn btn--primary btn--full js-open-form-popup" data-title="Оставить заявку"
+          type="button">Оставить заявку</button>
+      </form>
     </div>
   </div>
-</section>
+  <!-- БРЕНДЫ (Узкий слайдер) -->
+  <section class="brands-section" id="brands">
+    <div class="container">
+      <div class="brands-header">
+        <h2 class="section__title">Только оригинальные бренды</h2>
+        <button class="btn-order" id="openBrandsModalBtn" type="button">
+          Посмотреть все
+          <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="brands-slider">
+        <div class="brands-track">
+          <!-- Слайд 1 (1–5) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img alt="химический анкер Sormat" src="img/brands/11_logo_SORMAT.png"
+                title="химический анкер Sormat" /></div>
+            <div class="brands-item"><img alt="химический анкер HILTI" src="img/brands/12_logo_HILTI.webp"
+                title="химический анкер HILTI" /></div>
+            <div class="brands-item"><img alt="химический анкер BIT" src="img/brands/13_logo_BIT.png"
+                title="химический анкер BIT" /></div>
+            <div class="brands-item"><img alt="химический анкер Tech‑Krep" src="img/brands/14_logo_techkrep.png"
+                title="химический анкер Tech‑Krep" /></div>
+            <div class="brands-item"><img alt="химический анкер RAWLPLUG" src="img/brands/15_logo_rawlplug.jpg"
+                title="химический анкер RAWLPLUG" /></div>
+          </div>
+          <!-- Слайд 2 (6–10) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img alt="химический анкер SKIF" src="img/brands/21_logo_SKIF.png"
+                title="химический анкер SKIF" /></div>
+            <div class="brands-item"><img alt="химический анкер HIMTEX" src="img/brands/22_logo_HIMTEX.png"
+                title="химический анкер HIMTEX" /></div>
+            <div class="brands-item"><img alt="химический анкер TYTAN" src="img/brands/23_logo_TYTAN.png"
+                title="химический анкер TYTAN" /></div>
+            <div class="brands-item"><img alt="химический анкер UTECH" src="img/brands/24_logo_UTECH.png"
+                title="химический анкер UTECH" /></div>
+            <div class="brands-item"><img alt="химический анкер Fasty" src="img/brands/25_logo_Fasty.png"
+                title="химический анкер Fasty" /></div>
+          </div>
+          <!-- Слайд 3 (11–15) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img alt="химический анкер EMS" src="img/brands/31_logo_EMS_Dubell.png"
+                title="химический анкер EMS" /></div>
+            <div class="brands-item"><img alt="химический анкер MKT" src="img/brands/32_logo_MKT.png"
+                title="химический анкер MKT" /></div>
+            <div class="brands-item"><img alt="химический анкер Fischer" src="img/brands/33_logo_FISCHER.png"
+                title="химический анкер Fischer" /></div>
+            <div class="brands-item"><img alt="химический анкер Daxmer" src="img/brands/34_logo_DAXMER.svg"
+                title="химический анкер Daxmer" /></div>
+            <div class="brands-item"><img alt="химический анкер GRAF" src="img/brands/35_logo_GRAF.png"
+                title="химический анкер GRAF" /></div>
+          </div>
+          <!-- Слайд 4 (16–20) -->
+          <div class="brands-slide">
+            <div class="brands-item"><img alt="химический анкер КМП" src="img/brands/41_logo_KMP.png"
+                title="химический анкер КМП" /></div>
+            <div class="brands-item"><img alt="химический анкер OKG" src="img/brands/42_logo_OKG.png"
+                title="химический анкер OKG" /></div>
+            <div class="brands-item"><img alt="химический анкер STALMAX" src="img/brands/43_logo_STALMAX.png"
+                title="химический анкер STALMAX" /></div>
+            <div class="brands-item"><img alt="химический анкер Фиксар" src="img/brands/44_logo_FIXAR.png"
+                title="химический анкер Фиксар" /></div>
+            <div class="brands-item"><img alt="химический анкер ELEMENTA" src="img/brands/45_logo_ELEMENTA.webp"
+                title="химический анкер ELEMENTA" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- КВИЗ -->
+  <section class="quiz-section" id="quiz-block">
+    <h2 class="quiz-title">Не знаете, какой анкер выбрать?</h2>
+    <!-- Индикатор прогресса -->
+    <div class="quiz-progress" id="quiz-progress">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="quiz-step-indicator active" data-step-num="1">1</div>
+      <div class="quiz-step-indicator" data-step-num="2">2</div>
+      <div class="quiz-step-indicator" data-step-num="3">3</div>
+    </div>
+    <!-- Шаг 1: Материал -->
+    <div class="quiz-step active" data-step="1">
+      <h3>1. Выберите материал основания</h3>
+      <div class="quiz-options">
+        <button class="quiz-btn" data-field="material" data-value="Бетон" type="button">Бетон</button>
+        <button class="quiz-btn" data-field="material" data-value="Растянутая зона бетона" type="button">Растянутая зона
+          бетона</button>
+        <button class="quiz-btn" data-field="material" data-value="Кирпич" type="button">Кирпич</button>
+        <button class="quiz-btn" data-field="material" data-value="Газобетон" type="button">Газобетон</button>
+        <button class="quiz-btn" data-field="material" data-value="Природный камень" type="button">Природный
+          камень</button>
+      </div>
+    </div>
+    <!-- Шаг 2: Условия монтажа -->
+    <div class="quiz-step" data-step="2">
+      <h3>2. Условия монтажа</h3>
+      <div class="quiz-options">
+        <button class="quiz-btn" data-field="condition" data-value="Обычные" type="button">Обычные</button>
+        <button class="quiz-btn" data-field="condition" data-value="Мокрые отверстия" type="button">Мокрые
+          отверстия</button>
+        <button class="quiz-btn" data-field="condition" data-value="Алмазное бурение" type="button">Алмазное
+          бурение</button>
+        <button class="quiz-btn" data-field="condition" data-value="Низкие температуры (зима)" type="button">Низкие
+          температуры (зима)</button>
+      </div>
+      <div class="quiz-nav-btns">
+        <button class="btn-prev" type="button">← Назад</button>
+      </div>
+    </div>
+    <!-- Шаг 3: Диаметр -->
+    <div class="quiz-step" data-step="3">
+      <h3>3. Диаметр шпильки или арматуры</h3>
+      <div class="quiz-options">
+        <button class="quiz-btn" data-field="diameter" data-value="М8–М24" type="button">М8–М24</button>
+        <button class="quiz-btn" data-field="diameter" data-value="М24 и выше" type="button">М24 и выше</button>
+        <button class="quiz-btn" data-field="diameter" data-value="Не знаю" type="button">Не знаю</button>
+      </div>
+      <div class="quiz-nav-btns">
+        <button class="btn-prev" type="button">← Назад</button>
+      </div>
+    </div>
+    <!-- Результат -->
+    <div class="quiz-result" data-step="result">
+      <h3>Подходящий вариант под ваши задачи:</h3>
+      <div class="result-card">
+        <div class="result-product-image">
+          <img alt="Химический анкер ITH 410 Ve" id="recommended-product-image"
+            src="/images/products/ith-410-ve.webp" />
+        </div>
+        <div class="result-product-info">
+          <div class="result-product-title" id="recommended-product-name">
+            ITH 410 Ve
+          </div>
+          <div class="result-product-desc" id="recommended-product-desc">
+            Универсальный высокопрочный химический анкер
+          </div>
+        </div>
+      </div>
+      <form class="quiz-form" id="quiz-form" novalidate="">
+        <input id="input-quiz-material" name="quiz_material" type="hidden" />
+        <input id="input-quiz-condition" name="quiz_condition" type="hidden" />
+        <input id="input-quiz-diameter" name="quiz_diameter" type="hidden" />
+        <input id="input-quiz-recommendation" name="quiz_recommendation" type="hidden" />
 
 
-<!-- Доставка -->
-<section class="section" id="delivery">
+
+        <button class="btn-submit js-open-form-popup" data-lead-source="quiz" data-title="Получить расчёт и КП"
+          type="button">Получить расчёт и КП</button>
+      </form>
+      <div class="quiz-success-msg" id="quiz-success-msg">
+        Ваша заявка успешно отправлена! Наш инженер свяжется с вами в течение 15 минут.
+      </div>
+      <button class="btn-reset" id="btn-reset-quiz" type="button">
+        Пройти опрос заново
+      </button>
+    </div>
+  </section>
+  <!-- СЕКЦИЯ КАТАЛОГА SKYTRADE -->
+  <section class="catalog-section" id="catalog">
+    <div class="catalog-container">
+      <h2 class="section__title">Каталог продукции</h2>
+      <!-- Переключатель категорий товаров -->
+      <div class="catalog-tabs">
+        <button class="tab-btn" data-category="chem-anchors">Химические анкеры</button>
+        <button class="tab-btn" data-category="capsules">Анкер-капсулы</button>
+        <button class="tab-btn" data-category="guns">Пистолеты</button>
+        <button class="tab-btn" data-category="studs">Шпильки</button>
+        <button class="tab-btn" data-category="sleeves">Сетчатые гильзы</button>
+        <button class="tab-btn" data-category="accessories">Аксессуары для монтажа</button>
+      </div>
+      <!-- Сетка / Горизонтальная карусель карточек товаров -->
+      <div class="catalog-grid">
+        <!-- 1. Химический анкер: Полиэстер -->
+        <div class="product-card" data-category="chem-anchors" data-product-id="polyester"
+          data-product-name="Полиэстер">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Полиэстер" class="slider-img"
+              data-images='["images/polyester-2.png", "images/polyester-3.png", "images/polyester-1.png"]'
+              data-index="0" src="images/polyester-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Полиэстер</h3>
+            <div class="param-row"><span class="param-label">Бренды:</span> Sormat, Hilti. Tech Krep, Tytan,
+              SKIF, BIT, FISCHER, RAWLPLUG
+              HIMTEX, STALMAX, BIT, GRAF, Фиксар, IRFIX, JETFIX, Bull, КМП</div>
+            <div class="param-row"><span class="param-label">Артикулы:</span>ITH Pe, PE, BIT-PE 300, R-KEM, R-KEM-II,
+              PESF, VM-PY, FIS P, П 410, S-1200, CA900, ECO 300, A-PE, PE 300 s</div>
+            <div class="param-row"><span class="param-label">Объем картриджа, мл:</span>165, 175, 280, 300, 350, 360,
+              380, 400, 410, 420</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <circle cx="8" cy="8" fill="#94A3B8" r="1"></circle>
+                      <circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="24" cy="8" fill="#94A3B8" r="1"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">пеноблок (газобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#FCA5A5" height="32" rx="4" width="32"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич пустотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
+                      <path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич полнотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 2. Химический анкер: Винилэстер -->
+        <div class="product-card" data-category="chem-anchors" data-product-id="vinylester"
+          data-product-name="Винилэстер">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Винилэстер" class="slider-img"
+              data-images='["images/vinylester-2.png", "images/vinylester-3.png", "images/vinylester-1.png"]'
+              data-index="0" src="images/vinylester-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Винилэстер</h3>
+            <div class="param-row"><span class="param-label">Бренды: </span>SKIF, Sormat, BIT, RAWLPLUG, HIMTEX, Tech
+              Krep, FISCHER, DAXMER, Stalmax, GRAF, IRFIX, SOUDAL, BOSSONG, KMP, TECFI, FASTY, MUNGO, МОМЕНТ, Tech-Krep,
+              EASYFIX, ELNAR, MKT, ELEMENTA</div>
+            <div class="param-row"><span class="param-label">Артикулы: </span>VESF, ITH Ve, R-KER, FIS V, Ve, FIS VW,
+              BIT-200, VE-SF, R-KER-S, VE-200, VMU, VMZ, FIS VS, FIS SB, FIS HB</div>
+            <div class="param-row"><span class="param-label">Объем, мл: </span>165, 280, 300, 350, 360, 380, 400, 410,
+              420</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <circle cx="8" cy="8" fill="#94A3B8" r="1"></circle>
+                      <circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="24" cy="8" fill="#94A3B8" r="1"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">пеноблок (газобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#FCA5A5" height="32" rx="4" width="32"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич пустотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
+                      <path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич полнотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 3. Химический анкер: Эпокси-акрилат -->
+        <div class="product-card" data-category="chem-anchors" data-product-id="epoxy-acrylate"
+          data-product-name="Эпокси-акрилат">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Эпокси-акрилат" class="slider-img"
+              data-images='["images/akrilat-2.png", "images/akrilat-3.png", "images/akrilat-1.png"]' data-index="0"
+              src="images/akrilat-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Эпокси-акрилат</h3>
+            <div class="param-row"><span class="param-label">Бренды:</span> Tech Krep, utech, HIMTEX, BIT, GRAF, КМП,
+              DAXMER, STALMAX, Mungo</div>
+            <div class="param-row"><span class="param-label">Артикулы:</span> ITH EA, EASF, BIT EA, EASF S, MIT-E,
+              WIT-EA, ANW</div>
+            <div class="param-row"><span class="param-label">Объем, мл:</span> 150, 300, 330, 380, 400, 410</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <circle cx="8" cy="8" fill="#94A3B8" r="1"></circle>
+                      <circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="24" cy="8" fill="#94A3B8" r="1"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">пеноблок (газобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#FCA5A5" height="32" rx="4" width="32"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич пустотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
+                      <path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич полнотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 4. Химический анкер: Эпоксидная смола -->
+        <div class="product-card" data-category="chem-anchors" data-product-id="epoxy-resin"
+          data-product-name="Эпоксидная смола">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Эпоксидная смола" class="slider-img"
+              data-images='["images/epoksi-2.png", "images/epoksi-3.png", "images/epoksi-1.png"]' data-index="0"
+              src="images/epoksi-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Эпоксидная смола</h3>
+            <div class="param-row"><span class="param-label">Бренды: </span>Sormat, hilti, SKIF, utech, Tech Krep,
+              RAWLPLUG, HIMTEX, Elementa, FASTY, BIT, GRAF, КМП, MUNGO, MKT, FISCHER, OKG, STALMAX, WUERTH, EASYFIX
+            </div>
+            <div class="param-row"><span class="param-label">Артикулы: </span>ITH EPOXE, HIT-RE 500, 585 EPOXe,
+              R-KEX-II, EPOXY PE-500, BIT-500, EPOXY, TE 100/500, BIT-EX, HITRE 500, TE 70/500, A-EX 400, VME 600, FIS
+              EM, MIT600RE, PE-500 385 s, HIT-RE 100, VME, EPX 400S</div>
+            <div class="param-row"><span class="param-label">Объем, мл: </span>330, 385, 390, 400, 450, 470, 500, 585,
+              600, 1000</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <rect fill="#CBD5E1" height="16" rx="2" width="22" x="5" y="8"></rect>
+                      <circle cx="9" cy="12" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="15" cy="13.5" fill="#94A3B8" r="0.9"></circle>
+                      <circle cx="20" cy="16" fill="#94A3B8" r="1.1"></circle>
+                      <circle cx="12" cy="20" fill="#94A3B8" r="0.9"></circle>
+                      <circle cx="22" cy="19" fill="#94A3B8" r="0.7"></circle>
+                      <path d="M9.2 11.5 L12 13.6 L11 15.8 L14 17.4 L13.2 19.6 L16 20.2" stroke="#334155"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+                      <path d="M12 13.6 L10.8 14.2" stroke="#475569" stroke-linecap="round" stroke-width="1.0"></path>
+                      <path d="M14 17.4 L15.2 16.6" stroke="#475569" stroke-linecap="round" stroke-width="1.0"></path>
+                      <path d="M13.2 19.6 L14.6 18.8" stroke="#475569" stroke-linecap="round" stroke-width="1.0"></path>
+                      <path d="M17.6 12.2 L18.8 13.0" stroke="#475569" stroke-linecap="round" stroke-width="0.9"></path>
+                      <path d="M19 15 L18.2 15.6" stroke="#475569" stroke-linecap="round" stroke-width="0.9"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">Растянутая зона бетона</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 5. Химический анкер: Зимний состав для низких температур -->
+        <div class="product-card" data-category="chem-anchors" data-product-id="winter-compound"
+          data-product-name="Зимний состав для низких температур">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Зимний состав для низких температур" class="slider-img"
+              data-images='["images/zima-2.png", "images/zima-3.png", "images/zima-1.png"]' data-index="0"
+              src="images/zima-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Зимний состав для низких температур</h3>
+            <div class="param-row"><span class="param-label">Бренды:</span> RAWLPLUG, Sormat, SKIF, HIMTEX, Tech Krep,
+              HILTI, BIT, FISCHER, UTECH, STALMAX, MUNGO, EASYFIX, MKT, wurth, TYTAN, Elementa, Fasty, КМП</div>
+            <div class="param-row"><span class="param-label">Артикулы:</span> ITH Wi, FIS VW, BIT-NORD, HIT-ICE, ICE
+              500, PRO 3000 V-ICE EASF, Arctic Profi 200, PESF-100 WINTER, VE-100SF, BCR400 V-PLUS Winter, Arctic 410,
+              VE-POLAR, R-KER-W, R-KEM-II-W, Mit-Cool, EASF 300W s, BIT NORD, EV-W, VM-Polar, FIS SB, FIS VW PLUS, EAF
+              350Ws</div>
+            <div class="param-row"><span class="param-label">Объем, мл:</span> 165, 175, 280, 300, 350, 360, 380, 400,
+              410, 420</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <circle cx="8" cy="8" fill="#94A3B8" r="1"></circle>
+                      <circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="24" cy="8" fill="#94A3B8" r="1"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">пеноблок (газобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#FCA5A5" height="32" rx="4" width="32"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич пустотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
+                      <path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич полнотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 6. Химический анкер: Уретан-метакрилат -->
+        <div class="product-card" data-category="chem-anchors" data-product-id="urethane-methacrylate"
+          data-product-name="Уретан-метакрилат">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Уретан-метакрилат" class="slider-img"
+              data-images='["images/uretan-2.png", "images/uretan-3.png", "images/uretan-1.png"]' data-index="0"
+              src="images/uretan-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Уретан-метакрилат</h3>
+            <div class="param-row"><span class="param-label">Бренды:</span> HILTI</div>
+            <div class="param-row"><span class="param-label">Артикулы:</span> HIT HY, HIT MM</div>
+            <div class="param-row"><span class="param-label">Объем, мл:</span> 296, 300, 330, 500</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <circle cx="8" cy="8" fill="#94A3B8" r="1"></circle>
+                      <circle cx="16" cy="12" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="24" cy="8" fill="#94A3B8" r="1"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">пеноблок (газобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#FCA5A5" height="32" rx="4" width="32"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="4" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="11" x="17" y="6"></rect>
+                      <rect fill="#DC2626" height="8" rx="1" width="24" x="4" y="18"></rect>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич пустотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#F1F5F9" height="32" rx="4" width="32"></rect>
+                      <rect fill="#C2410C" height="12" rx="2" width="20" x="6" y="10"></rect>
+                      <path d="M6 16H26" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M12 10V16" stroke="#9A3412" stroke-width="1.5"></path>
+                      <path d="M20 16V22" stroke="#9A3412" stroke-width="1.5"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">кирпич полнотелый</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 7. Анкер-капсулы -->
+        <div class="product-card" data-category="capsules" data-product-id="chemical-anchor-capsules"
+          data-product-name="Химический анкер в капсулах">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Анкер-капсулы" class="slider-img"
+              data-images='["images/capsule-2.png", "images/capsule-3.png", "images/capsule-4.png", "images/capsule-1.png"]'
+              data-index="0" src="images/capsule-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">Химический анкер в капсулах</h3>
+            <div class="param-row"><span class="param-label">Бренды:</span> SORMAT, RAWLPLUG, HILTI, HIMTEX, FISCHER,
+              BIT, MKT</div>
+            <div class="param-row"><span class="param-label">Артикулы:</span> KEM VE, R CAS, R-HAC, HVU, SUPERCAP, RM II
+            </div>
+            <div class="param-row"><span class="param-label">Диаметр шпильки:</span> М8, М10, М12, М14, М16, М20, М24,
+              М27, М30</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials">
+              <div class="base-materials-title">Материал основания:</div>
+              <div class="materials-icons">
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="10" cy="10" fill="#64748B" r="2"></circle>
+                      <circle cx="22" cy="18" fill="#64748B" r="3"></circle>
+                      <circle cx="12" cy="24" fill="#64748B" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <span class="material-label">бетон</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <rect fill="#E2E8F0" height="32" rx="4" width="32"></rect>
+                      <circle cx="9" cy="9" fill="#94A3B8" r="1.5"></circle>
+                      <circle cx="23" cy="10" fill="#94A3B8" r="1.2"></circle>
+                      <circle cx="11" cy="23" fill="#94A3B8" r="1.3"></circle>
+                      <circle cx="24" cy="22" fill="#94A3B8" r="1.1"></circle>
+                      <path d="M8 12H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 16H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M8 20H24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M12 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                      <path d="M20 8V24" stroke="#475569" stroke-linecap="round" stroke-width="1.8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">армированный бетон (железобетон)</span>
+                </div>
+                <div class="material-item">
+                  <div class="icon-box">
+                    <svg fill="none" height="24" viewbox="0 0 32 32" width="24">
+                      <path d="M6 22L12 8L22 6L28 16L22 26L10 28L6 22Z" fill="#94A3B8"></path>
+                    </svg>
+                  </div>
+                  <span class="material-label">природный камень</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 8. Пистолеты -->
+        <div class="product-card" data-category="guns" data-product-id="ipu-150-300" data-product-name="IPU 150/300">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Пистолеты" class="slider-img" data-images='["images/gun-150-2.png", "images/gun-150-1.png"]'
+              data-index="0" src="images/gun-150-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IPU 150/300</h3>
+            <div class="param-row">Высококачественный инструмент для химических анкеров в картриджах</div>
+            <div class="param-row"><span class="param-label">Под картриджи:</span> 165 мл, 280 мл и 300 мл</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="guns" data-product-id="ipu-410" data-product-name="IPU 410">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Пистолеты" class="slider-img" data-images='["images/gun-410-2.png", "images/gun-410-1.png"]'
+              data-index="0" src="images/gun-410-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IPU 410</h3>
+            <div class="param-row">Профессиональный пистолет для химанкров</div>
+            <div class="param-row"><span class="param-label">Под картриджи:</span> 380 мл, 400 мл и 410 мл</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="guns" data-product-id="ipu-385-585" data-product-name="IPU 385/585">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Пистолеты" class="slider-img" data-images='["images/gun-385-2.png", "images/gun-385-1.png"]'
+              data-index="0" src="images/gun-385-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IPU 385/585</h3>
+            <div class="param-row">Надежный механический пистолет для эпоксидных составов</div>
+            <div class="param-row"><span class="param-label">Под картриджи:</span> 385 мл, 450 мл и 585 мл</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="guns" data-product-id="ipu-380-pi" data-product-name="IPU 380 PI">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Пистолеты" class="slider-img" data-images='["images/gun-380-2.png", "images/gun-380-1.png"]'
+              data-index="0" src="images/gun-380-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IPU 380 PI</h3>
+            <div class="param-row">Пневматический дозатор</div>
+            <div class="param-row"><span class="param-label">Под картриджи:</span> 380 мл, 400 мл и 410 мл</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="guns" data-product-id="ipu-385-585-pi"
+          data-product-name="IPU 385/585 PI">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Пистолеты" class="slider-img" data-images='["images/gun-385PI-2.png", "images/gun-385PI-1.png"]'
+              data-index="0" src="images/gun-385PI-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IPU 385/585 PI</h3>
+            <div class="param-row">Пневматический дозатор для эпоксидных составов</div>
+            <div class="param-row"><span class="param-label">Под картриджи:</span> 385 мл, 450 мл и 585 мл</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 9. Шпильки -->
+        <div class="product-card" data-category="studs" data-product-id="keva" data-product-name="KEVA">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="шпильки KEVA" class="slider-img" data-images='["images/keva-2.png", "images/keva-1.png"]'
+              data-index="0" src="images/keva-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">KEVA</h3>
+            <div class="param-row">Оцинкованные шпильки для химического анкера, применение внутри сухих помещений</div>
+            <div class="param-row"><span class="param-label">Класс прочности:</span> 5.8, 8.8</div>
+            <div class="param-row"><span class="param-label">Размеры:</span> М6, М8, М10, М12, М16, М20, М24, М30</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="studs" data-product-id="vks" data-product-name="VKS">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="шпильки VKS" class="slider-img" data-images='["images/vks-2.png", "images/vks-1.png"]'
+              data-index="0" src="images/vks-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">VKS</h3>
+            <div class="param-row">Анкерные шпильки с цинклмельным, flZn, Delta, ТДЦ или горячеоцинкованным HDG
+              покрытием для среднеагрессивной среды</div>
+            <div class="param-row"><span class="param-label">Класс прочности:</span> 5.8, 8.8</div>
+            <div class="param-row"><span class="param-label">Размеры:</span> М6, М8, М10, М12, М16, М20, М24, М30</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="studs" data-product-id="vh" data-product-name="VH">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="шпильки VH" class="slider-img" data-images='["images/vh-2.png", "images/vh-1.png"]' data-index="0"
+              src="images/vh-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">VH</h3>
+            <div class="param-row">Шпильки для химанкера из нержавеющей стали А4 (AISI 316) для монтажа в агрессивных
+              средах</div>
+            <div class="param-row"><span class="param-label">Размеры:</span> М6, М8, М10, М12, М16, М20, М24, М30</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 10. Сетчатые гильзы -->
+        <div class="product-card" data-category="sleeves" data-product-id="iov" data-product-name="IOV">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Сетчатые гильзы IOV" class="slider-img" data-images='["images/iov-2.png", "images/iov-1.png"]'
+              data-index="0" src="images/iov-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IOV</h3>
+            <div class="param-row">Сетчатые гильзы-втулки для монтажа химических анкеров в пустотелые и перфорированные
+              основания</div>
+            <div class="param-row"><span class="param-label">Диаметр применяемой шпильки:</span> М8, М10, М12, М16</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="sleeves" data-product-id="ish" data-product-name="ISH">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Сетчатые гильзы ISH" class="slider-img" data-images='["images/ish-2.png", "images/ish-1.png"]'
+              data-index="0" src="images/ish-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">ISH</h3>
+            <div class="param-row">Втулка с внутренней резьбой для создания разъемного соединения с болтами или
+              резьбовыми шпильками</div>
+            <div class="param-row"><span class="param-label">Размер резьбы:</span> М6, М8, М10, М12</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <!-- 11. Аксессуары для монтажа -->
+        <div class="product-card" data-category="accessories" data-product-id="ipum" data-product-name="IPUM">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Аксессуары" class="slider-img" data-images='["images/ipum-2.png", "images/ipum-1.png"]'
+              data-index="0" src="images/ipum-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">IPUM</h3>
+            <div class="param-row">Эффективный насос для тщательной очистки отверстий от буровой пыли</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="accessories" data-product-id="mb" data-product-name="MB">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Аксессуары" class="slider-img" data-images='["images/mb-2.png", "images/mb-1.png"]' data-index="0"
+              src="images/mb-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">MB</h3>
+            <div class="param-row">Металлическая щетка для очистки просверленных отверстий</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="accessories" data-product-id="isl" data-product-name="ISL">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Аксессуары" class="slider-img" data-images='["images/isl-2.png", "images/isl-1.png"]'
+              data-index="0" src="images/isl-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">ISL</h3>
+            <div class="param-row">Высококлассный носик-смеситель для химических анкеров</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-category="accessories" data-product-id="isl-ext" data-product-name="ISL EXT">
+          <div class="card-slider">
+            <button class="slider-arrow arrow-prev" onclick="changeSlide1(this, -1)">&lt;</button>
+            <img alt="Аксессуары" class="slider-img" data-images='["images/islext-2.png", "images/islext-1.png"]'
+              data-index="0" src="images/islext-1.png" />
+            <button class="slider-arrow arrow-next" onclick="changeSlide1(this, 1)">&gt;</button>
+          </div>
+          <div class="card-info">
+            <h3 class="product-title">ISL EXT</h3>
+            <div class="param-row">Удлинитель носика для монтажа химанкера в глубоких отверстиях</div>
+          </div>
+          <div class="card-bottom">
+            <div class="base-materials"></div>
+            <div class="card-actions">
+              <button class="btn-order js-open-form-popup" data-title="Запросить КП" type="button">Запросить КП</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Преимущества -->
+  <section class="section section--alt" id="benefits">
+    <div class="container">
+      <h2 class="section__title">Наши преимущества</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="card__h">5000+</h3>
+          <p class="card__p">клиентов с 2010 года</p>
+        </div>
+        <div class="card">
+          <h3 class="card__h">Официальный дилер</h3>
+          <p class="card__p">Скай Трейд - партнер известных мировых производителей и брендов</p>
+        </div>
+        <div class="card">
+          <h3 class="card__h">до 45%</h3>
+          <p class="card__p">экономия бюджета при верном выборе состава или подборе аналогов</p>
+        </div>
+        <div class="card">
+          <h3 class="card__h">3 часа</h3>
+          <p class="card__p">срочная доставка до вашего объекта или терминала транспортной компании в Москве</p>
+        </div>
+        <div class="card">
+          <h3 class="card__h">Инженерная поддержка</h3>
+          <p class="card__p">Проведем испытания и оформим протокол. Подберем оптимальное решение для анкерных креплений.
+            Осуществляем расчеты несущей способности и расхода</p>
+        </div>
+        <div class="card">
+          <h3 class="card__h">Разрешительные документы</h3>
+          <p class="card__p">предоставим сертификаты, технические свидетельство, протокол испытаний, паспорта на
+            продукцию</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- СЕКЦИЯ "НАМ ДОВЕРЯЮТ" -->
+  <section class="trust-section" id="trust">
+    <div class="trust-container">
+      <h2 class="section__title">Нам доверяют</h2>
+      <p class="trust-subtitle">
+        Благодаря экспертности, качеству, опыту и ценовой политике для реализации проектов нас выбирают компании от
+        малого бизнеса до крупных корпораций на самых ответственных объектах:
+      </p>
+      <div class="trust-category">
+        <h3 class="category-title">Компании</h3>
+        <div class="trust-grid">
+          <div class="trust-card company-card">
+            <div class="logo-box">
+              <img alt="ГАЗПРОМ" class="company-logo" src="img/clients/gazprom.svg" />
+            </div>
+          </div>
+          <div class="trust-card company-card">
+            <div class="logo-box">
+              <img alt="САМОЛЕТ" class="company-logo" src="img/clients/samolet.jpg" />
+            </div>
+          </div>
+          <div class="trust-card company-card">
+            <div class="logo-box">
+              <img alt="СЕВЕРСТАЛЬ" class="company-logo" src="img/clients/severstal.svg" />
+            </div>
+          </div>
+          <div class="trust-card company-card">
+            <div class="logo-box">
+              <img alt="Московский метрополитен" class="company-logo" src="img/clients/metro.svg" />
+            </div>
+          </div>
+          <div class="trust-card company-card">
+            <div class="logo-box">
+              <img alt="ТАТПРОФ" class="company-logo" src="img/clients/tatprof.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-category">
+        <h3 class="category-title">Объекты</h3>
+        <div class="trust-grid">
+          <div class="trust-card object-card">
+            <div class="object-img-box">
+              <img alt="Парящий мост в Зарядье" class="object-img" src="img/obj/most.jpg" />
+            </div>
+            <span class="card-label">Парящий мост в Зарядье</span>
+          </div>
+          <div class="trust-card object-card">
+            <div class="object-img-box">
+              <img alt="Большой кремлевский дворец" class="object-img" src="img/obj/palace.jpg" />
+            </div>
+            <span class="card-label">Государственный кремлевский дворец</span>
+          </div>
+          <div class="trust-card object-card">
+            <div class="object-img-box">
+              <img alt="Сберсити" class="object-img" src="img/obj/sber.jpg" />
+            </div>
+            <span class="card-label">Сберсити</span>
+          </div>
+          <div class="trust-card object-card">
+            <div class="object-img-box">
+              <img alt="Московское метро" class="object-img" src="img/obj/metro.jpg" />
+            </div>
+            <span class="card-label">Московское метро</span>
+          </div>
+          <div class="trust-card object-card">
+            <div class="object-img-box">
+              <img alt="Москва Сити" class="object-img" src="img/obj/mosc_city.jpg" />
+            </div>
+            <span class="card-label">Москва Сити</span>
+          </div>
+        </div>
+        <div class="card card--note">
+          <p>Подберем оптимальное решение по нагрузкам и стоимости для вашего проекта</p>
+          <button class="btn-order js-open-form-popup" data-title="Оставить заявку" href="#lead">Оставить
+            заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Блок: Инженерный сервис СКАЙ ТРЕЙД -->
+  <section class="engineering-service section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section__title">Экспертная поддержка</h2>
+        <p class="section-description">
+          Поделимся опытом и экспертизой в использовании химических анкеров:
+        </p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="card-icon-wrapper">
+            <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="32">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m16 12-4-4-4 4"></path>
+              <path d="M12 16V8"></path>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Подбор оптимального решения</h3>
+            <p class="card-text">
+              Подберем оптимальное решение для анкерного крепления с учетом типа основания, нагрузок и условий монтажа.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon-wrapper">
+            <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="32">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" x2="8" y1="13" y2="13"></line>
+              <line x1="16" x2="8" y1="17" y2="17"></line>
+              <line x1="10" x2="8" y1="9" y2="9"></line>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Проектирование и расчеты</h3>
+            <p class="card-text">
+              Сделаем расчет в соответствии с <span class="norm-tag">СП 513.1325800.2022</span> «Анкерные крепления к
+              бетону. Правила проектирования».
+            </p>
+          </div>
+        </div>
+        <div class="service-card highlight-card">
+          <div class="card-icon-wrapper accent">
+            <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="32">
+              <line x1="12" x2="12" y1="1" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Оптимизация бюджета</h3>
+            <p class="card-text">
+              Подберем проверенные аналоги и сэкономим <strong class="text-accent">до 45% бюджета</strong> без потери
+              надежности узла.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon-wrapper">
+            <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="32">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Сопровождение и защита</h3>
+            <p class="card-text">
+              Защитим проектное решение и ответим на любые замечания строительной экспертизы или технического надзора.
+            </p>
+          </div>
+        </div>
+        <div class="service-card full-width-card">
+          <div class="card-icon-wrapper lab">
+            <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="32">
+              <path
+                d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A2 2 0 0 0 6.516 23h10.968a2 2 0 0 0 1.797-2.45L14.21 10.42a2 2 0 0 1-.21-.896V2">
+              </path>
+              <path d="M8.5 2h7"></path>
+              <path d="M7 16h10"></path>
+            </svg>
+          </div>
+          <div class="card-content">
+            <div class="card-header-badge">
+              <h3 class="card-title">Испытательная лаборатория</h3>
+              <span class="status-badge">Натурные испытания на объекте</span>
+            </div>
+            <p class="card-text">
+              Проведем испытания на несущую способность непосредственно на вашем объекте. Определим расчетную нагрузку и
+              оформим официальный протокол в соответствии со <span class="norm-tag">СТО 44416204-010-2010</span> и <span
+                class="norm-tag">ГОСТ Р 71447-2024</span> «Крепления Анкерные».
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="service-actions">
+        <button class="btn-order js-open-form-popup" data-title="Провести испытания" type="button">
+          <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Провести испытания
+        </button>
+        <button class="btn-order js-open-form-popup" data-title="Заказать расчет" type="button">
+          <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+            <rect height="20" rx="2" width="16" x="4" y="2"></rect>
+            <line x1="8" x2="16" y1="6" y2="6"></line>
+            <line x1="16" x2="16" y1="14" y2="18"></line>
+            <path d="M16 10h.01"></path>
+            <path d="M12 10h.01"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M12 14h.01"></path>
+            <path d="M8 14h.01"></path>
+            <path d="M12 18h.01"></path>
+            <path d="M8 18h.01"></path>
+          </svg>
+          Заказать расчет
+        </button>
+        <button class="btn-order js-open-form-popup" data-title="Обсудить проект" type="button">
+          <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Обсудить проект
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Испытания -->
+  <section class="section" id="testing">
+    <div class="container">
+      <h2 class="section__title">Документы, сертификаты и паспорта</h2>
+      <div class="grid grid--2">
+        <div class="text">
+          <p>Предоставим все сертификаты и протоколы испытаний, подтверждающие качество продукции, её соответствие
+            техническим требованиям и условиям применения.</p>
+          <p>В ассортименте компании анкера с техническим свидетельством и техоценкой Минстрой РФ, европейским
+            техсвидетельством ETA (OPT 1 и OPT 7), паспортами безопасности, подтверждённой сейсмо- и огнестойкостью.</p>
+            <div class="certs_logos">
+              <img alt="Сертификат 1" src="img/certs/certlogo/1minstroy.png" />
+              <img alt="Сертификат 1" src="img/certs/certlogo/2 - FCS.png" />
+              <img alt="Сертификат 1" src="img/certs/certlogo/3 - PCT-Logo-Blue.png" />
+              <img alt="Сертификат 1" src="img/certs/certlogo/4 - ETA.webp" />
+              <img alt="Сертификат 1" src="img/certs/certlogo/5 - Fire resistant.webp" />
+              <img alt="Сертификат 1" src="img/certs/certlogo/6-Seismic.webp" />
+            </div>
+        </div>
+        <div class="certs">
+          <img alt="Сертификат 1" src="img/certs/cert1.png" />
+          <img alt="Сертификат 2" src="img/certs/cert2.png" />
+          <img alt="Сертификат 3" src="img/certs/cert3.png" />
+          <img alt="Сертификат 4" src="img/certs/cert4.png" />
+        </div>
+
+      </div>
+      <div class="card card--objects">
+        <p>Подберем химический анкер по требованиям вашего проекта. Предложим аналоги</p>
+        <button class="btn-order js-open-form-popup" data-title="Оставить заявку" href="#lead">Оставить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Доставка -->
+  <section class="section" id="delivery">
+    <div class="container">
+        <div class="brands-header">
+      <h2 class="section__title">Условия доставки и возможности оплаты</h2>
+              <button class="btn-order js-open-form-popup" data-title="Получить консультацию" href="#lead">Получить
+          консультацию</button>
+        </div>
+      <div class="grid grid--2">
+        <ul class="list">
+          <li>Отгрузка со склада в день оплаты</li>
+          <li>Оперативно отправим ваш заказ в любую точку России проверенным логистическим оператором</li>
+          <li>Срочная доставка по Москве и Московской области</li>
+          <li>Отсрочка платежа для надежных партнеров</li>
+          <li>Индивидуальные условия для постоянных клиентов</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Отзывы -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="section__title">Отзывы клиентов</h2>
+      <div class="reviews">
+        <div class="review">
+          <div class="review__text">Быстро подобрали состав под бетон В25, отгрузили в день оплаты. Документы пришли
+            вовремя.</div>
+          <div class="review__meta">ООО «СтройТех», Москва</div>
+        </div>
+        <div class="review">
+          <div class="review__text">Зимний состав выручил на монтаже фасада при −10°C. Будем работать дальше.</div>
+          <div class="review__meta">АО «ФасадСервис», Санкт‑Петербург</div>
+        </div>
+        <div class="review">
+          <div class="review__text">Хорошие цены и наличие. Пистолеты и миксеры всегда в комплекте.</div>
+          <div class="review__meta">ИП Ковалёв, Казань</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <div class="container">
-<h2 class="section__title">Доставка и условия</h2>
-<div class="grid grid--2">
-<ul class="list">
-<li>Отгрузка со склада в день оплаты (или в течение 24 часов)</li>
-<li>Доставка ТК по РФ и СНГ, либо самовывоз</li>
-<li>Индивидуальные условия для постоянных клиентов</li>
-</ul>
-</div>
-<div class="card card--note">
-<p><strong>Нужен аналог?</strong> Подберём совместимый состав под ваши нагрузки и основание. При первом заказе — расчёт одного узла бесплатно.</p>
-<a class="btn btn--ghost js-open-form-popup" data-title="Получить консультацию" href="#lead">Получить консультацию</a>
-</div>
-</div>
-</section>
-<!-- Отзывы -->
-<section class="section" id="reviews">
-<div class="container">
-<h2 class="section__title">Отзывы клиентов</h2>
-<div class="reviews">
-<div class="review">
-<div class="review__text">Быстро подобрали состав под бетон В25, отгрузили в день оплаты. Документы пришли вовремя.</div>
-<div class="review__meta">ООО «СтройТех», Москва</div>
-</div>
-<div class="review">
-<div class="review__text">Зимний состав выручил на монтаже фасада при −10°C. Будем работать дальше.</div>
-<div class="review__meta">АО «ФасадСервис», Санкт‑Петербург</div>
-</div>
-<div class="review">
-<div class="review__text">Хорошие цены и наличие. Пистолеты и миксеры всегда в комплекте.</div>
-<div class="review__meta">ИП Ковалёв, Казань</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Подвал -->
-<footer class="footer footer--dark">
-<div class="container">
-<div class="footer__top">
-<div class="footer__col">
-<div class="brand brand--footer">
-<div class="brand__text">
-<strong>Скай Трейд</strong>
-<span>Химические анкера оптом</span>
-</div>
-</div>
-<ul class="footer__list">
-<li><a class="footer__list" href="tel:+74957241180">+7 (495) 724‑11‑80</a></li>
-<li><a class="footer__list" href="/cdn-cgi/l/email-protection#8fe6e1e9e0cffce4f6fbfdeeebeaa1fdfa"><span class="__cf_email__" data-cfemail="e980878f86a99a82909d9b888d8cc79b9c">[email&#160;protected]</span></a></li>
-<li>Режим работы: Пн–Пт, 9:00–18:00</li>
-<li>Адрес: г. Москва, пос. подсобного хоз‑ва Воскресенское, 24А</li>
-</ul>
-</div>
-<div class="footer__col">
-<h3 class="footer__h">Реквизиты</h3>
-<ul class="footer__list">
-<li>ООО «СкайТрейд»</li>
-<li>ИНН 7700000000, КПП 770001001</li>
-<li>ОГРН 1107746000000</li>
-<li>Р/с 40702XXXXXXXXXXXX в ПАО «Банк», к/с 30101XXXXXXXXXXXX, БИК 044525225</li>
-</ul>
-</div>
-<div class="footer__col">
-<h3 class="footer__h">Мы на карте</h3>
-<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/skay_treyd/1254708445/?utm_medium=mapframe&amp;utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Скай Трейд</a><a href="https://yandex.ru/maps/213/moscow/category/fasteners/184106650/?utm_medium=mapframe&amp;utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Крепёжные изделия в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/ropes_cables_cords/184106522/?utm_medium=mapframe&amp;utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Верёвки, канаты, тросы в Москве</a><iframe allowfullscreen="true" frameborder="1" height="400" src="https://yandex.ru/map-widget/v1/?ll=37.449336%2C55.523050&amp;mode=search&amp;oid=1254708445&amp;ol=biz&amp;z=17.13" style="position:relative;" width="560"></iframe></div>
-</div>
-</div>
-<div class="footer__bottom">
-<div class="footer__copy">© Скай Трейд, 2010–2026</div>
-<a class="footer__link" href="#" id="openPopupBtn2">Политика конфиденциальности</a>
-</div>
-</div>
-</footer>
-<!-- Cookies -->
-<div class="cookie" hidden="" id="cookie-popup">
-<p>Мы используем cookies для улучшения работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с нашей <a href="#" id="openPopupBtn3">политикой конфиденциальности</a>.</p>
-<button class="btn btn--primary" id="cookie-accept">Принять</button>
-</div>
-<!-- Политика (оверлей) -->
-<div class="overlay" hidden="" id="popupOverlay">
-<div aria-labelledby="policyTitle" aria-modal="true" class="popup" id="popupContent" role="dialog">
-<h2 id="policyTitle">Политика конфиденциальности</h2>
-<div class="popup__body">
-<p>Здесь размещается актуальный текст политики конфиденциальности вашей компании.</p>
-</div>
-<button aria-label="Закрыть" class="popup__close" id="popupClose">✕</button>
-</div>
-</div>
-<!-- Попап просмотра увеличенного сертификата -->
-<div class="overlay cert-popup-overlay" hidden="" id="certPopupOverlay">
-<div class="cert-popup-container">
-<img alt="Сертификат" class="cert-popup-img" id="certPopupImg" src=""/>
-</div>
-</div>
-<!-- Попап с формой -->
-<div aria-hidden="true" class="overlay" hidden="" id="formPopupOverlay">
-<div aria-labelledby="formPopupTitle" aria-modal="true" class="popup" id="formPopupContent" role="dialog"><button aria-label="Закрыть" class="popup__close" id="formPopupClose" type="button">✕</button><h3 class="form-popup__title" id="formPopupTitle">Оставить заявку</h3><p class="form-popup__subtitle" id="formPopupSubtitle" style="display: none;"></p><form action="send.php" class="form" id="universalLeadForm" method="POST" novalidate=""><input id="formPopupTitleInput" name="title" type="hidden" value=""/><input id="formPopupFormTitleInput" name="form_title" type="hidden" value=""/><input id="formPopupProductIdInput" name="product_id" type="hidden" value=""/><input id="formPopupProductInput" name="product_name" type="hidden" value=""/><input name="form_name" type="hidden" value="modal_callback"/><label class="input form-popup__field" for="formPopupName">Ваше имя<input autocomplete="name" class="input__control" id="formPopupName" name="name" placeholder="Ваше имя *" required="" style="width: 100%;" type="text"/></label><label class="input form-popup__field" for="formPopupPhone">Номер телефона<input autocomplete="tel" class="input__control" id="formPopupPhone" inputmode="tel" name="phone" placeholder="+7 (___) ___-__-__" required="" style="width: 100%;" type="tel"/></label><label class="check" style="margin-top: 14px; display: flex; align-items: flex-start; gap: 8px; font-size: 13px; text-align: left;"><input checked="" name="privacy_policy" required="" style="margin-top: 3px;" type="checkbox" value="1"/><span>Я ознакомился(-ась) с <a href="/privacy-policy.html" rel="noopener" target="_blank">Политикой</a> в области обработки персональных данных</span></label><label class="check" style="margin-top: 14px; display: flex; align-items: flex-start; gap: 8px; font-size: 13px; text-align: left;"><input checked="" name="personal_data_consent" required="" style="margin-top: 3px;" type="checkbox" value="1"/><span>Пользователь выразил <a href="/personal-data-consent.html" rel="noopener" target="_blank">согласие</a> на обработку персональных данных</span></label><button class="btn btn--primary btn--full" disabled="" id="formPopupSubmit" style="width: 100%; margin-top: 8px;" type="submit">Отправить заявку</button><p aria-live="polite" class="form-popup__status" id="formPopupStatus"></p></form></div>
-</div>
-<!-- БЛОК МОДАЛЬНОГО ОКНА БРЕНДОВ -->
-<div aria-hidden="true" class="brands-modal" id="brandsModal">
-<div class="brands-modal-content">
-<div class="brands-modal-header">
-<h3>Все бренды</h3>
-<span class="brands-modal-hint"></span>
-</div>
-<div class="brands-modal-grid">
-<div class="brand-card"><img alt="химический анкер Sormat" src="img/brands/11_logo_SORMAT.png" title="химический анкер Sormat"/></div>
-<div class="brand-card"><img alt="химический анкер HILTI" src="img/brands/12_logo_HILTI.webp" title="химический анкер HILTI"/></div>
-<div class="brand-card"><img alt="химический анкер BIT" src="img/brands/13_logo_BIT.png" title="химический анкер BIT"/></div>
-<div class="brand-card"><img alt="химический анкер Tech‑Krep" src="img/brands/14_logo_techkrep.png" title="химический анкер Tech‑Krep"/></div>
-<div class="brand-card"><img alt="химический анкер RAWLPLUG" src="img/brands/15_logo_rawlplug.jpg" title="химический анкер RAWLPLUG"/></div>
-<div class="brand-card"><img alt="химический анкер SKIF" src="img/brands/21_logo_SKIF.png" title="химический анкер SKIF"/></div>
-<div class="brand-card"><img alt="химический анкер HIMTEX" src="img/brands/22_logo_HIMTEX.png" title="химический анкер HIMTEX"/></div>
-<div class="brand-card"><img alt="химический анкер TYTAN" src="img/brands/23_logo_TYTAN.png" title="химический анкер TYTAN"/></div>
-<div class="brand-card"><img alt="химический анкер UTECH" src="img/brands/24_logo_UTECH.png" title="химический анкер UTECH"/></div>
-<div class="brand-card"><img alt="химический анкер Fasty" src="img/brands/25_logo_Fasty.png" title="химический анкер Fasty"/></div>
-<div class="brand-card"><img alt="химический анкер EMS" src="img/brands/31_logo_EMS_Dubell.png" title="химический анкер EMS"/></div>
-<div class="brand-card"><img alt="химический анкер MKT" src="img/brands/32_logo_MKT.png" title="химический анкер MKT"/></div>
-<div class="brand-card"><img alt="химический анкер Fischer" src="img/brands/33_logo_FISCHER.png" title="химический анкер Fischer"/></div>
-<div class="brand-card"><img alt="химический анкер Daxmer" src="img/brands/34_logo_DAXMER.svg" title="химический анкер Daxmer"/></div>
-<div class="brand-card"><img alt="химический анкер GRAF" src="img/brands/35_logo_GRAF.png" title="химический анкер GRAF"/></div>
-<div class="brand-card"><img alt="химический анкер КМП" src="img/brands/41_logo_KMP.png" title="химический анкер КМП"/></div>
-<div class="brand-card"><img alt="химический анкер OKG" src="img/brands/42_logo_OKG.png" title="химический анкер OKG"/></div>
-<div class="brand-card"><img alt="химический анкер STALMAX" src="img/brands/43_logo_STALMAX.png" title="химический анкер STALMAX"/></div>
-<div class="brand-card"><img alt="химический анкер Фиксар" src="img/brands/44_logo_FIXAR.png" title="химический анкер Фиксар"/></div>
-<div class="brand-card"><img alt="химический анкер ELEMENTA" src="img/brands/45_logo_ELEMENTA.webp" title="химический анкер ELEMENTA"/></div>
-</div>
-</div>
-</div>
+        <div class="brands-header">
+      <h2 class="section__title">Остались вопросы? Оставьте заявку, и мы Вам перезвоним</h2>
+              <button class="btn-order js-open-form-popup" data-title="Получить консультацию" href="#lead">Получить
+          консультацию</button>
+        </div>
+
+  <!-- Подвал -->
+  <footer class="footer footer--dark">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col">
+          <div class="brand brand--footer">
+            <div class="brand__text">
+              <strong>Скай Трейд</strong>
+              <span>Химические анкера оптом</span>
+            </div>
+          </div>
+          <ul class="footer__list">
+            <li><a class="footer__list" href="tel:+74957241180">+7 (495) 724‑11‑80</a></li>
+            <li><a class="footer__list" href="/cdn-cgi/l/email-protection#8fe6e1e9e0cffce4f6fbfdeeebeaa1fdfa"><span
+                  class="__cf_email__"
+                  data-cfemail="e980878f86a99a82909d9b888d8cc79b9c">[email&#160;protected]</span></a></li>
+            <li>Режим работы: Пн–Пт, 9:00–18:00</li>
+            <li>Адрес: г. Москва, пос. подсобного хоз‑ва Воскресенское, 24А</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__h">Реквизиты</h3>
+          <ul class="footer__list">
+            <li>ООО «СкайТрейд»</li>
+            <li>ИНН 7700000000, КПП 770001001</li>
+            <li>ОГРН 1107746000000</li>
+            <li>Р/с 40702XXXXXXXXXXXX в ПАО «Банк», к/с 30101XXXXXXXXXXXX, БИК 044525225</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__h">Мы на карте</h3>
+          <div style="position:relative;overflow:hidden;"><a
+              href="https://yandex.ru/maps/org/skay_treyd/1254708445/?utm_medium=mapframe&amp;utm_source=maps"
+              style="color:#eee;font-size:12px;position:absolute;top:0px;">Скай Трейд</a><a
+              href="https://yandex.ru/maps/213/moscow/category/fasteners/184106650/?utm_medium=mapframe&amp;utm_source=maps"
+              style="color:#eee;font-size:12px;position:absolute;top:14px;">Крепёжные изделия в Москве</a><a
+              href="https://yandex.ru/maps/213/moscow/category/ropes_cables_cords/184106522/?utm_medium=mapframe&amp;utm_source=maps"
+              style="color:#eee;font-size:12px;position:absolute;top:28px;">Верёвки, канаты, тросы в Москве</a><iframe
+              allowfullscreen="true" frameborder="1" height="400"
+              src="https://yandex.ru/map-widget/v1/?ll=37.449336%2C55.523050&amp;mode=search&amp;oid=1254708445&amp;ol=biz&amp;z=17.13"
+              style="position:relative;" width="560"></iframe></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">© Скай Трейд, 2010–2026</div>
+        <a class="footer__link" href="#" id="openPopupBtn2">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Cookies -->
+  <div class="cookie" hidden="" id="cookie-popup">
+    <p>Мы используем cookies для улучшения работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с нашей <a
+        href="#" id="openPopupBtn3">политикой конфиденциальности</a>.</p>
+    <button class="btn btn--primary" id="cookie-accept">Принять</button>
+  </div>
+  <!-- Политика (оверлей) -->
+  <div class="overlay" hidden="" id="popupOverlay">
+    <div aria-labelledby="policyTitle" aria-modal="true" class="popup" id="popupContent" role="dialog">
+      <h2 id="policyTitle">Политика конфиденциальности</h2>
+      <div class="popup__body">
+        <p>Здесь размещается актуальный текст политики конфиденциальности вашей компании.</p>
+      </div>
+      <button aria-label="Закрыть" class="popup__close" id="popupClose">✕</button>
+    </div>
+  </div>
+  <!-- Попап просмотра увеличенного сертификата -->
+  <div class="overlay cert-popup-overlay" hidden="" id="certPopupOverlay">
+    <div class="cert-popup-container">
+      <img alt="Сертификат" class="cert-popup-img" id="certPopupImg" src="" />
+    </div>
+  </div>
+  <!-- Попап с формой -->
+  <div aria-hidden="true" class="overlay" hidden="" id="formPopupOverlay">
+    <div aria-labelledby="formPopupTitle" aria-modal="true" class="popup" id="formPopupContent" role="dialog"><button
+        aria-label="Закрыть" class="popup__close" id="formPopupClose" type="button">✕</button>
+      <h3 class="form-popup__title" id="formPopupTitle">Оставить заявку</h3>
+      <p class="form-popup__subtitle" id="formPopupSubtitle" style="display: none;"></p>
+      <form action="send.php" class="form" id="universalLeadForm" method="POST" novalidate=""><input
+          id="formPopupTitleInput" name="title" type="hidden" value="" /><input id="formPopupFormTitleInput"
+          name="form_title" type="hidden" value="" /><input id="formPopupProductIdInput" name="product_id" type="hidden"
+          value="" /><input id="formPopupProductInput" name="product_name" type="hidden" value="" /><input
+          name="form_name" type="hidden" value="modal_callback" /><label class="input form-popup__field"
+          for="formPopupName">Ваше имя<input autocomplete="name" class="input__control" id="formPopupName" name="name"
+            placeholder="Ваше имя *" required="" style="width: 100%;" type="text" /></label><label
+          class="input form-popup__field" for="formPopupPhone">Номер телефона<input autocomplete="tel"
+            class="input__control" id="formPopupPhone" inputmode="tel" name="phone" placeholder="+7 (___) ___-__-__"
+            required="" style="width: 100%;" type="tel" /></label><label class="check"
+          style="margin-top: 14px; display: flex; align-items: flex-start; gap: 8px; font-size: 13px; text-align: left;"><input
+            checked="" name="privacy_policy" required="" style="margin-top: 3px;" type="checkbox" value="1" /><span>Я
+            ознакомился(-ась) с <a href="/privacy-policy.html" rel="noopener" target="_blank">Политикой</a> в области
+            обработки персональных данных</span></label><label class="check"
+          style="margin-top: 14px; display: flex; align-items: flex-start; gap: 8px; font-size: 13px; text-align: left;"><input
+            checked="" name="personal_data_consent" required="" style="margin-top: 3px;" type="checkbox"
+            value="1" /><span>Пользователь выразил <a href="/personal-data-consent.html" rel="noopener"
+              target="_blank">согласие</a> на обработку персональных данных</span></label><button
+          class="btn btn--primary btn--full" disabled="" id="formPopupSubmit" style="width: 100%; margin-top: 8px;"
+          type="submit">Отправить заявку</button>
+        <p aria-live="polite" class="form-popup__status" id="formPopupStatus"></p>
+      </form>
+    </div>
+  </div>
+  <!-- БЛОК МОДАЛЬНОГО ОКНА БРЕНДОВ -->
+  <div aria-hidden="true" class="brands-modal" id="brandsModal">
+    <div class="brands-modal-content">
+      <div class="brands-modal-header">
+        <h3>Все бренды</h3>
+        <span class="brands-modal-hint"></span>
+      </div>
+      <div class="brands-modal-grid">
+        <div class="brand-card"><img alt="химический анкер Sormat" src="img/brands/11_logo_SORMAT.png"
+            title="химический анкер Sormat" /></div>
+        <div class="brand-card"><img alt="химический анкер HILTI" src="img/brands/12_logo_HILTI.webp"
+            title="химический анкер HILTI" /></div>
+        <div class="brand-card"><img alt="химический анкер BIT" src="img/brands/13_logo_BIT.png"
+            title="химический анкер BIT" /></div>
+        <div class="brand-card"><img alt="химический анкер Tech‑Krep" src="img/brands/14_logo_techkrep.png"
+            title="химический анкер Tech‑Krep" /></div>
+        <div class="brand-card"><img alt="химический анкер RAWLPLUG" src="img/brands/15_logo_rawlplug.jpg"
+            title="химический анкер RAWLPLUG" /></div>
+        <div class="brand-card"><img alt="химический анкер SKIF" src="img/brands/21_logo_SKIF.png"
+            title="химический анкер SKIF" /></div>
+        <div class="brand-card"><img alt="химический анкер HIMTEX" src="img/brands/22_logo_HIMTEX.png"
+            title="химический анкер HIMTEX" /></div>
+        <div class="brand-card"><img alt="химический анкер TYTAN" src="img/brands/23_logo_TYTAN.png"
+            title="химический анкер TYTAN" /></div>
+        <div class="brand-card"><img alt="химический анкер UTECH" src="img/brands/24_logo_UTECH.png"
+            title="химический анкер UTECH" /></div>
+        <div class="brand-card"><img alt="химический анкер Fasty" src="img/brands/25_logo_Fasty.png"
+            title="химический анкер Fasty" /></div>
+        <div class="brand-card"><img alt="химический анкер EMS" src="img/brands/31_logo_EMS_Dubell.png"
+            title="химический анкер EMS" /></div>
+        <div class="brand-card"><img alt="химический анкер MKT" src="img/brands/32_logo_MKT.png"
+            title="химический анкер MKT" /></div>
+        <div class="brand-card"><img alt="химический анкер Fischer" src="img/brands/33_logo_FISCHER.png"
+            title="химический анкер Fischer" /></div>
+        <div class="brand-card"><img alt="химический анкер Daxmer" src="img/brands/34_logo_DAXMER.svg"
+            title="химический анкер Daxmer" /></div>
+        <div class="brand-card"><img alt="химический анкер GRAF" src="img/brands/35_logo_GRAF.png"
+            title="химический анкер GRAF" /></div>
+        <div class="brand-card"><img alt="химический анкер КМП" src="img/brands/41_logo_KMP.png"
+            title="химический анкер КМП" /></div>
+        <div class="brand-card"><img alt="химический анкер OKG" src="img/brands/42_logo_OKG.png"
+            title="химический анкер OKG" /></div>
+        <div class="brand-card"><img alt="химический анкер STALMAX" src="img/brands/43_logo_STALMAX.png"
+            title="химический анкер STALMAX" /></div>
+        <div class="brand-card"><img alt="химический анкер Фиксар" src="img/brands/44_logo_FIXAR.png"
+            title="химический анкер Фиксар" /></div>
+        <div class="brand-card"><img alt="химический анкер ELEMENTA" src="img/brands/45_logo_ELEMENTA.webp"
+            title="химический анкер ELEMENTA" /></div>
+      </div>
+    </div>
+  </div>
 
 </body>
+
 </html>

@@ -1363,3 +1363,90 @@ if (mobileCatalogGrid) {
     }
   });
 });
+
+  // =========================================================
+  // СКРЫТИЕ БРЕНДОВ И АРТИКУЛОВ
+  // =========================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+  const MAX_VISIBLE_ITEMS = 5;
+
+  document.querySelectorAll('.product-card .param-row').forEach(function (row) {
+    const label = row.querySelector('.param-label');
+
+    // Работаем только с полями «Бренды» и «Артикулы»
+    if (!label || !/^(Бренды|Артикулы):\s*$/i.test(label.textContent.trim())) {
+      return;
+    }
+
+    // Получаем текст после span.param-label
+    const fullText = Array.from(row.childNodes)
+      .filter(function (node) {
+        return node !== label;
+      })
+      .map(function (node) {
+        return node.textContent;
+      })
+      .join('')
+      .trim();
+
+    const items = fullText
+      .split(',')
+      .map(function (item) {
+        return item.trim();
+      })
+      .filter(Boolean);
+
+    // Если позиций 5 или меньше — ничего не меняем
+    if (items.length <= MAX_VISIBLE_ITEMS) {
+      return;
+    }
+
+    const shortText = items.slice(0, MAX_VISIBLE_ITEMS).join(', ');
+    const hiddenText = items.slice(MAX_VISIBLE_ITEMS).join(', ');
+
+    // Удаляем исходный текст, оставляя сам заголовок (span)
+    Array.from(row.childNodes).forEach(function (node) {
+      if (node !== label) {
+        node.remove();
+      }
+    });
+
+    const visiblePart = document.createElement('span');
+    visiblePart.className = 'param-values-visible';
+    visiblePart.textContent = shortText;
+
+    const hiddenPart = document.createElement('span');
+    hiddenPart.className = 'param-values-hidden';
+    hiddenPart.textContent = ', ' + hiddenText;
+    hiddenPart.hidden = true;
+
+    const toggleButton = document.createElement('button');
+    toggleButton.type = 'button';
+    toggleButton.className = 'param-more-btn';
+    toggleButton.textContent = '...';
+    toggleButton.setAttribute('aria-expanded', 'false');
+    toggleButton.setAttribute('aria-label', 'Показать все значения');
+
+    toggleButton.addEventListener('click', function () {
+      const isHidden = hiddenPart.hidden;
+
+      hiddenPart.hidden = !isHidden;
+      toggleButton.setAttribute('aria-expanded', String(isHidden));
+
+      if (isHidden) {
+        toggleButton.textContent = 'Свернуть';
+        toggleButton.setAttribute('aria-label', 'Свернуть список');
+      } else {
+        toggleButton.textContent = '...';
+        toggleButton.setAttribute('aria-label', 'Показать все значения');
+      }
+    });
+
+    row.appendChild(document.createTextNode(' '));
+    row.appendChild(visiblePart);
+    row.appendChild(hiddenPart);
+    row.appendChild(document.createTextNode(' '));
+    row.appendChild(toggleButton);
+  });
+});

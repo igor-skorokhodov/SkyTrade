@@ -47,8 +47,8 @@
 /* Активная вкладка */
 .catalog-tabs .tab-btn.is-active {
     color: #fff;
-    background-color: #1e3a5f;
-    border-color: #1e3a5f;
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
 /* Учитываем настройку ОС «уменьшить движение» */
@@ -2369,22 +2369,19 @@ img {
 
 .card--note {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 12px;
   align-items: center;
   margin: 0 auto;
-  max-width: 700px;
-  margin-top: 30px;
 }
+
 
 .card--objects {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 12px;
   align-items: center;
-  max-width: 90%;
   margin: 0 auto;
-  max-width: 700px;
 }
 
 /* Text blocks */
@@ -2408,6 +2405,14 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   align-content: start;
+}
+
+.certs_logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 100px;
 }
 
 .certs img {
@@ -2437,6 +2442,7 @@ img {
   border-top: 1px solid var(--line);
   padding: 16px 0;
   background: #fff;
+  margin-top: 25px;
 }
 
 .footer__row {
@@ -3577,4 +3583,39 @@ body.brands-modal-open { overflow: hidden; }
 /* Каталог: разрешаем вертикальную прокрутку сайта при свайпе по карточке */
 #catalog .catalog-grid {
   touch-action: pan-y pinch-zoom !important;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brands-header {
+  display: flex;
+    justify-content: space-between;
+}
+
+.param-more-btn {
+  display: inline;
+  padding: 0;
+  margin-left: 3px;
+  border: 0;
+  background: transparent;
+  color: #2563eb;
+  font: inherit;
+  font-weight: 600;
+  line-height: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.param-more-btn:hover {
+  color: #1d4ed8;
+}
+
+.param-more-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 3px;
 }
