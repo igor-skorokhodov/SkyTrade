@@ -2382,6 +2382,7 @@ img {
   gap: 12px;
   align-items: center;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 /* Text blocks */
